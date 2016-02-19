@@ -51,6 +51,6 @@ public class QuadTree<K extends Comparable<K>, E> {
             current = current.next[0];
             x++;
         }
-        System.out.println(x + "quadtree nodes printed");
+        System.out.println(x + " quadtree nodes printed");
     }
 }
