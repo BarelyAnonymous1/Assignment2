@@ -96,6 +96,16 @@ public class QuadNode<K extends Comparable<K>, E>
     {
         return level;
     }
+    
+    public int getLeftChild()
+    {
+    	return leftChild;
+    }
+    
+    public int getRightChild()
+    {
+    	return rightChild;
+    }
 
     /**
      * gets the pair
