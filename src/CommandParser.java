@@ -150,7 +150,7 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-            Rectangle found = base.remove(name);
+            Rectangle found = base.removeKey(name);
             if (found == null)
             {
                 System.out
@@ -174,7 +174,7 @@ public class CommandParser
                         + height;
                 Rectangle searchRect = new Rectangle(null, x, y, width,
                         height);
-                Rectangle found = list.removeValue(searchRect);
+                Rectangle found = base.removeValue(searchRect);
                 if (found == null)
                 {
                     System.out.println(
