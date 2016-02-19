@@ -34,15 +34,15 @@ public class Database<K extends Comparable<K>, E> {
 	 * not yet implemented
 	 * @param key is the key to be searched
 	 */
-	public E remove(K key)
+	public E removeKey(K key)
 	{
-		return null;
+		return (E) list.removeKey(key);
 	}
 	/**
 	 * 
 	 * @param val is the value to be found
 	 */
-	public void remove(E val)
+	public void removeValue(E val)
 	{
 		// not implemented
 	}
