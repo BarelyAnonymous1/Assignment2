@@ -31,7 +31,7 @@ public class QuadTree<K extends Comparable<K>, E> {
      */
     public void dump()
     {
-        System.out.println("SkipList dump:");
+        System.out.println("QuadTree dump:");
         int x = 0;
         QuadNode<K, E> current = head;
         while (current != null)
