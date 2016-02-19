@@ -262,7 +262,7 @@ public class CommandParser
      */
     private void parseDuplicates()
     {
-        System.out.println("Duplicate pairs:");
+        System.out.println("Duplicate points:");
         base.duplicates();
     }
 
