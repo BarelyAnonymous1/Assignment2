@@ -19,7 +19,7 @@ public class CommandParser
     /**
      * SkipList used to hold the KeyValue Pairs for Rectangles
      */
-    private Database base;
+    private Database<String, Rectangle> base;
 
     /**
      * constructor for parser, stores filename
@@ -30,7 +30,7 @@ public class CommandParser
     public CommandParser(String file)
     {
         inputFile = file;
-        base = new Database();
+        base = new Database<String, Rectangle>();
     }
 
     /**
@@ -74,9 +74,9 @@ public class CommandParser
                         parseRegionSearch(scanner);
                         break;
                     }
-                    case ("intersections"):
+                    case ("duplicates"):
                     {
-                        parseIntersections();
+                        parseDuplicates();
                         break;
                     }
                     case ("search"):
@@ -86,7 +86,7 @@ public class CommandParser
                     }
                     case ("dump"):
                     {
-                        list.dump();
+                        base.dump();
                         break;
                     }
                     default:
@@ -117,12 +117,10 @@ public class CommandParser
         String name = scanner.next();
         int x = scanner.nextInt();
         int y = scanner.nextInt();
-        int width = scanner.nextInt();
-        int height = scanner.nextInt();
         char c = name.charAt(0);
-        if (checkDim(x, y, width, height) && Character.isAlphabetic(c))
+        if (checkDim(x, y) && Character.isAlphabetic(c))
         {
-            Rectangle rect = new Rectangle(name, x, y, width, height);
+            Rectangle rect = new Rectangle(name, x, y);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
                     name, rect);
             base.insert(pair);
@@ -131,7 +129,7 @@ public class CommandParser
         }
         else
         {
-            System.out.println("Rectangle rejected: (" + name + ", " + x
+            System.out.println("Point rejected: (" + name + ", " + x
                     + ", " + y + ", " + width + ", " + height + ")");
         }
     }
@@ -217,7 +215,7 @@ public class CommandParser
                     + ", " + y + ", " + width + ", " + height + "):");
             Rectangle regionRect = new Rectangle("regionRect", x, y, width,
                     height);
-            list.regionSearch(regionRect);
+            base.regionSearch(regionRect);
         }
         else
         {
@@ -239,8 +237,8 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        SkipNode<String, Rectangle> searchResult = list.search(name);
-        if (null == list.search(name))
+        SkipNode<String, Rectangle> searchResult = base.search(name);
+        if (null == base.search(name))
         {
             System.out.println("Rectangle not found: " + name);
         }
@@ -266,10 +264,10 @@ public class CommandParser
      * @postcondition terminal will have outputs containing intersections of
      *                rectangles, if any
      */
-    private void parseIntersections()
+    private void parseDuplicates()
     {
-        System.out.println("Intersection pairs:");
-        list.intersections();
+        System.out.println("Duplicate pairs:");
+        base.duplicates();
     }
 
     /**
@@ -292,18 +290,13 @@ public class CommandParser
      *            coordinate
      * @param y
      *            coordinate
-     * @param width
-     *            of rectangle
-     * @param height
-     *            of rectangle
      * @return a boolean true or false
      */
-    public boolean checkDim(int x, int y, int width, int height)
+    public boolean checkDim(int x, int y)
     {
-        return !(width <= 0 || 
-                height <= 0 || 
-                x + width > 1024 ||
-                y + height > 1024 ||
-                x < 0 || y < 0);
+        return (x >= 0 && 
+                y >= 0 && 
+                x < 1023 && 
+                y < 1023);
     }
 }

@@ -36,15 +36,15 @@ public class Database<K extends Comparable<K>, E> {
 	 */
 	public E removeKey(K key)
 	{
-		return (E) list.removeKey(key);
+		return null;
 	}
 	/**
 	 * 
 	 * @param val is the value to be found
 	 */
-	public void removeValue(E val)
+	public E removeValue(E val)
 	{
-		// not implemented
+		return null;
 	}
 	/**
 	 * not implemented
@@ -62,10 +62,13 @@ public class Database<K extends Comparable<K>, E> {
 	/**
 	 * not implemented
 	 */
-	public void search(){};
+	public SkipNode<K, E> search(K key)
+	{
+		return null;
+	}
 	
 	/**
 	 * not implemented
 	 */
-	public void regionsearch(){};
+	public void regionSearch(E region){};
 }
