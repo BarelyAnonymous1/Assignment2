@@ -12,11 +12,13 @@ public class Database<K extends Comparable<K>, E> {
 	/**
 	 * creates the skipList for the database
 	 */
-	private SkipList list;
+	private SkipList<K, E> list;
+	private QuadTree tree
 	
 	public Database()
 	{
-		list = new SkipList();
+		list = new SkipList<K, E>();
+		tree = new QuadTree();
 	}
 	
 	/**
@@ -57,7 +59,13 @@ public class Database<K extends Comparable<K>, E> {
 	/**
 	 * not implemented
 	 */
-	public void dump(){};
+	public void dump()
+	{
+		System.out.println("SkipList dump:");
+		list.dump();
+		System.out.println("QuadTree dump:");
+		tree.dump();
+	}
 	
 	/**
 	 * not implemented

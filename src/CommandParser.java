@@ -86,7 +86,7 @@ public class CommandParser
                     }
                     case ("dump"):
                     {
-                        base.dump();
+                        base.dump();;
                         break;
                     }
                     default:
