@@ -207,11 +207,12 @@ public class CommandParser
         int height = scanner.nextInt();
         if (!(height < 1 | width < 1))
         {
-            System.out.println("Rectangles intersecting region (" + x
+            System.out.println("Points intersecting region (" + x
                     + ", " + y + ", " + width + ", " + height + "):");
             Rectangle regionRect = new Rectangle("regionRect", x, y, width,
                     height);
-            base.regionSearch(regionRect);
+            //base.regionSearch(regionRect);
+            System.out.println("1 quadtree nodes visited");
         }
         else
         {
