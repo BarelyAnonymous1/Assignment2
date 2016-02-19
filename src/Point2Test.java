@@ -53,9 +53,11 @@ public class Point2Test
      *
      * @throws Exception
      */
-    /**public void testSyntax2()
+    public void testSyntax2()
         throws Exception
     {
+    	System.out.println("");
+    	System.out.println("");
         String[] args = new String[1];
         args[0] = "P2SyntaxTest2.txt";
         Point2.main(args);
@@ -64,5 +66,5 @@ public class Point2Test
                 .endsWith("SkipList size is: 2\n" + "QuadTree dump:\n"
                     + "Node at 0, 0, 1024:\n" + "far, 200, 200\n"
                     + "r_42, 1, 20\n" + "1 quadtree nodes printed\n"));
-    }*/
+    }
 }

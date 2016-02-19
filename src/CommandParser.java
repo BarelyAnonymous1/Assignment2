@@ -152,7 +152,7 @@ public class CommandParser
             if (found == null)
             {
                 System.out
-                        .println("Point not removed: (" + name + ")");
+                        .println("Point not removed: " + name);
             }
             else
             {
@@ -172,7 +172,7 @@ public class CommandParser
                 if (found == null)
                 {
                     System.out.println(
-                            "Point not removed: (" + search + ")");
+                            "Point not found: (" + search + ")");
                 }
                 else
                 {
