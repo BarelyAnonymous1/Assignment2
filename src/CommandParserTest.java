@@ -26,7 +26,7 @@ public class CommandParserTest extends TestCase
      */
     public void testSearchPass()
     {
-        parser = new CommandParser("SyntaxTest.txt");
+        parser = new CommandParser("P2SyntaxTest.txt");
         boolean success = parser.parseFile();
         assertTrue(success);
     }
@@ -56,7 +56,7 @@ public class CommandParserTest extends TestCase
      */
     public void testParseFile()
     {
-        parser = new CommandParser("SyntaxTest.txt");
+        parser = new CommandParser("P2SyntaxTest.txt");
         boolean success = parser.parseFile();
         assertTrue(success);
     }
