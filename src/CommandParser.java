@@ -125,7 +125,7 @@ public class CommandParser
             Rectangle rect = new Rectangle(name, x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
                     name, rect);
-            list.insert(pair);
+            base.insert(pair);
             System.out.println("Rectangle inserted: (" + name + ", " + x
                     + ", " + y + ", " + width + ", " + height + ")");
         }
@@ -150,7 +150,7 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-            Rectangle found = list.removeKey(name);
+            Rectangle found = base.remove(name);
             if (found == null)
             {
                 System.out

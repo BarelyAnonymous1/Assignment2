@@ -19,7 +19,11 @@ public class Database<K extends Comparable<K>, E> {
 		list = new SkipList();
 	}
 	
-	public void insert()
+	/**
+	 * 
+	 * @param pair is the value to be inserted
+	 */
+	public void insert(KVPair pair)
 	{
 		/** not yet implemented
 		 * 
@@ -28,8 +32,17 @@ public class Database<K extends Comparable<K>, E> {
 	
 	/**
 	 * not yet implemented
+	 * @param key is the key to be searched
 	 */
-	public void remove()
+	public E remove(K key)
+	{
+		return null;
+	}
+	/**
+	 * 
+	 * @param val is the value to be found
+	 */
+	public void remove(E val)
 	{
 		// not implemented
 	}
