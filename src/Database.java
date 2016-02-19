@@ -61,9 +61,7 @@ public class Database<K extends Comparable<K>, E> {
 	 */
 	public void dump()
 	{
-		System.out.println("SkipList dump:");
 		list.dump();
-		System.out.println("QuadTree dump:");
 		tree.dump();
 	}
 	
