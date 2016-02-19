@@ -152,11 +152,11 @@ public class CommandParser
             if (found == null)
             {
                 System.out
-                        .println("Rectangle not removed: (" + name + ")");
+                        .println("Point not removed: (" + name + ")");
             }
             else
             {
-                System.out.println("Rectangle removed: (" + name + ", "
+                System.out.println("Point removed: (" + name + ", "
                         + found.toString() + ")");
             }
         }
