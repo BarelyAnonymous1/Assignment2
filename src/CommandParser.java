@@ -124,13 +124,13 @@ public class CommandParser
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
                     name, rect);
             base.insert(pair);
-            System.out.println("Rectangle inserted: (" + name + ", " + x
-                    + ", " + y + ", " + width + ", " + height + ")");
+            System.out.println("Point inserted: (" + name + ", " + x
+                    + ", " + y + ")");
         }
         else
         {
             System.out.println("Point rejected: (" + name + ", " + x
-                    + ", " + y + ", " + width + ", " + height + ")");
+                    + ", " + y + ")");
         }
     }
 
@@ -164,31 +164,27 @@ public class CommandParser
         {
             int x = Integer.parseInt(name);
             int y = scanner.nextInt();
-            int width = scanner.nextInt();
-            int height = scanner.nextInt();
-            if (checkDim(x, y, width, height))
+            if (checkDim(x, y))
             {
-                String search = x + ", " + y + ", " + width + ", "
-                        + height;
-                Rectangle searchRect = new Rectangle(null, x, y, width,
-                        height);
+                String search = x + ", " + y;
+                Rectangle searchRect = new Rectangle(null, x, y);
                 Rectangle found = base.removeValue(searchRect);
                 if (found == null)
                 {
                     System.out.println(
-                            "Rectangle not removed: (" + search + ")");
+                            "Point not removed: (" + search + ")");
                 }
                 else
                 {
                     System.out.println(
-                            "Rectangle removed: (" + found.getName() + ", "
+                            "Point removed: (" + found.getName() + ", "
                                     + found.toString() + ")");
                 }
             }
             else
             {
-                System.out.println("Rectangle rejected: (" + x + ", " + y
-                        + ", " + width + ", " + height + ")");
+                System.out.println("Point rejected: (" + x + ", " + y
+                        + ")");
             }
         }
     }
@@ -284,7 +280,7 @@ public class CommandParser
 
     /**
      * helper method to do math regarding the dimensions of 
-     * the rectangle
+     * the point
      * 
      * @param x
      *            coordinate
@@ -298,5 +294,27 @@ public class CommandParser
                 y >= 0 && 
                 x < 1023 && 
                 y < 1023);
+    }
+    /**
+     * helper method to do math regarding the dimensions of 
+     * the rectangle for regionsearch
+     * 
+     * @param x
+     *            coordinate
+     * @param y
+     *            coordinate
+     * @param width
+     *            of rectangle
+     * @param height
+     *            of rectangle
+     * @return a boolean true or false
+     */
+    public boolean checkDim(int x, int y, int width, int height)
+    {
+        return !(width <= 0 || 
+                height <= 0 || 
+                x + width > 1024 ||
+                y + height > 1024 ||
+                x < 0 || y < 0);
     }
 }
