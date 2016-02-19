@@ -46,8 +46,8 @@ public class QuadTree<K extends Comparable<K>, E> {
                 name = current.getPair().toString();
             }
             System.out.println("Node at " + current.getLevel()
-                    + ", " + current.getLeftChild(), 
-                    + ", " + current.getRightChild(),
+                    + ", " + current.getLeftChild() 
+                    + ", " + current.getRightChild()
                     + ": " + name);
 
             current = current.next[0];
