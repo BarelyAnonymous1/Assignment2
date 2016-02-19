@@ -236,7 +236,7 @@ public class CommandParser
         SkipNode<String, Rectangle> searchResult = base.search(name);
         if (null == base.search(name))
         {
-            System.out.println("Rectangle not found: " + name);
+            System.out.println("Point not found: " + name);
         }
         else
         {
