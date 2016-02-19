@@ -295,26 +295,5 @@ public class CommandParser
                 x < 1023 && 
                 y < 1023);
     }
-    /**
-     * helper method to do math regarding the dimensions of 
-     * the rectangle for regionsearch
-     * 
-     * @param x
-     *            coordinate
-     * @param y
-     *            coordinate
-     * @param width
-     *            of rectangle
-     * @param height
-     *            of rectangle
-     * @return a boolean true or false
-     */
-    public boolean checkDim(int x, int y, int width, int height)
-    {
-        return !(width <= 0 || 
-                height <= 0 || 
-                x + width > 1024 ||
-                y + height > 1024 ||
-                x < 0 || y < 0);
-    }
+    
 }
