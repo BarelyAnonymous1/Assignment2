@@ -23,6 +23,9 @@ public class QuadNode<K extends Comparable<K>, E>
      * Data stored into the node
      */
     private KVPair<K, E>    pair;
+    
+    private int leftChild;
+    private int rightChild;
     /**
      * determines the level that the node is actually on
      */
@@ -38,10 +41,13 @@ public class QuadNode<K extends Comparable<K>, E>
      */
 
     @SuppressWarnings("unchecked")
-    public QuadNode(KVPair<K, E> newPair, int newLevel)
+    public QuadNode(KVPair<K, E> newPair, int newLeftChild, 
+    		int newRightChild, int newLevel)
     {
         level = newLevel;
         pair = newPair;
+        leftChild = newLeftChild;
+        rightChild = newRightChild;
         next = (QuadNode<K, E>[]) new QuadNode[newLevel + 1];
         for (int i = 0; i < level; i++)
         {
