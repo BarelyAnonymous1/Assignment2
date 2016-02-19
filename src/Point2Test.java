@@ -18,16 +18,6 @@ public class Point2Test
 
 
     // ----------------------------------------------------------
-    /**
-     * This method is simply to get code coverage of the class declaration.
-     */
-    public void testRInit()
-    {
-        Point2 dum = new Point2();
-        assertNotNull(dum);
-        Point2.main(null);
-        assertFuzzyEquals("Hello, World\n", systemOut().getHistory());
-    }
 
 
     // ----------------------------------------------------------
