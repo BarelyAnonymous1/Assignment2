@@ -13,7 +13,7 @@ public class Database<K extends Comparable<K>, E> {
 	 * creates the skipList for the database
 	 */
 	private SkipList<K, E> list;
-	private QuadTree tree
+	private QuadTree tree;
 	
 	public Database()
 	{

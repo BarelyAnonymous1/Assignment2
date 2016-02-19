@@ -6,7 +6,7 @@
  * @author prestonlattimer
  *
  */
-public class QuadTree {
+public class QuadTree<K extends Comparable<K>, E> {
 
 	/**
 	 * @param args
@@ -14,9 +14,12 @@ public class QuadTree {
 	
 	private int level;
 	
+	private QuadNode<K, E> head;
+	
 	public QuadTree() 
 	{
 		level = 0;
+		head = new QuadNode<K, E>(null, 0);
 	}
 
 	
@@ -29,7 +32,8 @@ public class QuadTree {
     public void dump()
     {
         System.out.println("SkipList dump:");
-        SkipNode<K, E> current = head;
+        int x = 0;
+        QuadNode<K, E> current = head;
         while (current != null)
         {
             String name = "";
@@ -41,11 +45,12 @@ public class QuadTree {
             {
                 name = current.getPair().toString();
             }
-            System.out.println("Node has depth " + current.getLevel()
+            System.out.println("Node at " + current.getLevel()
                     + ", Value (" + name + ")");
 
             current = current.next[0];
+            x++;
         }
-        System.out.println("SkipList size is: " + size);
+        System.out.println(x + "quadtree nodes printed");
     }
 }
