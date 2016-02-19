@@ -10,22 +10,22 @@
  * @version 1
  *
  */
-public class QuadNode<K extends Comparable<K>, E>
+public class QuadInternalNode<K extends Comparable<K>, E>
 {
 
     /**
      * creates a skip list node array that is blank that will point to the next
      * node in the list
      */
-    public QuadNode<K, E>[] next;
+    public QuadInternalNode<K, E>[] next;
 
     /**
      * Data stored into the node
      */
     private KVPair<K, E>    pair;
     
-    private int leftChild;
-    private int rightChild;
+    private int x;
+    private int y;
     /**
      * determines the level that the node is actually on
      */
@@ -41,18 +41,23 @@ public class QuadNode<K extends Comparable<K>, E>
      */
 
     @SuppressWarnings("unchecked")
-    public QuadNode(KVPair<K, E> newPair, int newLeftChild, 
-    		int newRightChild, int newLevel)
+    public QuadInternalNode(KVPair<K, E> newPair, int newX, 
+    		int newY, int newLevel)
     {
         level = newLevel;
         pair = newPair;
-        leftChild = newLeftChild;
-        rightChild = newRightChild;
-        next = (QuadNode<K, E>[]) new QuadNode[newLevel + 1];
+        x = newX;
+        y = newY;
+        next = (QuadInternalNode<K, E>[]) new QuadInternalNode[newLevel + 1];
         for (int i = 0; i < level; i++)
         {
             next[i] = null;
         }
+    }
+    
+    public void traverse()
+    {
+    	System.out.println("Node at ", );
     }
 
     /**
@@ -97,16 +102,10 @@ public class QuadNode<K extends Comparable<K>, E>
         return level;
     }
     
-    public int getLeftChild()
+    public int getX()
     {
-    	return leftChild;
+    	return 
     }
-    
-    public int getRightChild()
-    {
-    	return rightChild;
-    }
-
     /**
      * gets the pair
      * 

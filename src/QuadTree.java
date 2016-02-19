@@ -12,14 +12,13 @@ public class QuadTree<K extends Comparable<K>, E> {
 	 * @param args
 	 */
 	
-	private int level;
 	
-	private QuadNode<K, E> head;
+	
+	private QuadInternalNode<K, E> head;
 	
 	public QuadTree() 
 	{
-		level = 0;
-		head = new QuadNode<K, E>(null, 0, 1024, 0);
+		head = new QuadInternalNode<K, E>(null, 0, 1024, 0);
 	}
 
 	
@@ -33,7 +32,7 @@ public class QuadTree<K extends Comparable<K>, E> {
     {
         System.out.println("QuadTree dump:");
         int x = 0;
-        QuadNode<K, E> current = head;
+        QuadInternalNode<K, E> current = head;
         while (current != null)
         {
             String name = "";
