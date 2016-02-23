@@ -22,33 +22,9 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode {
 	}
 
 	@Override
-	public LinkedNode remove(QuadNode<K, E> root) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public LinkedList getElement() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setElement(LinkedList list) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void dump(QuadNode root) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public LinkedNode<E> find(QuadNode root) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -56,5 +32,6 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }
