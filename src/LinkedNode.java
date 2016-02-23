@@ -1,27 +1,40 @@
-
-public class LinkedNode
+/**
+ * nodes to build a linked list of points
+ * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
+ *
+ */
+public class LinkedNode<E>
 {
-    private LinkedNode next;
-    private Point2 data;
+    /**
+     * next node in the list
+     */
+    private LinkedNode<E> next;
+    /**
+     * point data contained in the node
+     */
+    private E data;
     
-    
-    public LinkedNode(Point2 newValue)
+    /**
+     * 
+     * @param newValue
+     */
+    public LinkedNode(E newValue)
     {
         data = newValue;
         next = null;
     }
     
-    public void setNext(LinkedNode newNext)
+    public void setNext(LinkedNode<E> newNext)
     {
         next = newNext;
     }
     
-    public LinkedNode getNext()
+    public LinkedNode<E> getNext()
     {
         return next;
     }
     
-    public void setNext(Point2 newData)
+    public void setNext(E newData)
     {
         data = newData;
     }
