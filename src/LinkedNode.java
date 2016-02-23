@@ -39,7 +39,7 @@ public class LinkedNode<E>
         data = newData;
     }
     
-    public Point2 getData()
+    public E getData()
     {
         return data;
     }
