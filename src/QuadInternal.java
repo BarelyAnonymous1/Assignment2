@@ -22,7 +22,7 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode {
 	}
 
 	@Override
-	public LinkedNode remove(QuadNode root) {
+	public LinkedNode remove(QuadNode<K, E> root) {
 		// TODO Auto-generated method stub
 		return null;
 	}

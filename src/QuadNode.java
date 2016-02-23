@@ -19,5 +19,6 @@ public interface QuadNode<K extends Comparable<K>, E>
 	public void dump(QuadNode<K, E> root);
 	public LinkedNode<K, E> find(QuadNode<K, E> root);
 	public void insert(QuadNode<K, E> root);
+	LinkedNode remove(QuadNode<K, E> root);
 	
 }
