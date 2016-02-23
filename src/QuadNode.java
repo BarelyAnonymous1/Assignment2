@@ -46,8 +46,8 @@ public class QuadNode<K extends Comparable<K>, E>
     		QuadNode<K, E> newRightChild, boolean newInternal)
     {
         pair = newPair;
-        leftChild = newLeftChild;
-        rightChild = newRightChild;
+        NWChild = newLeftChild;
+        NEChild = newRightChild;
     }
 
     /**
