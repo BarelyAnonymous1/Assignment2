@@ -1,14 +1,9 @@
-package Parser;
+
 
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-import Database;
-import KVPair;
-import Rectangle;
-import SkipNode;
+import java.util.Scannee;
 
 /**
  * CommandParser class used to scan through a file with a Scanner and retrieve
