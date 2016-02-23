@@ -26,6 +26,7 @@ public class QuadNode<K extends Comparable<K>, E>
     
     private QuadNode<K, E> NWChild;
     private QuadNode<K, E> NEChild;
+    
     private boolean internal;
     /**
      * determines the level that the node is actually on
