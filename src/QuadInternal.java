@@ -6,7 +6,7 @@
  * @author prestonlattimer
  *
  */
-public class QuadInternal implements QuadNode {
+public class QuadInternal<K extends Comparable<K>, E> implements QuadNode {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class QuadInternal implements QuadNode {
 	}
 
 	@Override
-	public LinkedNode find(QuadNode root) {
+	public LinkedNode<E> find(QuadNode root) {
 		// TODO Auto-generated method stub
 		return null;
 	}
