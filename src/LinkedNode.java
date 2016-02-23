@@ -3,12 +3,12 @@
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  *
  */
-public class LinkedNode<E>
+public class LinkedNode<K extends Comparable<K>, E>
 {
     /**
      * next node in the list
      */
-    private LinkedNode<E> next;
+    private LinkedNode<K, E> next;
     /**
      * point data contained in the node
      */
@@ -24,12 +24,12 @@ public class LinkedNode<E>
         next = null;
     }
     
-    public void setNext(LinkedNode<E> newNext)
+    public void setNext(LinkedNode<K, E> newNext)
     {
         next = newNext;
     }
     
-    public LinkedNode<E> getNext()
+    public LinkedNode<K, E> getNext()
     {
         return next;
     }
