@@ -57,4 +57,11 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode {
 		
 	}
 
+    @Override
+    public LinkedNode find(QuadNode root)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
