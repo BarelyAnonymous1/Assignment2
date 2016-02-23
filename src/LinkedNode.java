@@ -1,45 +1,59 @@
 /**
  * nodes to build a linked list of points
+ * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  *
  */
-public class LinkedNode<E>
+public class LinkedNode<K extends Comparable<K>, E>
 {
     /**
      * next node in the list
      */
-    private LinkedNode<E> next;
+    private LinkedNode<K, E> next;
     /**
      * point data contained in the node
      */
-    private E data;
-    
+    private KVPair<K, E>     data;
+
     /**
+     * creates a node that contains data and no next node
      * 
      * @param newValue
+     *            the value stored in the node
      */
-    public LinkedNode(E newValue)
+    public LinkedNode(KVPair<K, E> newValue)
     {
         data = newValue;
         next = null;
     }
-    
-    public void setNext(LinkedNode<E> newNext)
+
+    /**
+     * sets the value of the next node
+     * 
+     * @param newNext
+     *            the node next to this one
+     */
+    public void setNext(LinkedNode<K, E> newNext)
     {
         next = newNext;
     }
-    
-    public LinkedNode<E> getNext()
+
+    /**
+     * get the next node
+     * 
+     * @return the node next to this one
+     */
+    public LinkedNode<K, E> getNext()
     {
         return next;
     }
-    
-    public void setNext(E newData)
+
+    public void setNext(KVPair<K, E> newData)
     {
         data = newData;
     }
-    
-    public E getData()
+
+    public KVPair<K, E> getData()
     {
         return data;
     }
