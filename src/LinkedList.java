@@ -32,5 +32,10 @@ public class LinkedList<K extends Comparable<K>, E>
             size++;
         }
     }
+    
+    public void dump()
+    {
+    	//TODO  not yet implemented
+    }
 
 }
