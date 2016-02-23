@@ -24,8 +24,8 @@ public class QuadNode<K extends Comparable<K>, E>
      */
     private KVPair<K, E>    pair;
     
-    private QuadNode<K, E> leftChild;
-    private QuadNode<K, E> rightChild;
+    private QuadNode<K, E> NWChild;
+    private QuadNode<K, E> NEChild;
     private boolean internal;
     /**
      * determines the level that the node is actually on

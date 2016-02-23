@@ -17,7 +17,7 @@ public class QuadTree<K extends Comparable<K>, E> {
 	
 	public QuadTree() 
 	{
-		head = new QuadNode<K, E>(null, 0, 1024, 0);
+		//head = new QuadNode<K, E>(null, 0, 1024, 0);
 	}
 
 	
@@ -43,10 +43,10 @@ public class QuadTree<K extends Comparable<K>, E> {
             {
                 name = current.getPair().toString();
             }
-            System.out.println("Node at " + current.getLevel()
-                    + ", " + current.getLeftChild() 
-                    + ", " + current.getRightChild()
-                    + ": " + name);
+//            System.out.println("Node at " + current.getLevel()
+//                    + ", " + current.getLeftChild() 
+//                    + ", " + current.getRightChild()
+//                    + ": " + name);
 
             current = current.next[0];
             x++;
