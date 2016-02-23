@@ -1,7 +1,7 @@
 
-public class LinkedList<E>
+public class LinkedList<K extends Comparable<K>, E>
 {
-    private LinkedNode<E> head;
+    private LinkedNode<K, E> head;
     private int           size;
 
     public LinkedList()
@@ -10,13 +10,13 @@ public class LinkedList<E>
         size = 0;
     }
 
-    public LinkedList(LinkedNode<E> startHead)
+    public LinkedList(LinkedNode<K, E> startHead)
     {
         head = startHead;
         size = 1;
     }
 
-    public void insert(LinkedNode<E> newNode)
+    public void insert(LinkedNode<K, E> newNode)
     {
         if (head == null)
         {
@@ -25,7 +25,7 @@ public class LinkedList<E>
         } 
         else
         {
-            LinkedNode<E> curr = head;
+            LinkedNode<K, E> curr = head;
             while (curr.getNext() != null)
                 curr.setNext(curr.getNext());
             curr.setNext(newNode);
