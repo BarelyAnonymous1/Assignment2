@@ -12,13 +12,13 @@ public class LinkedNode<K extends Comparable<K>, E>
     /**
      * point data contained in the node
      */
-    private E data;
+    private KVPair<K, E> data;
     
     /**
      * 
      * @param newValue
      */
-    public LinkedNode(E newValue)
+    public LinkedNode(KVPair<K, E> newValue)
     {
         data = newValue;
         next = null;
@@ -34,12 +34,12 @@ public class LinkedNode<K extends Comparable<K>, E>
         return next;
     }
     
-    public void setNext(E newData)
+    public void setNext(KVPair<K, e> newData)
     {
         data = newData;
     }
     
-    public E getData()
+    public KVPair<K, E> getData()
     {
         return data;
     }
