@@ -151,7 +151,7 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-            Rectangle found = base.removeKey(name);
+            Point found = base.removeKey(name);
             if (found == null)
             {
                 System.out
