@@ -16,8 +16,14 @@ public class Database<K extends Comparable<K>, E>
      * creates the skipList for the database
      */
     private SkipList<K, E> list;
+    /**
+     * declares the quadtree for the database
+     */
     private QuadTree<K, E> tree;
 
+    /**
+     * initializes the SkipList and QuadTree for the Database
+     */
     public Database()
     {
         list = new SkipList<K, E>();
@@ -25,6 +31,7 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
+     * insert a KVPair into the data structures of the database
      * 
      * @param pair
      *            is the value to be inserted
@@ -38,7 +45,7 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
-     * not yet implemented
+     * remove a value from the database based on the key
      * 
      * @param key
      *            is the key to be searched
@@ -49,6 +56,7 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
+     * remove a value from the database based on the value
      * 
      * @param val
      *            is the value to be found
@@ -59,7 +67,7 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
-     * not implemented
+     * find all duplicate points in the quad tree
      */
     public void duplicates()
     {
@@ -67,16 +75,15 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
-     * not implemented
+     * outputs the data using the quad tree
      */
     public void dump()
     {
-        list.dump();
         tree.dump();
     }
 
     /**
-     * not implemented
+     * searches for a specific key value
      */
     public SkipNode<K, E> search(K key)
     {
@@ -84,9 +91,9 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
-     * not implemented
+     * find all points within a specific region in the quadtree
      */
     public void regionSearch(E region)
     {
-    };
+    }
 }
