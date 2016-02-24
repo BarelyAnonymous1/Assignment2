@@ -38,11 +38,23 @@ public class Point implements Comparable<Point>
         x = newX;
     }
 
+    /**
+     * sets the Y coordinate of the Point
+     * 
+     * @param newY
+     *            replacement y coordinate
+     */
     public void setY(int newY)
     {
         y = newY;
     }
 
+    /**
+     * sets the name of the Point
+     * 
+     * @param newName
+     *            replacement name for the Point
+     */
     public void setName(String newName)
     {
         name = newName;
