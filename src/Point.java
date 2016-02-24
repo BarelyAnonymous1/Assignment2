@@ -60,21 +60,41 @@ public class Point implements Comparable<Point>
         name = newName;
     }
 
+    /**
+     * access to private x coordinate
+     * 
+     * @return x coordinate
+     */
     public int getX()
     {
         return x;
     }
 
+    /**
+     * access to private y coordinate
+     * 
+     * @return y coordinate
+     */
     public int getY()
     {
         return y;
     }
 
+    /**
+     * access to private name
+     * 
+     * @return name of the Point
+     */
     public String getName()
     {
         return name;
     }
 
+    /**
+     * checks to see if two Points are equivalent
+     * 
+     * @return an integer to determine equivalence
+     */
     public int compareTo(Point other)
     {
         if (this.x == other.getX() && this.y == other.getY())
@@ -83,6 +103,11 @@ public class Point implements Comparable<Point>
             return -1;
     }
 
+    /**
+     * determins if the obj is equivalent to this Point
+     * 
+     * @return true if equivalent, false otherwise
+     */
     @Override
     public boolean equals(Object obj)
     {
