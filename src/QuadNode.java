@@ -12,14 +12,21 @@
  */
 public interface QuadNode<K extends Comparable<K>, E>
 {
-	
-	public void traverse(QuadNode<K, E> root);
-	public LinkedNode<K, E> remove(QuadNode<K, E> root);
-	public LinkedList<K, E> getElement();
-	public void setElement(LinkedList<K, E> list);
-	public void dump(QuadNode<K, E> root);
-	public LinkedNode<K, E> find(QuadNode<K, E> root);
-	public void insert(QuadNode<K, E> root);
-	public void getData();
-	
+
+    public void traverse(QuadNode<K, E> root);
+
+    public LinkedNode<K, E> remove(QuadNode<K, E> root);
+
+    public LinkedList<K, E> getElement();
+
+    public void setElement(LinkedList<K, E> list);
+
+    public void dump(QuadNode<K, E> root);
+
+    public LinkedNode<K, E> find(QuadNode<K, E> root);
+
+    public void insert(QuadNode<K, E> root);
+
+    public void getData();
+
 }
