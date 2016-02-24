@@ -250,6 +250,7 @@ public class RectangleTest extends TestCase
         assertFalse(rect1.intersects(rect2));
         assertFalse(rect2.intersects(rect1));
     }
+
     /**
      * tests the .equals method
      */
