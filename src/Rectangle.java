@@ -185,7 +185,13 @@ public class Rectangle implements Comparable<Rectangle>
                 // top edge r2 is below r1
                 || (otherRect.getY() >= this.y + this.height));
     }
-    
+
+    /**
+     * decides if a rectangle contains a certain point
+     * 
+     * @param otherPoint the point that could be within the rectangle
+     * @return if the point is within the rectang;e
+     */
     public boolean contains(Point otherPoint)
     {
         // left edge r2 is to the right of r1
