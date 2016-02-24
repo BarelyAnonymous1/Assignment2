@@ -12,6 +12,7 @@
  */
 public interface QuadNode<K extends Comparable<K>, E>
 {
+	
 	public void traverse(QuadNode<K, E> root);
 	public LinkedNode<K, E> remove(QuadNode<K, E> root);
 	public LinkedList<K, E> getElement();

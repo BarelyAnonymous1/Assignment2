@@ -36,6 +36,7 @@ public class LinkedList<K extends Comparable<K>, E>
     public void dump()
     {
     	//TODO  not yet implemented
+    	// should print in form "Node at 0, 0, 1024: Internal"
     }
 
 }

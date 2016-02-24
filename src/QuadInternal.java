@@ -10,6 +10,9 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode<K, E> 
 
 	private int depth;
 	private LinkedList<K, E> data;
+	private int cornerx;
+	private int cornery;
+	private int width;
 	/**
 	 * 
 	 */
@@ -22,7 +25,8 @@ public class QuadInternal<K extends Comparable<K>, E> implements QuadNode<K, E> 
 	public void traverse(QuadNode<K, E> root) {
 		if (root == null) return;
 		int i = 0;
-		
+		while (i < depth) System.out.print("  ");
+		root.getData();
 		
 	}
 
