@@ -2,7 +2,7 @@
  * Class that stores the coordinates to a point in a given plane
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
- * @version
+ * @version 1
  */
 public class Point implements Comparable<Point>
 {
