@@ -87,6 +87,10 @@ public class Database<K extends Comparable<K>, E>
 
     /**
      * searches for a specific key value
+     * 
+     * @param key
+     *            the key that is being searched for
+     * @return the node in the SkipList that contains that specific key
      */
     public SkipNode<K, E> search(K key)
     {
