@@ -20,15 +20,7 @@ public class Point2
      */
     public static void main(String[] args)
     {
-        if (args.length != 1)
-        {
-            System.out.println(
-                    "Error: Incorrect number of arguments provided\n");
-        }
-        else
-        {
             CommandParser parser = new CommandParser(args[0]);
             parser.parseFile();
-        }
     }
 }
