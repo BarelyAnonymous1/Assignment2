@@ -53,11 +53,22 @@ public class LinkedNode<K extends Comparable<K>, E>
         return next;
     }
 
-    public void setNext(KVPair<K, E> newData)
+    /**
+     * sets the value of the node
+     * 
+     * @param newData
+     *            data to be stored in the node
+     */
+    public void setData(KVPair<K, E> newData)
     {
         data = newData;
     }
 
+    /**
+     * returns the private KVPair stored in the node
+     * 
+     * @return the pair in the node
+     */
     public KVPair<K, E> getData()
     {
         return data;
