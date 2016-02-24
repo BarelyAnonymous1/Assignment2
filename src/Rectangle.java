@@ -61,11 +61,12 @@ public class Rectangle implements Comparable<Rectangle>
         width = newWidth;
         height = newHeight;
     }
+
     public Rectangle(String newName, int newX, int newY)
     {
-    	name = newName;
-    	x = newX;
-    	y = newY;
+        name = newName;
+        x = newX;
+        y = newY;
     }
 
     /**
@@ -157,8 +158,8 @@ public class Rectangle implements Comparable<Rectangle>
         {
             Rectangle rect = (Rectangle) obj;
             return (this.x == rect.getX() && this.y == rect.getY()
-                && this.width == rect.getWidth()
-                && this.height == rect.getHeight());
+                    && this.width == rect.getWidth()
+                    && this.height == rect.getHeight());
         }
         return false;
     }
