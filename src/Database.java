@@ -62,6 +62,7 @@ public class Database<K extends Comparable<K>, E>
      * 
      * @param val
      *            is the value to be found
+     * @return the value in the SkipList and quadtree
      */
     public E removeValue(E val)
     {
