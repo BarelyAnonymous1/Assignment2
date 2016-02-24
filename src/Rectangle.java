@@ -185,4 +185,16 @@ public class Rectangle implements Comparable<Rectangle>
                 // top edge r2 is below r1
                 || (otherRect.getY() >= this.y + this.height));
     }
+    
+    public boolean contains(Point otherPoint)
+    {
+        // left edge r2 is to the right of r1
+        return !((otherPoint.getX() > this.x + this.width)
+                // right edge r2 is to the left of r1
+                || (otherPoint.getX() < this.x)
+                // bottom edge r2 is above r1
+                || (otherPoint.getY() < this.y)
+                // top edge r2 is below r1
+                || (otherPoint.getY() > this.y + this.height));
+    }
 }

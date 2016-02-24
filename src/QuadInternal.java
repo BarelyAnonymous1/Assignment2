@@ -38,10 +38,9 @@ public class QuadInternal<K extends Comparable<K>, E>
         if (root == null)
             return;
         int i = 0;
-        while (i < depth)
+        while (i <= depth + 1)
             System.out.print("  ");
         root.getData();
-
     }
 
     @Override
@@ -91,8 +90,7 @@ public class QuadInternal<K extends Comparable<K>, E>
      */
     public void getData()
     {
-        data.dump();
-        return;
+
     }
 
 }
