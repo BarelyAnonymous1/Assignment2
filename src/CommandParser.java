@@ -1,6 +1,4 @@
 
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -17,7 +15,7 @@ public class CommandParser
     /**
      * String field to hold the file that has been input
      */
-    private String                      inputFile;
+    private String                  inputFile;
 
     /**
      * SkipList used to hold the KeyValue Pairs for Rectangles
@@ -124,16 +122,16 @@ public class CommandParser
         if (checkDim(x, y) && Character.isAlphabetic(c))
         {
             Point point = new Point(name, x, y);
-            KVPair<String, Point> pair = new KVPair<String, Point>(
-                    name, point);
+            KVPair<String, Point> pair = new KVPair<String, Point>(name,
+                    point);
             base.insert(pair);
-            System.out.println("Point inserted: (" + name + ", " + x
-                    + ", " + y + ")");
+            System.out.println("Point inserted: (" + name + ", " + x + ", "
+                    + y + ")");
         }
         else
         {
-            System.out.println("Point rejected: (" + name + ", " + x
-                    + ", " + y + ")");
+            System.out.println("Point rejected: (" + name + ", " + x + ", "
+                    + y + ")");
         }
     }
 
@@ -154,8 +152,7 @@ public class CommandParser
             Point found = base.removeKey(name);
             if (found == null)
             {
-                System.out
-                        .println("Point not removed: " + name);
+                System.out.println("Point not removed: " + name);
             }
             else
             {
@@ -174,20 +171,19 @@ public class CommandParser
                 Point found = base.removeValue(searchPoint);
                 if (found == null)
                 {
-                    System.out.println(
-                            "Point not found: (" + search + ")");
+                    System.out
+                            .println("Point not found: (" + search + ")");
                 }
                 else
                 {
-                    System.out.println(
-                            "Point removed: (" + found.getName() + ", "
-                                    + found.toString() + ")");
+                    System.out.println("Point removed: (" + found.getName()
+                            + ", " + found.toString() + ")");
                 }
             }
             else
             {
-                System.out.println("Point rejected: (" + x + ", " + y
-                        + ")");
+                System.out
+                        .println("Point rejected: (" + x + ", " + y + ")");
             }
         }
     }
@@ -210,11 +206,11 @@ public class CommandParser
         int height = scanner.nextInt();
         if (!(height < 1 | width < 1))
         {
-            System.out.println("Points intersecting region (" + x
-                    + ", " + y + ", " + width + ", " + height + "):");
+            System.out.println("Points intersecting region (" + x + ", "
+                    + y + ", " + width + ", " + height + "):");
             Rectangle regionRect = new Rectangle("regionRect", x, y, width,
                     height);
-            //base.regionSearch(regionRect);
+            // base.regionSearch(regionRect);
             System.out.println("1 quadtree nodes visited");
         }
         else
@@ -283,8 +279,7 @@ public class CommandParser
     }
 
     /**
-     * helper method to do math regarding the dimensions of 
-     * the point
+     * helper method to do math regarding the dimensions of the point
      * 
      * @param x
      *            coordinate
@@ -294,10 +289,7 @@ public class CommandParser
      */
     public boolean checkDim(int x, int y)
     {
-        return (x >= 0 && 
-                y >= 0 && 
-                x < 1023 && 
-                y < 1023);
+        return (x >= 0 && y >= 0 && x < 1023 && y < 1023);
     }
-    
+
 }

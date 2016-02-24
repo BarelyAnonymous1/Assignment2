@@ -1,6 +1,4 @@
 
-
-
 import student.TestCase;
 
 /**
@@ -22,10 +20,10 @@ public class CommandParserTest extends TestCase
         boolean success = parser.parseFile();
         assertFalse(success);
     }
-    
+
     /**
-     * tests to see if the parser will correctly open and close a file
-     * does not test the output of the parser
+     * tests to see if the parser will correctly open and close a file does not
+     * test the output of the parser
      */
     public void testSearchPass()
     {
@@ -37,23 +35,21 @@ public class CommandParserTest extends TestCase
     /**
      * tests checkDim for the variety of conditions that are available
      */
-    /**public void testCheckDim()
-    {
-        parser = new CommandParser("test.txt");
-        assertTrue(parser.checkDim(0, 0, 1, 1));
-        assertTrue(parser.checkDim(1, 1, 1, 1));
-        assertFalse(parser.checkDim(0, 0, 1025, 1));
-        assertFalse(parser.checkDim(0, 0, 1, 1025));
-        assertFalse(parser.checkDim(-1, 1, 1, 1));
-        assertFalse(parser.checkDim(0, -1, 1, 1));
-        assertFalse(parser.checkDim(-1, -1, 1, 1));
-        assertFalse(parser.checkDim(-1, -1, -1, 1));
-        assertFalse(parser.checkDim(-1, -1, -1, -1));
-        assertFalse(parser.checkDim(0,  0, 0, 0));
-        assertFalse(parser.checkDim(0, 0, 1, 0));
-        
-    }*/
-    
+    /**
+     * public void testCheckDim() { parser = new CommandParser("test.txt");
+     * assertTrue(parser.checkDim(0, 0, 1, 1)); assertTrue(parser.checkDim(1, 1,
+     * 1, 1)); assertFalse(parser.checkDim(0, 0, 1025, 1));
+     * assertFalse(parser.checkDim(0, 0, 1, 1025));
+     * assertFalse(parser.checkDim(-1, 1, 1, 1)); assertFalse(parser.checkDim(0,
+     * -1, 1, 1)); assertFalse(parser.checkDim(-1, -1, 1, 1));
+     * assertFalse(parser.checkDim(-1, -1, -1, 1));
+     * assertFalse(parser.checkDim(-1, -1, -1, -1));
+     * assertFalse(parser.checkDim(0, 0, 0, 0)); assertFalse(parser.checkDim(0,
+     * 0, 1, 0));
+     * 
+     * }
+     */
+
     /**
      * tests the parsers various tests
      */
@@ -63,5 +59,5 @@ public class CommandParserTest extends TestCase
         boolean success = parser.parseFile();
         assertTrue(success);
     }
-    
+
 }
