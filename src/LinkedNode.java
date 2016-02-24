@@ -1,8 +1,13 @@
 /**
+ * 
  * nodes to build a linked list of points
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  *
+ * @param <K>
+ *            key for the KVPair
+ * @param <E>
+ *            value for the KVPair
  */
 public class LinkedNode<K extends Comparable<K>, E>
 {
