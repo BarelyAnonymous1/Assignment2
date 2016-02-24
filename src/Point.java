@@ -1,51 +1,52 @@
 /**
  * Class that stores the coordinates to a point in a given plane
+ * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version
  */
 public class Point implements Comparable<Point>
 {
-    private int x;
-    private int y;
+    private int    x;
+    private int    y;
     private String name;
-    
+
     public Point(String startName, int startX, int startY)
     {
         name = startName;
         x = startX;
         y = startY;
     }
-    
+
     public void setX(int newX)
     {
         x = newX;
     }
-    
+
     public void setY(int newY)
     {
         y = newY;
     }
-    
+
     public void setName(String newName)
     {
         name = newName;
     }
-    
+
     public int getX()
     {
         return x;
     }
-    
+
     public int getY()
     {
         return y;
     }
-    
+
     public String getName()
     {
         return name;
     }
-    
+
     public int compareTo(Point other)
     {
         if (this.x == other.getX() && this.y == other.getY())
@@ -53,7 +54,7 @@ public class Point implements Comparable<Point>
         else
             return -1;
     }
-    
+
     @Override
     public boolean equals(Object obj)
     {
@@ -64,5 +65,5 @@ public class Point implements Comparable<Point>
         }
         return false;
     }
-    
+
 }

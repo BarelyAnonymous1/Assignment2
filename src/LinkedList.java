@@ -2,7 +2,7 @@
 public class LinkedList<K extends Comparable<K>, E>
 {
     private LinkedNode<K, E> head;
-    private int           size;
+    private int              size;
 
     public LinkedList()
     {
@@ -22,7 +22,7 @@ public class LinkedList<K extends Comparable<K>, E>
         {
             head = newNode;
             size++;
-        } 
+        }
         else
         {
             LinkedNode<K, E> curr = head;
@@ -32,11 +32,11 @@ public class LinkedList<K extends Comparable<K>, E>
             size++;
         }
     }
-    
+
     public void dump()
     {
-    	//TODO  not yet implemented
-    	// should print in form "Node at 0, 0, 1024: Internal"
+        // TODO not yet implemented
+        // should print in form "Node at 0, 0, 1024: Internal"
     }
 
 }
