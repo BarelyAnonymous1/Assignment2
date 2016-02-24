@@ -3,17 +3,17 @@
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version
  */
-public class Point extends Comparable<Point>
+public class Point implements Comparable<Point>
 {
     private int x;
     private int y;
     private String name;
     
-    public Point(int startX, int startY, String startName)
+    public Point(String startName, int startX, int startY)
     {
+        name = startName;
         x = startX;
         y = startY;
-        name = startName;
     }
     
     public void setX(int newX)
@@ -48,8 +48,21 @@ public class Point extends Comparable<Point>
     
     public int compareTo(Point other)
     {
-        
+        if (this.x == other.getX() && this.y == other.getY())
+            return 0;
+        else
+            return -1;
     }
     
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof Point)
+        {
+            Point point = (Point) obj;
+            return (this.x == point.getX() && this.y == point.getY());
+        }
+        return false;
+    }
     
 }

@@ -22,7 +22,7 @@ public class CommandParser
     /**
      * SkipList used to hold the KeyValue Pairs for Rectangles
      */
-    private Database<String, Rectangle> base;
+    private Database<String, Point> base;
 
     /**
      * constructor for parser, stores filename
@@ -33,7 +33,7 @@ public class CommandParser
     public CommandParser(String file)
     {
         inputFile = file;
-        base = new Database<String, Rectangle>();
+        base = new Database<String, Point>();
     }
 
     /**
