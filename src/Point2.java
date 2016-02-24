@@ -20,7 +20,7 @@ public class Point2
      */
     public static void main(String[] args)
     {
-            CommandParser parser = new CommandParser(args[0]);
-            parser.parseFile();
+        CommandParser parser = new CommandParser(args[0]);
+        parser.parseFile();
     }
 }
