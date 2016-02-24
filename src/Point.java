@@ -10,6 +10,16 @@ public class Point implements Comparable<Point>
     private int    y;
     private String name;
 
+    /**
+     * constructor to store a name and coordinates of a point
+     * 
+     * @param startName
+     *            original name
+     * @param startX
+     *            original x coordinate
+     * @param startY
+     *            original y coordinate
+     */
     public Point(String startName, int startX, int startY)
     {
         name = startName;
