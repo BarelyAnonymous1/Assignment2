@@ -11,20 +11,25 @@
 public class QuadInternal<K extends Comparable<K>, E>
         implements QuadNode<K, E>
 {
-
-    private int              depth;
-    private LinkedList<K, E> data;
-    private int              cornerX;
-    private int              cornerY;
-    private int              width;
+    private int            depth;
+    private QuadNode<K, E> northWest;
+    private QuadNode<K, E> northEast;
+    private QuadNode<K, E> southWest;
+    private QuadNode<K, E> southEast;
 
     /**
      * default constructor that has no depth or data
+     * 
+     * @param newDepth
+     *            the depth of the internal node
      */
-    public QuadInternal()
+    public QuadInternal(int newDepth)
     {
-        depth = 0;
-        data = null;
+        depth = newDepth;
+        // northWest = flyweight;
+        // northEast = flyweight;
+        // southWest = flyweight;
+        // southEast = flyweight;
     }
 
     @Override
@@ -40,7 +45,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     }
 
     @Override
-    public LinkedNode<K, E> remove(QuadNode<K, E> root)
+    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
     {
         // TODO Auto-generated method stub
         return null;
