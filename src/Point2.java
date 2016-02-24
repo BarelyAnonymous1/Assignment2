@@ -6,7 +6,7 @@
  * The class containing the main method, the entry point of the application.
  *
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
- * @version {put something here}
+ * @version 1
  */
 public class Point2
 {
