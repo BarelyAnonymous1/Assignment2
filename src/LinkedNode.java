@@ -3,7 +3,7 @@
  * nodes to build a linked list of points
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
- *
+ * @version 1
  * @param <K>
  *            key for the KVPair
  * @param <E>
