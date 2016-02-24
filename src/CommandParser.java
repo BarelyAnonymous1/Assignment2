@@ -89,7 +89,7 @@ public class CommandParser
                     }
                     case ("dump"):
                     {
-                        base.dump();;
+                        base.dump();
                         break;
                     }
                     default:
@@ -170,8 +170,8 @@ public class CommandParser
             if (checkDim(x, y))
             {
                 String search = x + ", " + y;
-                Rectangle searchRect = new Rectangle(null, x, y);
-                Rectangle found = base.removeValue(searchRect);
+                Point searchPoint = new Point(null, x, y);
+                Point found = base.removeValue(searchPoint);
                 if (found == null)
                 {
                     System.out.println(
@@ -237,7 +237,7 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        SkipNode<String, Rectangle> searchResult = base.search(name);
+        SkipNode<String, Point> searchResult = base.search(name);
         if (null == base.search(name))
         {
             System.out.println("Point not found: " + name);
