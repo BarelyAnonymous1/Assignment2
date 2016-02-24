@@ -123,9 +123,9 @@ public class CommandParser
         char c = name.charAt(0);
         if (checkDim(x, y) && Character.isAlphabetic(c))
         {
-            Rectangle rect = new Rectangle(name, x, y);
-            KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
-                    name, rect);
+            Point point = new Point(name, x, y);
+            KVPair<String, Point> pair = new KVPair<String, Point>(
+                    name, point);
             base.insert(pair);
             System.out.println("Point inserted: (" + name + ", " + x
                     + ", " + y + ")");
