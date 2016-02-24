@@ -13,19 +13,19 @@ public class Database<K extends Comparable<K>, E> {
 	 * creates the skipList for the database
 	 */
 	private SkipList<K, E> list;
-	private QuadTree tree;
+	private QuadTree<K, E> tree;
 	
 	public Database()
 	{
 		list = new SkipList<K, E>();
-		tree = new QuadTree();
+		tree = new QuadTree<K, E>();
 	}
 	
 	/**
 	 * 
 	 * @param pair is the value to be inserted
 	 */
-	public void insert(KVPair pair)
+	public void insert(KVPair<K, E> pair)
 	{
 		/** not yet implemented
 		 * 
