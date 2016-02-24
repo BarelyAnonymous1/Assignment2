@@ -35,6 +35,7 @@ public class QuadTree<K extends Comparable<K>, E> {
         if (head == null)
         {
             System.out.println("Node at 0, 0, 1024: Empty");
+            x++;
         }
         /**while (current != null)
         {
