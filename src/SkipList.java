@@ -160,10 +160,9 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * Scrolls along the bottom level of the list until
-     * the loop hits a value that is the same as the searched
-     * for value. Then uses removeKey(key of value) to delete
-     * the node from the SkipList
+     * Scrolls along the bottom level of the list until the loop hits a value
+     * that is the same as the searched for value. Then uses removeKey(key of
+     * value) to delete the node from the SkipList
      * 
      * @param value
      *            the searched for value
@@ -174,7 +173,7 @@ public class SkipList<K extends Comparable<K>, E>
         SkipNode<K, E> current = head;
         while (current.next[0] != null)
         {
-            if ( current.next[0].getValue().equals(value))
+            if (current.next[0].getValue().equals(value))
             {
                 return removeKey(current.next[0].getKey());
             }
@@ -184,8 +183,8 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * finds a specific node given a key value using a while loop
-     * to discover the specific node. 
+     * finds a specific node given a key value using a while loop to discover
+     * the specific node.
      * 
      * @param key
      *            the key that is being searched for
@@ -211,8 +210,7 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * output a list of every item in the list in the following
-     * format: 
+     * output a list of every item in the list in the following format:
      * "Node has depth 0, Value (0)"
      */
     public void dump()
