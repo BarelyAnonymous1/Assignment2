@@ -10,10 +10,7 @@ import student.TestCase;
  */
 public class DatabaseTest extends TestCase
 {
-
-    /**
-     * @throws java.lang.Exception
-     */
+    private Database base;
 
     public void setUp() throws Exception
     {
