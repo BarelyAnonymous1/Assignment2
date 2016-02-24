@@ -104,7 +104,7 @@ public class Point implements Comparable<Point>
     }
 
     /**
-     * determins if the obj is equivalent to this Point
+     * determines if the obj is equivalent to this Point
      * 
      * @return true if equivalent, false otherwise
      */
