@@ -13,9 +13,24 @@
 public interface QuadNode<K extends Comparable<K>, E>
 {
 
+    /**
+     * move through the quadtree
+     * 
+     * @param root
+     *            starting node
+     */
     public void traverse(QuadNode<K, E> root);
 
-    public LinkedNode<K, E> remove(QuadNode<K, E> root);
+    /**
+     * remove a specific node from the quadtree
+     * 
+     * @param root
+     *            the starting node
+     * @param pair
+     *            the pair to be removed
+     * @return the node in the list that contains the pair
+     */
+    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair);
 
     public LinkedList<K, E> getElement();
 
