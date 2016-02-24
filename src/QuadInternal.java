@@ -2,6 +2,7 @@
  * internal node for the quadtree
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
+ * @version 1
  * @param <K>
  *            key stored in the KVPair
  * @param <E>
@@ -80,6 +81,9 @@ public class QuadInternal<K extends Comparable<K>, E>
 
     }
 
+    /**
+     * outputs the value of the LinkedList in the node
+     */
     public void getData()
     {
         data.dump();
