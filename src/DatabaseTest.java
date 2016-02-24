@@ -10,15 +10,16 @@ import student.TestCase;
  */
 public class DatabaseTest extends TestCase
 {
-    private Database base;
+    private Database<String, Integer> base;
 
     public void setUp() throws Exception
     {
+        base = new Database<String, Integer>();
     }
 
     public void test()
     {
-        fail("Not yet implemented");
+        assertNull(base.removeKey("hello"));
     }
 
 }
