@@ -27,6 +27,12 @@ public class Point implements Comparable<Point>
         y = startY;
     }
 
+    /**
+     * sets the X coordinate of the Point
+     * 
+     * @param newX
+     *            replacement x coordinate
+     */
     public void setX(int newX)
     {
         x = newX;
