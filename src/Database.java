@@ -99,6 +99,10 @@ public class Database<K extends Comparable<K>, E>
 
     /**
      * find all points within a specific region in the quadtree
+     * 
+     * @param region
+     *            the region that is being used to search for points in the
+     *            quadtree
      */
     public void regionSearch(E region)
     {
