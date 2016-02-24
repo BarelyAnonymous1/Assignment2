@@ -93,6 +93,8 @@ public class Point implements Comparable<Point>
     /**
      * checks to see if two Points are equivalent
      * 
+     * @param other
+     *            the Point being compared to this
      * @return an integer to determine equivalence
      */
     public int compareTo(Point other)
@@ -106,6 +108,8 @@ public class Point implements Comparable<Point>
     /**
      * determines if the obj is equivalent to this Point
      * 
+     * @param obj
+     *            the Object being compared to this
      * @return true if equivalent, false otherwise
      */
     @Override

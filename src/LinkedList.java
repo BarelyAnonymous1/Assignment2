@@ -2,7 +2,7 @@
  * basic generic linked list implementation; based on storing KVPairs
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
- *
+ * @version 1
  * @param <K>
  *            key stored in the KVPair
  * @param <E>
@@ -37,7 +37,8 @@ public class LinkedList<K extends Comparable<K>, E>
     /**
      * inserts a specific KVPair into the list
      * 
-     * @param newNode
+     * @param newPair
+     *            the pair that will be added to the node
      */
     public void insert(KVPair<K, E> newPair)
     {
