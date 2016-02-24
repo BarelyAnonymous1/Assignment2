@@ -1,10 +1,11 @@
 /**
+ * internal node for the quadtree
  * 
- */
-
-/**
- * @author prestonlattimer
- *
+ * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
+ * @param <K>
+ *            key stored in the KVPair
+ * @param <E>
+ *            value stored in the KVPair
  */
 public class QuadInternal<K extends Comparable<K>, E>
         implements QuadNode<K, E>
@@ -17,7 +18,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     private int              width;
 
     /**
-     * 
+     * default constructor that has no depth or data
      */
     public QuadInternal()
     {

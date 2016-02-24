@@ -45,10 +45,12 @@ public class Database<K extends Comparable<K>, E>
     }
 
     /**
+     * 
      * remove a value from the database based on the key
      * 
      * @param key
      *            is the key to be searched
+     * @return the value in the SkipList and quadtree
      */
     public E removeKey(K key)
     {
