@@ -62,8 +62,7 @@ public class SkipListTest extends TestCase
     public void testRegionSearch()
     {
         Rectangle region = new Rectangle("region", 100, 100, 200, 200);
-        SkipList<String, Rectangle> regionList = 
-                new SkipList<String, Rectangle>();
+        SkipList<String, Rectangle> regionList = new SkipList<String, Rectangle>();
         regionList.insert(new KVPair<String, Rectangle>("notIntersect",
                 new Rectangle("notIntersect", 10, 10, 20, 20)));
         assertFalse(regionList.regionSearch(region));
@@ -78,8 +77,7 @@ public class SkipListTest extends TestCase
      */
     public void testIntersections()
     {
-        SkipList<String, Rectangle> intersectList = 
-                new SkipList<String, Rectangle>();
+        SkipList<String, Rectangle> intersectList = new SkipList<String, Rectangle>();
         intersectList.insert(new KVPair<String, Rectangle>("notIntersect",
                 new Rectangle("notIntersect", 10, 10, 20, 20)));
         assertFalse(intersectList.intersections());
