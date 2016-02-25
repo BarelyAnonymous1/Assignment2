@@ -50,11 +50,12 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root)
+    public int dump(QuadNode root, String coord)
     {
         if (root == null)
             return 0;
-        System.out.println(this.toString());
+        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        System.out.println(output + this.toString());
         return 1;
     }
 
@@ -80,12 +81,12 @@ public class QuadLeaf implements QuadNode
 
     public String toString()
     {
-        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+
         if (data == null)
-            return output + "Empty\n";
+            return "Empty\n";
         else
         {
-            output += "\n";
+            String output = "\n";
             String spaces = "";
             for (int i = 0; i < depth; i++)
                 spaces += "  ";
