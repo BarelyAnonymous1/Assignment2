@@ -92,3 +92,4 @@ public class QuadLeaf implements QuadNode
 
 }
 
+quadinternal.dump(root)
