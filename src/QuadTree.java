@@ -14,7 +14,8 @@ public class QuadTree
 
     public QuadTree()
     {
-        head = new QuadInternal<String, Point>(0, flyLeaf);
+        head = new QuadLeaf<String, Point>(0);
+        flyLeaf = new QuadLeaf<String, Point>();
     }
 
     /**
@@ -26,12 +27,6 @@ public class QuadTree
         System.out.println("QuadTree dump:");
         int x = 0;
         QuadNode<String, Point> current = head;
-        if (head == null)
-        {
-            System.out.println("Node at 0, 0, 1024: Empty");
-            x++;
-        }
-
         while (current != null)
         {
             String name = "";
@@ -50,5 +45,10 @@ public class QuadTree
             x++;
         }
         System.out.println(x + " quadtree nodes printed");
+    }
+    
+    public void dump2()
+    {
+        
     }
 }
