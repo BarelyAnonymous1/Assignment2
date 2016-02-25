@@ -84,11 +84,11 @@ public class QuadLeaf implements QuadNode
             return output + "Empty\n";       
         else
         {
-            String spaces = "";
+            String spaces = "\n";
             for (int i = 0; i < depth; i++)
                 spaces += "  ";
             LinkedNode curr = data.getHead();
-
+            
         }
     }
 }
