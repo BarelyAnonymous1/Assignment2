@@ -60,7 +60,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     }
 
     @Override
-    public void dump(String depth)
+    public void dump(QuadNode<K, E> root)
     {
         if (root == null) return;
         System.out.println(this.toString());
