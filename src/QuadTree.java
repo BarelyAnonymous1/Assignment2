@@ -15,6 +15,7 @@ public class QuadTree<K extends Comparable<K>, E>
      */
 
     private QuadNode head;
+    private static QuadLeaf<?, ?> flyLeaf;
 
     public QuadTree()
     {

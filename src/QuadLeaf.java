@@ -10,7 +10,7 @@ public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
     }
 
     @Override
-    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair);
+    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
     {
         // TODO Auto-generated method stub
         return null;

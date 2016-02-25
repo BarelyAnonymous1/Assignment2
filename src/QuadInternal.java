@@ -22,14 +22,16 @@ public class QuadInternal<K extends Comparable<K>, E>
      * 
      * @param newDepth
      *            the depth of the internal node
+     * @param child
+     *            the flyweight node for the internal node
      */
-    public QuadInternal(int newDepth)
+    public QuadInternal(int newDepth, QuadNode<K, E> child)
     {
         depth = newDepth;
-        // northWest = flyweight;
-        // northEast = flyweight;
-        // southWest = flyweight;
-        // southEast = flyweight;
+        northWest = child;
+        northEast = child;
+        southWest = child;
+        southEast = child;
     }
 
     @Override
