@@ -52,7 +52,7 @@ public interface QuadNode
     public LinkedNode find(QuadNode root);
 
     /**
-     * inserts a new quadnode
+     * inserts a new QuadNode
      * 
      * @param root
      *            i think?

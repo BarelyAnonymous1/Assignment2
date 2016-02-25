@@ -76,5 +76,22 @@ public class QuadLeaf implements QuadNode
     {
         return depth;
     }
+<<<<<<< HEAD
+=======
+    
+    public String toString()
+    {
+    	String output = "";
+    	int i = 0;
+    	while (i < depth) output += " ";
+    	output = "Node at " + x + ", " + y + ", " + width + ": ";
+        if (data == null)
+            return output + "Empty\n";
+        LinkedNode curr = data.getHead();
+        output = "";
+        return output;
+    }
+    
+>>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Assignment2.git
 
 }
