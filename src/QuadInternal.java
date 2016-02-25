@@ -59,7 +59,7 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root)
+    public int dump(QuadNode root, String coord)
     {
         System.out.println(root.toString());
         return 1 + root.dump(northEast) + root.dump(southEast)

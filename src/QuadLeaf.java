@@ -54,7 +54,7 @@ public class QuadLeaf implements QuadNode
     {
         if (root == null)
             return 0;
-        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        String output = "Node at " + coord + ": ";
         System.out.println(output + this.toString());
         return 1;
     }
