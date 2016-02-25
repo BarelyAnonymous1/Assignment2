@@ -44,7 +44,7 @@ public interface QuadNode<K extends Comparable<K>, E>
      * 
      * @param root
      */
-    public void dump(String depth);
+    public void dump(QuadNode<K, E> root);
 
     /**
      * searches for a specific node, traverses in preorder

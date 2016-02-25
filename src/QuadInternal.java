@@ -37,20 +37,6 @@ public class QuadInternal<K extends Comparable<K>, E>
         southEast = child;
     }
 
-    @Override
-    public void traverse(QuadNode<K, E> root)
-    {
-        if (root == null)
-            return;
-        int i = 0;
-        while (i <= depth + 1)
-            System.out.print("  ");
-        root.getData();
-        // northWest = flyweight;
-        // northEast = flyweight;
-        // southWest = flyweight;
-        // southEast = flyweight;
-    }
 
     @Override
     public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
