@@ -73,5 +73,19 @@ public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
         // TODO Auto-generated method stub
 
     }
+    
+    public int getDepth()
+    {
+        return depth;
+    }
+    
+    public String toString()
+    {
+        if (data == null)
+            return "Empty\n";
+        LinkedNode<K, E> curr = data.getHead();
+        String output = "";
+    }
+    
 
 }
