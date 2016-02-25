@@ -105,4 +105,9 @@ public class QuadLeaf implements QuadNode
             return output;
         }
     }
+    
+    public LinkedList getData()
+    {
+        return data;
+    }
 }
