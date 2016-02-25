@@ -25,7 +25,21 @@ public class QuadTree
     public int dump(int x, int y, int size, QuadNode<String, Point> root)
     {
         int nodeCount = 0;
-
+            String name = "";
+            if (current.getValue() == null)
+            {
+                name = "Empty";
+            }
+            else
+            {
+                name = current.getPair().toString();
+            }
+            System.out.println("Node at " + current.getLevel() + ", "
+                    + current.getLeftChild() + ", "
+                    + current.getRightChild() + ": " + name);
+            current = current.next[0];
+            nodeCount++;
+        }
         System.out.println(nodeCount + " quadtree nodes printed");
     }
     
@@ -33,8 +47,13 @@ public class QuadTree
     {
         return head;
     }
-    public void dump2()
+    public int dump2(int x, int y, int size, QuadNode<String, Point> root)
     {
-        
+        String output = "";
+        String depthSpace = "";
+        for (int i = 0; i < root.getDepth(); i++)
+            depthSpace += "  ";
+        output += "Node at " + x + ", " + y + ", " + size + ":";
+        output += 
     }
 }
