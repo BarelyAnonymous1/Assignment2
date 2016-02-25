@@ -123,4 +123,8 @@ public class Point implements Comparable<Point>
         return false;
     }
 
+    public String toString()
+    {
+        return name + ", " + x + ", " + y;
+    }
 }
