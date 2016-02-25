@@ -10,7 +10,7 @@
  * @version 1
  *
  */
-public interface QuadNode<K extends Comparable<K>, E>
+public interface QuadNode
 {
 
     /**
