@@ -59,7 +59,7 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root, String coord)
+    public int dump(QuadNode root)
     {
         System.out.println(root.toString());
         return 1 + root.dump(northEast) + root.dump(southEast)
@@ -74,10 +74,17 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public void insert(QuadNode root)
+    public QuadNode insert(QuadNode root, Point newPoint)
     {
-        // TODO Auto-generated method stub
-
+        if (newPoint.getX() < width / 2)
+            if (newPoint.getY() < width / 2)
+                return insert(northWest, newPoint);
+            else
+                return insert(southWest, newPoint);
+        else if (newPoint.getY() < width / 2)
+            return insert(northEast, newPoint);
+        else
+            return insert(southEast, newPoint);
     }
 
     /**
