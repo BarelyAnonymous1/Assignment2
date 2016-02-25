@@ -1,3 +1,9 @@
+/**
+ * 
+ * @author prestonlattimer
+ *
+ */
+
 public class QuadLeaf implements QuadNode
 {
     private int        depth;
