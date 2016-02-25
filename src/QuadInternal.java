@@ -60,8 +60,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     public void dump(QuadNode<K, E> root)
     {
         if (root == null) return;
-        System.out.println("Node at " + x + ", " + y + ", " + width + 
-        		": Internal");
+        System.out.println(this.toString());
         dump(northWest);
         dump(northEast);
         dump(southWest);
@@ -90,4 +89,16 @@ public class QuadInternal<K extends Comparable<K>, E>
     	return;
     }
 
+    public String toString()
+    {
+    	String printer = "";
+    	int i = 0;
+    	while (i < depth)
+    	{
+    		printer += " ";
+    	}
+    	printer += "Node at " + x + ", " + y + ", " + 
+    			width + ": Internal";
+    	return printer;
+    }
 }
