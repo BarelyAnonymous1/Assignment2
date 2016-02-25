@@ -8,8 +8,12 @@
  * @param <E>
  *            value stored in the KVPair
  */
+<<<<<<< HEAD
 public class QuadInternal
         implements QuadNode
+=======
+public class QuadInternal implements QuadNode
+>>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Assignment2.git
 {
     private int            depth;
     private int x;
@@ -36,6 +40,11 @@ public class QuadInternal
         southWest = child;
         southEast = child;
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Assignment2.git
     @Override
     public LinkedNode remove(QuadNode root, Point point)
     {
@@ -58,7 +67,7 @@ public class QuadInternal
     }
 
     @Override
-    public void dump(String depth)
+    public void dump(QuadNode root)
     {
     }
 

@@ -40,7 +40,7 @@ public interface QuadNode
      * 
      * @param root
      */
-    public void dump(String depth);
+    public void dump(QuadNode root);
 
     /**
      * searches for a specific node, traverses in preorder
