@@ -54,6 +54,6 @@ public class QuadTree
         for (int i = 0; i < root.getDepth(); i++)
             depthSpace += "  ";
         output += depthSpace + "Node at " + x + ", " + y + ", " + size + ": ";
-        output += 
+        output += root.dump(depthSpace);
     }
 }

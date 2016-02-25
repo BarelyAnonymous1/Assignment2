@@ -47,7 +47,7 @@ public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
     }
 
     @Override
-    public void dump(QuadNode<K, E> root)
+    public void dump(String depth)
     {
         // TODO Auto-generated method stub
 
