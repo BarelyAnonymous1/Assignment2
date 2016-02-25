@@ -62,10 +62,8 @@ public class QuadInternal implements QuadNode
     public int dump(QuadNode root)
     {
         System.out.println(root.toString());
-        return 1 + root.dump(northEast) + 
-        root.dump(southEast) +
-        root.dump(southWest) +
-        root.dump(northWest);
+        return 1 + root.dump(northEast) + root.dump(southEast)
+                + root.dump(southWest) + root.dump(northWest);
     }
 
     @Override

@@ -91,8 +91,7 @@ public class QuadLeaf implements QuadNode
                 spaces += "  ";
             LinkedNode curr = data.getHead();
             while (curr != null)
-            {
-                
+            {     
                 output += spaces + curr.getData().toString() + "\n"; 
                 curr = curr.getNext();
             }
