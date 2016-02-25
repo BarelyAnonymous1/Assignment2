@@ -32,7 +32,7 @@ public class QuadTree
      */
     public void dump()
     {
-        
+        root.dump(root);
     }
     
     public QuadNode getRoot()
