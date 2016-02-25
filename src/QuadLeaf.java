@@ -92,7 +92,7 @@ public class QuadLeaf implements QuadNode
             LinkedNode curr = data.getHead();
             while (curr != null)
             {
-                output += curr.getData().toString();
+                output += curr.getData().toString() + "\n";                
                 curr = curr.getNext();
             }
         }
