@@ -95,6 +95,7 @@ public class QuadLeaf implements QuadNode
                 output += curr.getData().toString() + "\n";                
                 curr = curr.getNext();
             }
+            return output;
         }
     }
 }
