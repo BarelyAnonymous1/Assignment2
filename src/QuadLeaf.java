@@ -76,4 +76,19 @@ public class QuadLeaf implements QuadNode
     {
         return depth;
     }
+
+    public String toString()
+    {
+    	String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        if (data == null)
+            return output + "Empty\n";       
+        else
+        {
+            String spaces = "";
+            for (int i = 0; i < depth; i++)
+                spaces += "  ";
+            LinkedNode curr = data.getHead();
+
+        }
+    }
 }
