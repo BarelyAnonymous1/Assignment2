@@ -71,13 +71,6 @@ public class QuadLeaf implements QuadNode
         return;
     }
 
-    @Override
-    public void getData()
-    {
-        // TODO Auto-generated method stub
-
-    }
-
     public int getDepth()
     {
         return depth;

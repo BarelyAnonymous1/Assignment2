@@ -80,9 +80,9 @@ public class QuadInternal implements QuadNode
     /**
      * outputs the value of the LinkedList in the node
      */
-    public void getData()
+    public LinkedList getData()
     {
-        return;
+        return null;
     }
 
     public int getDepth()

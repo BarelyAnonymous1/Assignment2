@@ -9,42 +9,34 @@
  */
 public class QuadTree
 {
-    private QuadNode head;
+    private QuadNode root;
     private static QuadLeaf flyLeaf;
 
     public QuadTree()
     {
-        head = new QuadLeaf(0);
+        root = new QuadLeaf(0);
         flyLeaf = new QuadLeaf();
+    }
+    
+    public void insert(Point newPoint)
+    {
+        if (root.getData() != null)
+        {
+            
+        }
     }
 
     /**
      * output a list of every item in the list in the following format:
      * "Node at 0, 0, 1024: Empty"
      */
-//    public int dump(int x, int y, int size, QuadNode<String, Point> root)
-//    {
-//        int nodeCount = 0;
-//            String name = "";
-//            if (current.getValue() == null)
-//            {
-//                name = "Empty";
-//            }
-//            else
-//            {
-//                name = current.getPair().toString();
-//            }
-//            System.out.println("Node at " + current.getLevel() + ", "
-//                    + current.getLeftChild() + ", "
-//                    + current.getRightChild() + ": " + name);
-//            current = current.next[0];
-//            nodeCount++;
-//        }
-//        System.out.println(nodeCount + " quadtree nodes printed");
-//    }
-    
-    public QuadNode getHead()
+    public void dump()
     {
-        return head;
+        
+    }
+    
+    public QuadNode getRoot()
+    {
+        return root;
     }
 }
