@@ -76,4 +76,5 @@ public class QuadLeaf implements QuadNode
     {
         return depth;
     }
+
 }
