@@ -14,8 +14,8 @@ public class QuadTree
 
     public QuadTree()
     {
-        root = new QuadLeaf(0);
         flyLeaf = new QuadLeaf();
+        root = flyLeaf;
     }
     
     public void insert(Point newPoint)
@@ -32,7 +32,7 @@ public class QuadTree
      */
     public void dump()
     {
-        root.dump(root);
+        System.out.println(root.dump(root) + " quadtree nodes printed");
     }
     
     public QuadNode getRoot()

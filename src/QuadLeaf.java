@@ -50,11 +50,12 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public void dump(QuadNode root)
+    public int dump(QuadNode root)
     {
         if (root == null)
-            return;
+            return 0;
         System.out.println(this.toString());
+        return 1;
     }
 
     @Override
