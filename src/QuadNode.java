@@ -3,10 +3,6 @@
  * 
  * @author Preston Lattimer (platt), Jonathan DeFreeuw (jondef95)
  * 
- * @param <K>
- *            the generic key value for the KVPair
- * @param <E>
- *            the generic data value for the KVPair
  * @version 1
  *
  */
@@ -22,14 +18,14 @@ public interface QuadNode
      *            the pair to be removed
      * @return the node in the list that contains the pair
      */
-    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair);
+    public LinkedNode remove(QuadNode root, Point point);
 
     /**
      * gets the list of elements in the node
      * 
      * @return the linked list of data elements
      */
-    public LinkedList<K, E> getElement();
+    public LinkedList getElement();
 
     /**
      * sets the list of elements in the node
@@ -37,7 +33,7 @@ public interface QuadNode
      * @param list
      *            new list to set into the node
      */
-    public void setElement(LinkedList<K, E> list);
+    public void setElement(LinkedList list);
 
     /**
      * outputs the value of the node, then recurses to the next node
@@ -53,7 +49,7 @@ public interface QuadNode
      *            the next node
      * @return the node if it was found
      */
-    public LinkedNode<K, E> find(QuadNode<K, E> root);
+    public LinkedNode find(QuadNode root);
 
     /**
      * inserts a new quadnode
@@ -61,7 +57,7 @@ public interface QuadNode
      * @param root
      *            i think?
      */
-    public void insert(QuadNode<K, E> root);
+    public void insert(QuadNode root);
 
     /**
      * not sure yet?
