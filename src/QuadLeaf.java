@@ -85,6 +85,7 @@ public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
             return "Empty\n";
         LinkedNode<K, E> curr = data.getHead();
         String output = "";
+        return output;
     }
     
 
