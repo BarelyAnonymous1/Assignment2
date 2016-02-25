@@ -2,6 +2,9 @@
 public class QuadLeaf implements QuadNode
 {
     private int              depth;
+    private int x;
+    private int y;
+    private int width;
     private LinkedList data;
 
     public QuadLeaf(){}
@@ -42,8 +45,9 @@ public class QuadLeaf implements QuadNode
     @Override
     public void dump(QuadNode root)
     {
-        // TODO Auto-generated method stub
-
+        if (root == null) return;
+        System.out.println(this.toString());
+        return;
     }
 
     @Override
@@ -74,10 +78,11 @@ public class QuadLeaf implements QuadNode
     
     public String toString()
     {
+    	String output = "Node at " + x + ", " + y + ", " + width + ": ";
         if (data == null)
-            return "Empty\n";
+            return output + "Empty\n";
         LinkedNode curr = data.getHead();
-        String output = "";
+        output = "";
         return output;
     }
     
