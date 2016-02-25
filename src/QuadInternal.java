@@ -12,6 +12,9 @@ public class QuadInternal<K extends Comparable<K>, E>
         implements QuadNode<K, E>
 {
     private int            depth;
+    private int x;
+    private int y;
+    private int width;
     private QuadNode<K, E> northWest;
     private QuadNode<K, E> northEast;
     private QuadNode<K, E> southWest;
@@ -56,8 +59,13 @@ public class QuadInternal<K extends Comparable<K>, E>
     @Override
     public void dump(QuadNode<K, E> root)
     {
-        // TODO Auto-generated method stub
-
+        if (root == null) return;
+        System.out.println("Node at " + x + ", " + y + ", " + width + 
+        		": Internal");
+        dump(northWest);
+        dump(northEast);
+        dump(southWest);
+        dump(southEast);
     }
 
     @Override
@@ -79,7 +87,7 @@ public class QuadInternal<K extends Comparable<K>, E>
      */
     public void getData()
     {
-
+    	return;
     }
 
 }
