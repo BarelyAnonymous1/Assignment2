@@ -8,17 +8,16 @@
  * @param <E>
  *            value stored in the KVPair
  */
-public class QuadInternal<K extends Comparable<K>, E>
-        implements QuadNode<K, E>
+public class QuadInternal implements QuadNode
 {
     private int            depth;
     private int x;
     private int y;
     private int width;
-    private QuadNode<K, E> northWest;
-    private QuadNode<K, E> northEast;
-    private QuadNode<K, E> southWest;
-    private QuadNode<K, E> southEast;
+    private QuadNode northWest;
+    private QuadNode northEast;
+    private QuadNode southWest;
+    private QuadNode southEast;
 
     /**
      * default constructor that has no depth or data
@@ -28,7 +27,7 @@ public class QuadInternal<K extends Comparable<K>, E>
      * @param child
      *            the flyweight node for the internal node
      */
-    public QuadInternal(int newDepth, QuadNode<K, E> child)
+    public QuadInternal(int newDepth, QuadNode child)
     {
         depth = newDepth;
         northWest = child;
@@ -39,28 +38,28 @@ public class QuadInternal<K extends Comparable<K>, E>
 
 
     @Override
-    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
+    public LinkedNode remove(QuadNode root, Point point)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public LinkedList<K, E> getElement()
+    public LinkedList getElement()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void setElement(LinkedList<K, E> list)
+    public void setElement(LinkedList list)
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void dump(QuadNode<K, E> root)
+    public void dump(QuadNode root)
     {
         if (root == null) return;
         System.out.println(this.toString());
@@ -71,14 +70,14 @@ public class QuadInternal<K extends Comparable<K>, E>
     }
 
     @Override
-    public LinkedNode<K, E> find(QuadNode<K, E> root)
+    public LinkedNode find(QuadNode root)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void insert(QuadNode<K, E> root)
+    public void insert(QuadNode root)
     {
         // TODO Auto-generated method stub 
 

@@ -1,63 +1,63 @@
 
-public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
+public class QuadLeaf implements QuadNode
 {
     private int              depth;
-    private LinkedList<K, E> data;
+    private LinkedList data;
 
     public QuadLeaf(){}
 
     public QuadLeaf(int startDepth)
     {
         depth = startDepth;
-        data = new LinkedList<K, E>();
+        data = new LinkedList();
     }
 
-    public QuadLeaf(int startDepth, KVPair<K, E> startData)
+    public QuadLeaf(int startDepth, KVPair startData)
     {
         depth = startDepth;
-        data = new LinkedList<K, E>(startData);
+        data = new LinkedList(startData);
     }
 
     @Override
-    public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
+    public LinkedNode remove(QuadNode root, Point point)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public LinkedList<K, E> getElement()
+    public LinkedList getElement()
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void setElement(LinkedList<K, E> list)
+    public void setElement(LinkedList list)
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void dump(String depth)
+    public void dump(QuadNode root)
     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public LinkedNode<K, E> find(QuadNode<K, E> root)
+    public LinkedNode find(QuadNode root)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void insert(QuadNode<K, E> root)
+    public void insert(QuadNode root)
     {
         // TODO Auto-generated method stub
-
+    	return;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
     {
         if (data == null)
             return "Empty\n";
-        LinkedNode<K, E> curr = data.getHead();
+        LinkedNode curr = data.getHead();
         String output = "";
         return output;
     }
