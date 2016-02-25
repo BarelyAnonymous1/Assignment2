@@ -40,9 +40,9 @@ public class LinkedList
      * @param newPair
      *            the pair that will be added to the node
      */
-    public void insert(KVPair<K, E> newPair)
+    public void insert(Point newPoint)
     {
-        LinkedNode<K, E> newNode = new LinkedNode<K, E>(newPair);
+        LinkedNode newNode = new LinkedNode(newPoint);
         if (head == null)
         {
             head = newNode;
@@ -50,7 +50,7 @@ public class LinkedList
         }
         else
         {
-            LinkedNode<K, E> curr = head;
+            LinkedNode curr = head;
             while (curr.getNext() != null)
                 curr.setNext(curr.getNext());
             curr.setNext(newNode);
@@ -58,7 +58,7 @@ public class LinkedList
         }
     }
     
-    public LinkedNode<K, E> getHead()
+    public LinkedNode getHead()
     {
         return head;
     }
