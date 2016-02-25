@@ -62,7 +62,7 @@ public interface QuadNode
     /**
      * not sure yet?
      */
-    public void getData();
+    public LinkedList getData();
     
     public int getDepth();
 }
