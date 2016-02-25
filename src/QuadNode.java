@@ -10,7 +10,7 @@
  * @version 1
  *
  */
-public interface QuadNode
+public interface QuadNode<String, Point>
 {
 
     /**
@@ -22,7 +22,7 @@ public interface QuadNode
      *            the pair to be removed
      * @return the node in the list that contains the pair
      */
-    public LinkedNode remove(QuadNode root, Point point);
+    public LinkedNode remove(QuadNode<String, Point> root, Point point);
 
     /**
      * gets the list of elements in the node
@@ -44,7 +44,7 @@ public interface QuadNode
      * 
      * @param root
      */
-    public void dump(QuadNode root);
+    public void dump(QuadNode<String, Point> root);
 
     /**
      * searches for a specific node, traverses in preorder
@@ -53,15 +53,15 @@ public interface QuadNode
      *            the next node
      * @return the node if it was found
      */
-    public LinkedNode find(QuadNode root);
+    public LinkedNode find(QuadNode<String, Point> root);
 
     /**
-     * inserts a new quadnode
+     * inserts a new QuadNode<String, Point>
      * 
      * @param root
      *            i think?
      */
-    public void insert(QuadNode root);
+    public void insert(QuadNode<String, Point> root);
 
     /**
      * not sure yet?
