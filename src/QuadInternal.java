@@ -8,12 +8,13 @@
  * @param <E>
  *            value stored in the KVPair
  */
+
 public class QuadInternal implements QuadNode
 {
-    private int            depth;
-    private int x;
-    private int y;
-    private int width;
+    private int      depth;
+    private int      x;
+    private int      y;
+    private int      width;
     private QuadNode northWest;
     private QuadNode northEast;
     private QuadNode southWest;
@@ -35,7 +36,6 @@ public class QuadInternal implements QuadNode
         southWest = child;
         southEast = child;
     }
-
 
     @Override
     public LinkedNode remove(QuadNode root, Point point)
@@ -61,12 +61,6 @@ public class QuadInternal implements QuadNode
     @Override
     public void dump(QuadNode root)
     {
-        if (root == null) return;
-        System.out.println(this.toString());
-        dump(northWest);
-        dump(northEast);
-        dump(southWest);
-        dump(southEast);
     }
 
     @Override
@@ -79,7 +73,7 @@ public class QuadInternal implements QuadNode
     @Override
     public void insert(QuadNode root)
     {
-        // TODO Auto-generated method stub 
+        // TODO Auto-generated method stub
 
     }
 
@@ -88,9 +82,9 @@ public class QuadInternal implements QuadNode
      */
     public void getData()
     {
-    	return;
+        return;
     }
-    
+
     public int getDepth()
     {
         return depth;
@@ -98,14 +92,13 @@ public class QuadInternal implements QuadNode
 
     public String toString()
     {
-    	String printer = "";
-    	int i = 0;
-    	while (i < depth)
-    	{
-    		printer += " ";
-    	}
-    	printer += "Node at " + x + ", " + y + ", " + 
-    			width + ": Internal";
-    	return printer;
+        String printer = "";
+        int i = 0;
+        while (i < depth)
+        {
+            printer += " ";
+        }
+        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
+        return printer;
     }
 }

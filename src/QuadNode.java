@@ -3,10 +3,6 @@
  * 
  * @author Preston Lattimer (platt), Jonathan DeFreeuw (jondef95)
  * 
- * @param <K>
- *            the generic key value for the KVPair
- * @param <E>
- *            the generic data value for the KVPair
  * @version 1
  *
  */

@@ -9,16 +9,16 @@
  * @param <E>
  *            value for the KVPair
  */
-public class LinkedNode<K extends Comparable<K>, E>
+public class LinkedNode
 {
     /**
      * next node in the list
      */
-    private LinkedNode<K, E> next;
+    private LinkedNode next;
     /**
      * point data contained in the node
      */
-    private KVPair<K, E>     data;
+    private Point    data;
 
     /**
      * creates a node that contains data and no next node
@@ -26,7 +26,7 @@ public class LinkedNode<K extends Comparable<K>, E>
      * @param newValue
      *            the value stored in the node
      */
-    public LinkedNode(KVPair<K, E> newValue)
+    public LinkedNode(Point newValue)
     {
         data = newValue;
         next = null;
@@ -38,7 +38,7 @@ public class LinkedNode<K extends Comparable<K>, E>
      * @param newNext
      *            the node next to this one
      */
-    public void setNext(LinkedNode<K, E> newNext)
+    public void setNext(LinkedNode newNext)
     {
         next = newNext;
     }
@@ -48,7 +48,7 @@ public class LinkedNode<K extends Comparable<K>, E>
      * 
      * @return the node next to this one
      */
-    public LinkedNode<K, E> getNext()
+    public LinkedNode getNext()
     {
         return next;
     }
@@ -59,7 +59,7 @@ public class LinkedNode<K extends Comparable<K>, E>
      * @param newData
      *            data to be stored in the node
      */
-    public void setData(KVPair<K, E> newData)
+    public void setData(Point newData)
     {
         data = newData;
     }
@@ -69,7 +69,7 @@ public class LinkedNode<K extends Comparable<K>, E>
      * 
      * @return the pair in the node
      */
-    public KVPair<K, E> getData()
+    public Point getData()
     {
         return data;
     }

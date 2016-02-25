@@ -1,13 +1,14 @@
-
 public class QuadLeaf implements QuadNode
 {
-    private int              depth;
-    private int x;
-    private int y;
-    private int width;
+    private int        depth;
+    private int        x;
+    private int        y;
+    private int        width;
     private LinkedList data;
 
-    public QuadLeaf(){}
+    public QuadLeaf()
+    {
+    }
 
     public QuadLeaf(int startDepth)
     {
@@ -15,7 +16,7 @@ public class QuadLeaf implements QuadNode
         data = new LinkedList();
     }
 
-    public QuadLeaf(int startDepth, KVPair startData)
+    public QuadLeaf(int startDepth, Point startData)
     {
         depth = startDepth;
         data = new LinkedList(startData);
@@ -45,9 +46,9 @@ public class QuadLeaf implements QuadNode
     @Override
     public void dump(QuadNode root)
     {
-        if (root == null) return;
+        if (root == null)
+            return;
         System.out.println(this.toString());
-        return;
     }
 
     @Override
@@ -61,7 +62,7 @@ public class QuadLeaf implements QuadNode
     public void insert(QuadNode root)
     {
         // TODO Auto-generated method stub
-    	return;
+        return;
     }
 
     @Override
@@ -70,26 +71,31 @@ public class QuadLeaf implements QuadNode
         // TODO Auto-generated method stub
 
     }
-    
+
     public int getDepth()
     {
         return depth;
     }
-    
+
+
     public String toString()
     {
-    	String output = "";
-    	int i = 0;
-    	while (i < depth) output += " ";
-    	output = "Node at " + x + ", " + y + ", " + width + ": ";
+        String output = "Node at " + x + ", " + y + ", " + width + ": ";
         if (data == null)
             return output + "Empty\n";
-        LinkedNode curr = data.getHead();
-        output = "";
-        return output;
+        else
+        {
+            output += "\n";
+            String spaces = "";
+            for (int i = 0; i < depth; i++)
+                spaces += "  ";
+            LinkedNode curr = data.getHead();
+            while (curr != null)
+            {
+                output += curr.getData().toString() + "\n";                
+                curr = curr.getNext();
+            }
+            return output;
+        }
     }
-    
-
 }
-
-quadinternal.dump(root)

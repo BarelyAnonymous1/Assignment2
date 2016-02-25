@@ -8,9 +8,9 @@
  * @param <E>
  *            value stored in the KVPair
  */
-public class LinkedList<K extends Comparable<K>, E>
+public class LinkedList
 {
-    private LinkedNode<K, E> head;
+    private LinkedNode head;
     private int              size;
 
     /**
@@ -28,9 +28,9 @@ public class LinkedList<K extends Comparable<K>, E>
      * @param startData
      *            the data that will start the list
      */
-    public LinkedList(KVPair<K, E> startData)
+    public LinkedList(Point point)
     {
-        head = new LinkedNode<K, E>(startData);
+        head = new LinkedNode(point);
         size = 1;
     }
 
@@ -40,9 +40,9 @@ public class LinkedList<K extends Comparable<K>, E>
      * @param newPair
      *            the pair that will be added to the node
      */
-    public void insert(KVPair<K, E> newPair)
+    public void insert(Point newPoint)
     {
-        LinkedNode<K, E> newNode = new LinkedNode<K, E>(newPair);
+        LinkedNode newNode = new LinkedNode(newPoint);
         if (head == null)
         {
             head = newNode;
@@ -50,7 +50,7 @@ public class LinkedList<K extends Comparable<K>, E>
         }
         else
         {
-            LinkedNode<K, E> curr = head;
+            LinkedNode curr = head;
             while (curr.getNext() != null)
                 curr.setNext(curr.getNext());
             curr.setNext(newNode);
@@ -58,7 +58,7 @@ public class LinkedList<K extends Comparable<K>, E>
         }
     }
     
-    public LinkedNode<K, E> getHead()
+    public LinkedNode getHead()
     {
         return head;
     }
