@@ -15,10 +15,10 @@ public class QuadInternal implements QuadNode
     private int      x;
     private int      y;
     private int      width;
-    private QuadNode northWest;
     private QuadNode northEast;
-    private QuadNode southWest;
     private QuadNode southEast;
+    private QuadNode southWest;
+    private QuadNode northWest;
 
     /**
      * default constructor that has no depth or data
@@ -31,10 +31,10 @@ public class QuadInternal implements QuadNode
     public QuadInternal(int newDepth, QuadNode child)
     {
         depth = newDepth;
-        northWest = child;
         northEast = child;
-        southWest = child;
         southEast = child;
+        southWest = child;
+        northWest = child;
     }
 
     @Override
@@ -59,8 +59,13 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public void dump(QuadNode root)
+    public int dump(QuadNode root)
     {
+        System.out.println(root.toString());
+        return 1 + root.dump(northEast) + 
+        root.dump(southEast) +
+        root.dump(southWest) +
+        root.dump(northWest);
     }
 
     @Override
@@ -93,8 +98,7 @@ public class QuadInternal implements QuadNode
     public String toString()
     {
         String printer = "";
-        int i = 0;
-        while (i < depth)
+        for (int i = 0; i < depth; i++)
         {
             printer += " ";
         }
