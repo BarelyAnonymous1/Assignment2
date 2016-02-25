@@ -25,10 +25,27 @@ public class QuadInternal<K extends Comparable<K>, E>
      * 
      * @param newDepth
      *            the depth of the internal node
+     * @param child
+     *            the flyweight node for the internal node
      */
-    public QuadInternal(int newDepth)
+    public QuadInternal(int newDepth, QuadNode<K, E> child)
     {
         depth = newDepth;
+        northWest = child;
+        northEast = child;
+        southWest = child;
+        southEast = child;
+    }
+
+    @Override
+    public void traverse(QuadNode<K, E> root)
+    {
+        if (root == null)
+            return;
+        int i = 0;
+        while (i <= depth + 1)
+            System.out.print("  ");
+        root.getData();
         // northWest = flyweight;
         // northEast = flyweight;
         // southWest = flyweight;
@@ -57,7 +74,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     }
 
     @Override
-    public void dump(QuadNode<K, E> root)
+    public void dump(String depth)
     {
         if (root == null) return;
         System.out.println(this.toString());
@@ -87,6 +104,11 @@ public class QuadInternal<K extends Comparable<K>, E>
     public void getData()
     {
     	return;
+    }
+    
+    public int getDepth()
+    {
+        return depth;
     }
 
     public String toString()

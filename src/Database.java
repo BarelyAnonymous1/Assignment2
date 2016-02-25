@@ -19,7 +19,7 @@ public class Database<K extends Comparable<K>, E>
     /**
      * declares the quadtree for the database
      */
-    private QuadTree<K, E> tree;
+    private QuadTree       tree;
 
     /**
      * initializes the SkipList and QuadTree for the Database
@@ -27,7 +27,7 @@ public class Database<K extends Comparable<K>, E>
     public Database()
     {
         list = new SkipList<K, E>();
-        tree = new QuadTree<K, E>();
+        tree = new QuadTree();
     }
 
     /**
@@ -82,7 +82,9 @@ public class Database<K extends Comparable<K>, E>
      */
     public void dump()
     {
-        tree.dump();
+        System.out.println("QuadTree dump:");
+//        System.out.println(tree.dump(0, 0, 1024, tree.getHead())
+//                + " quadtree nodes printed");
     }
 
     /**
