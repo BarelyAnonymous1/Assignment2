@@ -47,13 +47,4 @@ public class QuadTree
     {
         return head;
     }
-    public int dump2(int x, int y, int size, QuadNode<String, Point> root)
-    {
-        String output = "";
-        String depthSpace = "";
-        for (int i = 0; i < root.getDepth(); i++)
-            depthSpace += "  ";
-        output += depthSpace + "Node at " + x + ", " + y + ", " + size + ": ";
-        output += root.dump(depthSpace);
-    }
 }
