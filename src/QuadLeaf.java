@@ -2,12 +2,6 @@
 //public class QuadLeaf implements QuadNode<K, E>
 //{
 //
-//    @Override
-//    public void traverse(QuadNode<K, E> root)
-//    {
-//        // TODO Auto-generated method stub
-//
-//    }
 //
 //    @Override
 //    public LinkedNode<K, E> remove(QuadNode<K, E> root)

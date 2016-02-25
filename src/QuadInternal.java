@@ -33,17 +33,6 @@ public class QuadInternal<K extends Comparable<K>, E>
     }
 
     @Override
-    public void traverse(QuadNode<K, E> root)
-    {
-        if (root == null)
-            return;
-        int i = 0;
-        while (i <= depth + 1)
-            System.out.print("  ");
-        root.getData();
-    }
-
-    @Override
     public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair)
     {
         // TODO Auto-generated method stub
@@ -81,7 +70,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     @Override
     public void insert(QuadNode<K, E> root)
     {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub 
 
     }
 

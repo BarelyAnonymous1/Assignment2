@@ -14,14 +14,6 @@ public interface QuadNode<K extends Comparable<K>, E>
 {
 
     /**
-     * move through the quadtree
-     * 
-     * @param root
-     *            starting node
-     */
-    public void traverse(QuadNode<K, E> root);
-
-    /**
      * remove a specific node from the quadtree
      * 
      * @param root
