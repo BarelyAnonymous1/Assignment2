@@ -8,9 +8,9 @@
  * @param <E>
  *            value stored in the KVPair
  */
-public class LinkedList<K extends Comparable<K>, E>
+public class LinkedList
 {
-    private LinkedNode<K, E> head;
+    private LinkedNode head;
     private int              size;
 
     /**
@@ -28,9 +28,9 @@ public class LinkedList<K extends Comparable<K>, E>
      * @param startData
      *            the data that will start the list
      */
-    public LinkedList(KVPair<K, E> startData)
+    public LinkedList(Point point)
     {
-        head = new LinkedNode<K, E>(startData);
+        head = new LinkedNode(point);
         size = 1;
     }
 

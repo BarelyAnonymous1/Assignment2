@@ -9,7 +9,7 @@
  * @param <E>
  *            value for the KVPair
  */
-public class LinkedNode<K extends Comparable<K>, E>
+public class LinkedNode
 {
     /**
      * next node in the list
