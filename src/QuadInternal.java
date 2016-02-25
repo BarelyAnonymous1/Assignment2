@@ -31,7 +31,6 @@ public class QuadInternal<K extends Comparable<K>, E>
     public QuadInternal(int newDepth, QuadNode<K, E> child)
     {
         depth = newDepth;
-<<<<<<< HEAD
         northWest = child;
         northEast = child;
         southWest = child;
@@ -47,12 +46,10 @@ public class QuadInternal<K extends Comparable<K>, E>
         while (i <= depth + 1)
             System.out.print("  ");
         root.getData();
-=======
         // northWest = flyweight;
         // northEast = flyweight;
         // southWest = flyweight;
         // southEast = flyweight;
->>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Assignment2.git
     }
 
     @Override
