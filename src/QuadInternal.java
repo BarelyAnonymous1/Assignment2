@@ -94,5 +94,10 @@ public class QuadInternal<K extends Comparable<K>, E>
     {
 
     }
+    
+    public int getDepth()
+    {
+        return depth;
+    }
 
 }
