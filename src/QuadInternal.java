@@ -12,6 +12,9 @@ public class QuadInternal<K extends Comparable<K>, E>
         implements QuadNode<K, E>
 {
     private int            depth;
+    private int x;
+    private int y;
+    private int width;
     private QuadNode<K, E> northWest;
     private QuadNode<K, E> northEast;
     private QuadNode<K, E> southWest;
@@ -28,6 +31,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     public QuadInternal(int newDepth, QuadNode<K, E> child)
     {
         depth = newDepth;
+<<<<<<< HEAD
         northWest = child;
         northEast = child;
         southWest = child;
@@ -43,6 +47,12 @@ public class QuadInternal<K extends Comparable<K>, E>
         while (i <= depth + 1)
             System.out.print("  ");
         root.getData();
+=======
+        // northWest = flyweight;
+        // northEast = flyweight;
+        // southWest = flyweight;
+        // southEast = flyweight;
+>>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Assignment2.git
     }
 
     @Override
@@ -69,8 +79,12 @@ public class QuadInternal<K extends Comparable<K>, E>
     @Override
     public void dump(String depth)
     {
-        // TODO Auto-generated method stub
-
+        if (root == null) return;
+        System.out.println(this.toString());
+        dump(northWest);
+        dump(northEast);
+        dump(southWest);
+        dump(southEast);
     }
 
     @Override
@@ -83,7 +97,7 @@ public class QuadInternal<K extends Comparable<K>, E>
     @Override
     public void insert(QuadNode<K, E> root)
     {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub 
 
     }
 
@@ -92,7 +106,7 @@ public class QuadInternal<K extends Comparable<K>, E>
      */
     public void getData()
     {
-
+    	return;
     }
     
     public int getDepth()
@@ -100,4 +114,16 @@ public class QuadInternal<K extends Comparable<K>, E>
         return depth;
     }
 
+    public String toString()
+    {
+    	String printer = "";
+    	int i = 0;
+    	while (i < depth)
+    	{
+    		printer += " ";
+    	}
+    	printer += "Node at " + x + ", " + y + ", " + 
+    			width + ": Internal";
+    	return printer;
+    }
 }
