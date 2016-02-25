@@ -32,16 +32,40 @@ public interface QuadNode<K extends Comparable<K>, E>
      */
     public LinkedNode<K, E> remove(QuadNode<K, E> root, KVPair<K, E> pair);
 
+    /**
+     * gets the list of elements in the node
+     * @return the linked list of data elements
+     */
     public LinkedList<K, E> getElement();
 
+    /**
+     * sets the list of elements in the node
+     * @param list new list to set into the node
+     */
     public void setElement(LinkedList<K, E> list);
 
+    /**
+     * outputs the value of the node, then recurses to the next node
+     * @param root
+     */
     public void dump(QuadNode<K, E> root);
 
+    /**
+     * searches for a specific node, traverses in preorder
+     * @param root the next node
+     * @return the node if it was found
+     */
     public LinkedNode<K, E> find(QuadNode<K, E> root);
 
+    /**
+     * inserts a new quadnode
+     * @param root i think?
+     */
     public void insert(QuadNode<K, E> root);
 
+    /**
+     * not sure yet?
+     */
     public void getData();
 
 }
