@@ -1,5 +1,5 @@
 
-public class QuadLeaf<String, Point> implements QuadNode<String, Point>
+public class QuadLeaf implements QuadNode
 {
     private int              depth;
     private int x;
@@ -22,7 +22,7 @@ public class QuadLeaf<String, Point> implements QuadNode<String, Point>
     }
 
     @Override
-    public LinkedNode remove(QuadNode<String, Point> root, Point point)
+    public LinkedNode remove(QuadNode root, Point point)
     {
         // TODO Auto-generated method stub
         return null;
@@ -43,7 +43,7 @@ public class QuadLeaf<String, Point> implements QuadNode<String, Point>
     }
 
     @Override
-    public void dump(QuadNode<String, Point> root)
+    public void dump(QuadNode root)
     {
         if (root == null) return;
         System.out.println(this.toString());
@@ -51,14 +51,14 @@ public class QuadLeaf<String, Point> implements QuadNode<String, Point>
     }
 
     @Override
-    public LinkedNode find(QuadNode<String, Point> root)
+    public LinkedNode find(QuadNode root)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void insert(QuadNode<String, Point> root)
+    public void insert(QuadNode root)
     {
         // TODO Auto-generated method stub
     	return;

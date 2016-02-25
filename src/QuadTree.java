@@ -9,13 +9,13 @@
  */
 public class QuadTree
 {
-    private QuadNode<String, Point> head;
-    private static QuadLeaf<String, Point> flyLeaf;
+    private QuadNode head;
+    private static QuadLeaf flyLeaf;
 
     public QuadTree()
     {
-        head = new QuadLeaf<String, Point>(0);
-        flyLeaf = new QuadLeaf<String, Point>();
+        head = new QuadLeaf(0);
+        flyLeaf = new QuadLeaf();
     }
 
     /**
@@ -43,7 +43,7 @@ public class QuadTree
 //        System.out.println(nodeCount + " quadtree nodes printed");
 //    }
     
-    public QuadNode<String, Point> getHead()
+    public QuadNode getHead()
     {
         return head;
     }
