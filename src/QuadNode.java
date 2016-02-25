@@ -75,4 +75,6 @@ public interface QuadNode<K extends Comparable<K>, E>
      * not sure yet?
      */
     public void getData();
+    
+    public int getDepth();
 }
