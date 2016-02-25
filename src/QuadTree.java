@@ -22,13 +22,9 @@ public class QuadTree
      * output a list of every item in the list in the following format:
      * "Node at 0, 0, 1024: Empty"
      */
-    public void dump()
+    public int dump(int x, int y, int size, QuadNode<String, Point> root)
     {
-        System.out.println("QuadTree dump:");
-        int x = 0;
-        QuadNode<String, Point> current = head;
-        while (current != null)
-        {
+        int nodeCount = 0;
             String name = "";
             if (current.getValue() == null)
             {
@@ -42,11 +38,15 @@ public class QuadTree
                     + current.getLeftChild() + ", "
                     + current.getRightChild() + ": " + name);
             current = current.next[0];
-            x++;
+            nodeCount++;
         }
-        System.out.println(x + " quadtree nodes printed");
+        System.out.println(nodeCount + " quadtree nodes printed");
     }
     
+    public QuadNode<String, Point> getHead()
+    {
+        return head;
+    }
     public void dump2()
     {
         
