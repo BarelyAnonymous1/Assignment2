@@ -48,7 +48,7 @@ public interface QuadNode<K extends Comparable<K>, E>
      * outputs the value of the node, then recurses to the next node
      * @param root
      */
-    public void dump(QuadNode<K, E> root);
+    public void dump(QuadNode<K, E> root, int count);
 
     /**
      * searches for a specific node, traverses in preorder

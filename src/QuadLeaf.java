@@ -1,6 +1,20 @@
 
 public class QuadLeaf<K extends Comparable<K>, E> implements QuadNode<K, E>
 {
+    private int depth;
+    private LinkedList<K, E> data;
+    
+    public QuadLeaf(int startDepth)
+    {
+        depth = startDepth;
+        data = new LinkedList<K, E>();
+    }
+    
+    public QuadLeaf(int startDepth, KVPair<K, E> startData)
+    {
+        depth= startDepth;
+        data = new LinkedList<K, E>(startData);
+    }
 
     @Override
     public void traverse(QuadNode<K, E> root)

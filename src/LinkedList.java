@@ -25,12 +25,12 @@ public class LinkedList<K extends Comparable<K>, E>
     /**
      * creates a LinkedList based on a single node
      * 
-     * @param startHead
-     *            the node that will start the list
+     * @param startData
+     *            the data that will start the list
      */
-    public LinkedList(LinkedNode<K, E> startHead)
+    public LinkedList(KVPair<K, E> startData)
     {
-        head = startHead;
+        head = new LinkedNode<K, E>(startData);
         size = 1;
     }
 
