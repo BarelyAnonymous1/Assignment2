@@ -57,7 +57,7 @@ public interface QuadNode
      * @param root
      *            i think?
      */
-    public void insert(QuadNode root);
+    public QuadNode insert(QuadNode root, Point newPoint);
 
     /**
      * not sure yet?
