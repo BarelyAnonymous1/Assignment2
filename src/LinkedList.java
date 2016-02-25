@@ -57,6 +57,11 @@ public class LinkedList<K extends Comparable<K>, E>
             size++;
         }
     }
+    
+    public LinkedNode<K, E> getHead()
+    {
+        return head;
+    }
 
     /**
      * displays the toStrig values for each node in the list
