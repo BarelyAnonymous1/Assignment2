@@ -70,6 +70,7 @@ public class QuadInternal implements QuadNode
      *            - width of the current region
      * @param newPoint
      *            - Point that will be added to the tree
+     * @return the root of the subtree that is changed after insert
      */
     @Override
     public QuadNode insert(int x, int y, int width, Point newPoint)
