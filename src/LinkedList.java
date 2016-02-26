@@ -33,6 +33,13 @@ public class LinkedList
         head = new LinkedNode(point);
         setSize(1);
     }
+    
+    public Point remove()
+    {
+        LinkedNode temp = head;
+        head = head.getNext();
+        return temp.getData();
+    }
 
     /**
      * inserts a specific KVPair into the list
