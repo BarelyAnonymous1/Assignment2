@@ -11,9 +11,6 @@
 
 public class QuadInternal implements QuadNode
 {
-    private int      x;
-    private int      y;
-    private int      width;
     private QuadNode northEast;
     private QuadNode southEast;
     private QuadNode southWest;
@@ -72,7 +69,7 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public QuadNode insert(QuadNode root, Point newPoint)
+    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
     {
         if (newPoint.getX() < width / 2)
             if (newPoint.getY() < width / 2)
