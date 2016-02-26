@@ -20,9 +20,13 @@ public class QuadTree
     
     public void insert(Point newPoint)
     {
-        if (root.getData() != null)
+        if (root.getData() == null)
         {
-            
+            root = new QuadLeaf(newPoint);
+        }
+        else
+        {
+            root.insert(root, newPoint);
         }
     }
 

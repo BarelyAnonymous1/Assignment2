@@ -16,15 +16,17 @@ public class QuadLeaf implements QuadNode
     {
     }
 
-    public QuadLeaf(int startDepth)
+    public QuadLeaf(int startX, int startY, int startWidth, int startDepth)
     {
+        x = startX;
+        y = startY;
+        width = startWidth;
         depth = startDepth;
         data = new LinkedList();
     }
 
-    public QuadLeaf(int startDepth, Point startData)
+    public QuadLeaf(Point startData)
     {
-        depth = startDepth;
         data = new LinkedList(startData);
     }
 
@@ -50,7 +52,7 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root)
+    public int dump(QuadNode root, int depth)
     {
         if (root == null)
             return 0;
@@ -66,17 +68,18 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public void insert(QuadNode root)
+    public QuadNode insert(QuadNode root, Point newPoint)
     {
-        // TODO Auto-generated method stub
-        return;
+        if (data == null)
+        {
+            QuadLeaf newLeaf = new QuadLeaf()
+        }
     }
 
     public int getDepth()
     {
         return depth;
     }
-
 
     public String toString()
     {
@@ -91,14 +94,14 @@ public class QuadLeaf implements QuadNode
                 spaces += "  ";
             LinkedNode curr = data.getHead();
             while (curr != null)
-            {     
-                output += spaces + curr.getData().toString() + "\n"; 
+            {
+                output += spaces + curr.getData().toString() + "\n";
                 curr = curr.getNext();
             }
             return output;
         }
     }
-    
+
     public LinkedList getData()
     {
         return data;

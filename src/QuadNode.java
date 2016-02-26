@@ -57,12 +57,6 @@ public interface QuadNode
      * @param root
      *            i think?
      */
-    public QuadNode insert(QuadNode root, Point newPoint);
+    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint);
 
-    /**
-     * not sure yet?
-     */
-    public LinkedList getData();
-    
-    public int getDepth();
 }

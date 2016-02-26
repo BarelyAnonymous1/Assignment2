@@ -60,8 +60,8 @@ public class QuadInternal implements QuadNode
     public int dump(QuadNode root, int depth)
     {
         System.out.println(root.toString());
-        return 1 + root.dump(northEast) + root.dump(southEast)
-                + root.dump(southWest) + root.dump(northWest);
+        return 1 + root.dump(northEast, depth++) + root.dump(southEast, depth++)
+                + root.dump(southWest, depth++) + root.dump(northWest, depth++);
     }
 
     @Override
@@ -76,13 +76,13 @@ public class QuadInternal implements QuadNode
     {
         if (newPoint.getX() < width / 2)
             if (newPoint.getY() < width / 2)
-                northWest = insert(northWest, newPoint);
+                northWest = northWest.insert(northWest, newPoint);
             else
-                southWest = insert(southWest, newPoint);
+                southWest = southWest.insert(southWest, newPoint);
         else if (newPoint.getY() < width / 2)
-            northEast = insert(northEast, newPoint);
+            northEast = northEast.insert(northEast, newPoint);
         else
-            southEast = insert(southEast, newPoint);
+            southEast = southEast.insert(southEast, newPoint);
         return root;
     }
 
@@ -92,11 +92,6 @@ public class QuadInternal implements QuadNode
     public LinkedList getData()
     {
         return null;
-    }
-
-    public int getDepth()
-    {
-        return depth;
     }
 
     public String toString()
