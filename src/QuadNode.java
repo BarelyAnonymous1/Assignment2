@@ -38,7 +38,7 @@ public interface QuadNode
      *            - width of the current region
      * @param newPoint
      *            - Point that is being added to the list
-     * @return the root of the subtree after the Point has been added
+     * @return the root of the subtree after the tree has been traversed
      */
     public QuadNode insert(int x, int y, int width, Point newPoint);
 
