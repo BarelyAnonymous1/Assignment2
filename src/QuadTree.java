@@ -16,7 +16,7 @@ public class QuadTree
 
     public void insert(Point newPoint)
     {
-        root = root.insert(root, 0, 0, 1024, newPoint);
+        root = root.insert(0, 0, 1024, newPoint);
     }
 
     /**
@@ -26,7 +26,7 @@ public class QuadTree
     public void dump()
     {
         System.out.println("QuadTree dump:");
-        System.out.println(root.dump(root, 0, 0, 1024, 0)
+        System.out.println(root.dump(0, 0, 1024, 0)
                 + " quadtree nodes printed");
     }
 
