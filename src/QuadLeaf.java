@@ -26,7 +26,7 @@ public class QuadLeaf implements QuadNode
         if (root == null)
             return 0;
         String title = "Node at " + x + ", " + y + ", " + width + ": ";
-        if (data == null)
+        if (root.getData() == null)
             System.out.println(title + "Empty"); 
         else
         {
