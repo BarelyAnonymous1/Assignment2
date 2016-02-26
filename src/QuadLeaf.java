@@ -29,9 +29,16 @@ public class QuadLeaf implements QuadNode
     
     public QuadNode adjustTree(int x, int y, int width)
     {
-        if (data.getSize() == 4)
+        if (data != null && data.getSize() == 4)
         {
             QuadInternal root = new QuadInternal(QuadTree.getFlyLeaf());
+            LinkedNode curr = data.getHead();
+            while (curr != null)
+            {
+                root.insert(root, x, y, width, curr.getData());
+                curr = curr.getNext();
+            }
+            return root;
         }
         else
             return this;
@@ -57,24 +64,24 @@ public class QuadLeaf implements QuadNode
         return data;
     }
 
-    public String toString()
-    {
-        String output = "Node at " + x + ", " + y + ", " + width + ": ";
-        if (data == null)
-            return output + "Empty\n";
-        else
-        {
-            output += "\n";
-            String spaces = "";
-            for (int i = 0; i < depth; i++)
-                spaces += "  ";
-            LinkedNode curr = data.getHead();
-            while (curr != null)
-            {
-                output += spaces + curr.getData().toString() + "\n";
-                curr = curr.getNext();
-            }
-            return output;
-        }
-    }
+//    public String toString()
+//    {
+//        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+//        if (data == null)
+//            return output + "Empty\n";
+//        else
+//        {
+//            output += "\n";
+//            String spaces = "";
+//            for (int i = 0; i < depth; i++)
+//                spaces += "  ";
+//            LinkedNode curr = data.getHead();
+//            while (curr != null)
+//            {
+//                output += spaces + curr.getData().toString() + "\n";
+//                curr = curr.getNext();
+//            }
+//            return output;
+//        }
+//    }
 }

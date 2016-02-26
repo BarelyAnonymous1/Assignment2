@@ -33,7 +33,7 @@ public class QuadTree
      */
     public void dump()
     {
-        System.out.println(root.dump(root) + " quadtree nodes printed");
+        System.out.println(root.dump(root, 0) + " quadtree nodes printed");
     }
     
     public QuadNode getRoot()
