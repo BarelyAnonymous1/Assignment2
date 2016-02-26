@@ -19,7 +19,7 @@ public class QuadLeaf implements QuadNode
 
     
     @Override
-    public int dump(QuadNode root, int x, int y, int width, int depth)
+    public int dump(int x, int y, int width, int depth)
     {
         if (root == null)
             return 0;
@@ -61,7 +61,7 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
+    public QuadNode insert(int x, int y, int width, Point newPoint)
     {
         if (data == null)
         {
