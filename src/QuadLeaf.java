@@ -65,7 +65,6 @@ public class QuadLeaf implements QuadNode
     {
         if (data == null)
         {
-            System.out.println(newPoint.toString());
             QuadLeaf newLeaf = new QuadLeaf(newPoint);
             return newLeaf;
         }
