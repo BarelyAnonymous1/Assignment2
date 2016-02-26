@@ -11,8 +11,8 @@ public class LinkedList
      */
     private LinkedNode head;
     /**
-     * number of DIFFERENT Points in the list. 
-     * Example: 4,2->2,4->4,2->0,5 has size 3
+     * number of DIFFERENT Points in the list. Example: 4,2->2,4->4,2->0,5 has
+     * size 3
      */
     private int        size;
 
@@ -89,11 +89,16 @@ public class LinkedList
         }
     }
 
+    /**
+     * get the pointer to the head of the list
+     * 
+     * @return the head of the list
+     */
     public LinkedNode getHead()
     {
         return head;
     }
-    
+
     public int getSize()
     {
         return size;
