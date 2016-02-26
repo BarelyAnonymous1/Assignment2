@@ -40,6 +40,7 @@ public class LinkedNode
      */
     public void setNext(LinkedNode newNext)
     {
+        System.out.println("next");
         next = newNext;
     }
 
