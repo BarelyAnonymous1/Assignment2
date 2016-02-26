@@ -10,11 +10,13 @@ public class QuadLeaf implements QuadNode
 
     public QuadLeaf()
     {
+        System.out.println("made new fly");
     }
 
     public QuadLeaf(Point startData)
     {
         data = new LinkedList(startData);
+        System.out.println("made new node");
     }
 
     

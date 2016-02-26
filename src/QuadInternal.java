@@ -68,7 +68,7 @@ public class QuadInternal implements QuadNode
         else
             southEast = southEast.insert(southEast, width / 2, width / 2,
                     width / 2, newPoint);
-        return root;
+        return this;
     }
 
     public LinkedList getData()
