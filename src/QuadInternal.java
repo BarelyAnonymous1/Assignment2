@@ -24,12 +24,12 @@ public class QuadInternal implements QuadNode
      * @param child
      *            the flyweight node for the internal node
      */
-    public QuadInternal(QuadNode child)
+    public QuadInternal()
     {
-        northEast = child;
-        southEast = child;
-        southWest = child;
-        northWest = child;
+        northEast = QuadTree.getFlyLeaf();
+        southEast = QuadTree.getFlyLeaf();
+        southWest = QuadTree.getFlyLeaf();
+        northWest = QuadTree.getFlyLeaf();
     }
 
     @Override
