@@ -123,6 +123,10 @@ public class Point implements Comparable<Point>
         return false;
     }
 
+    /**
+     * turns the Point into a String to output to terminal
+     * @return the String representation of the Point
+     */
     public String toString()
     {
         return "(" + name + ", " + x + ", " + y + ")";
