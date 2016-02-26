@@ -3,10 +3,6 @@
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version 1
- * @param <K>
- *            key stored in the KVPair
- * @param <E>
- *            value stored in the KVPair
  */
 
 public class QuadInternal implements QuadNode
