@@ -24,5 +24,9 @@ public interface QuadNode
      */
     public QuadNode insert(int x, int y, int width, Point newPoint);
 
+    /**
+     * getter for the data stored in the node
+     * @return data in the node
+     */
     public LinkedList getData();
 }
