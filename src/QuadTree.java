@@ -2,10 +2,7 @@
  * general implementation of quadtree
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
- * @param <String>
- *            key stored in the KVPair
- * @param <Point>
- *            value stored in the KVPair
+ * @version 1
  */
 public class QuadTree
 {
@@ -42,5 +39,10 @@ public class QuadTree
     public QuadNode getRoot()
     {
         return root;
+    }
+    
+    public static QuadLeaf getFlyLeaf()
+    {
+        return flyLeaf;
     }
 }
