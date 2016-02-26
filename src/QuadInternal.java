@@ -56,7 +56,6 @@ public class QuadInternal implements QuadNode
     public QuadNode insert(QuadNode root, int x, int y, int width,
             Point newPoint)
     {
-        System.out.println("im in internal");
         if (newPoint.getX() < x + width / 2)
             if (newPoint.getY() < y + width / 2)
                 northWest = northWest.insert(northWest, x, y, width / 2,
