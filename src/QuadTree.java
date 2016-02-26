@@ -7,11 +7,11 @@
 public class QuadTree
 {
     private QuadNode              root;
-    private static final QuadLeaf flyLeaf = new QuadLeaf();
+    private static final QuadLeaf FLYLEAF = new QuadLeaf();
 
     public QuadTree()
     {
-        root = flyLeaf;
+        root = FLYLEAF;
     }
 
     public void insert(Point newPoint)
@@ -37,6 +37,6 @@ public class QuadTree
 
     public static QuadLeaf getFlyLeaf()
     {
-        return flyLeaf;
+        return FLYLEAF;
     }
 }
