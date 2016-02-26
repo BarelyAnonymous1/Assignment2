@@ -21,22 +21,26 @@ public class LinkedList
     /**
      * creates a LinkedList based on a single node
      * 
-     * @param startData
+     * @param startPoint
      *            the data that will start the list
      */
-    public LinkedList(Point point)
+    public LinkedList(Point startPoint)
     {
-        head = new LinkedNode(point);
+        head = new LinkedNode(startPoint);
         setSize(1);
     }
 
+    /**
+     * removes the head from the list, and replaces the head with the next node
+     * @return the data stored in the head of the node
+     */
     public Point remove()
     {
         if (head.getNext() != null)
         {
-            LinkedNode temp = head;
+            Point temp = head.getData();
             head = head.getNext();
-            return temp.getData();
+            return temp;
         }
         else
         {
