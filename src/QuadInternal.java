@@ -30,7 +30,6 @@ public class QuadInternal implements QuadNode
         southEast = child;
         southWest = child;
         northWest = child;
-        System.out.println("made new node");
     }
 
     @Override
