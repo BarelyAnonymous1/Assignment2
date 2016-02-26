@@ -13,12 +13,8 @@ public class QuadInternal implements QuadNode
     private QuadNode northWest;
 
     /**
-     * default constructor that has no depth or data
+     * default constructor that sets all of the children to the Flyweight
      * 
-     * @param newDepth
-     *            the depth of the internal node
-     * @param child
-     *            the flyweight node for the internal node
      */
     public QuadInternal()
     {
