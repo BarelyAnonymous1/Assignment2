@@ -1,12 +1,8 @@
 /**
- * basic generic linked list implementation; based on storing KVPairs
+ * basic linked list implementation; based on storing Points
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version 1
- * @param <K>
- *            key stored in the KVPair
- * @param <E>
- *            value stored in the KVPair
  */
 public class LinkedList
 {
