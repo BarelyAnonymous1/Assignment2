@@ -70,4 +70,10 @@ public class QuadInternal implements QuadNode
                     width / 2, newPoint);
         return this;
     }
+
+    @Override
+    public LinkedList getData()
+    {
+        return null;
+    }
 }
