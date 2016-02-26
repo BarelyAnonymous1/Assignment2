@@ -130,6 +130,11 @@ public class QuadLeaf implements QuadNode
         }
     }
 
+    /**
+     * returns the pointer to the linkedlist stored in this leaf node
+     * 
+     * @return the pointer to the linkedlist
+     */
     public LinkedList getData()
     {
         return data;
