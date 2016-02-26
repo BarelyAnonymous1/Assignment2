@@ -9,11 +9,18 @@ public class QuadTree
     private QuadNode              root;
     private static final QuadLeaf FLYLEAF = new QuadLeaf();
 
+    /**
+     * default constructor that stores a flyweight in the root of the tree
+     */
     public QuadTree()
     {
         root = FLYLEAF;
     }
 
+    /**
+     * insert a new point into the tree
+     * @param newPoint the new point to be added to the tree
+     */
     public void insert(Point newPoint)
     {
         root = root.insert(0, 0, 1024, newPoint);
@@ -30,10 +37,6 @@ public class QuadTree
                 root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
     }
 
-    public QuadNode getRoot()
-    {
-        return root;
-    }
 
     public static QuadLeaf getFlyLeaf()
     {
