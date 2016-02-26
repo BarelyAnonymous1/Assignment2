@@ -14,7 +14,7 @@ public interface QuadNode
      * 
      * @param root
      */
-    public int dump(QuadNode root, int depth);
+    public int dump(QuadNode root, int x, int y, int width, int depth);
 
     /**
      * inserts a new QuadNode
@@ -22,7 +22,8 @@ public interface QuadNode
      * @param root
      *            i think?
      */
-    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint);
+    public QuadNode insert(QuadNode root, int x, int y, int width,
+            Point newPoint);
 
     public LinkedList getData();
 }
