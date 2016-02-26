@@ -7,7 +7,7 @@
 public class QuadTree
 {
     private QuadNode              root;
-    private static final QuadLeaf FLYLEAF = new QuadLeaf();
+    public static final QuadLeaf FLYLEAF = new QuadLeaf();
 
     /**
      * default constructor that stores a flyweight in the root of the tree
@@ -35,11 +35,5 @@ public class QuadTree
         System.out.println("QuadTree dump:");
         System.out.println(
                 root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
-    }
-
-
-    public static QuadLeaf getFlyLeaf()
-    {
-        return FLYLEAF;
     }
 }
