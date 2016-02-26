@@ -93,14 +93,4 @@ public class LinkedList
     {
         return head;
     }
-
-    public int getSize()
-    {
-        return size;
-    }
-
-    public void setSize(int newSize)
-    {
-        size = newSize;
-    }
 }
