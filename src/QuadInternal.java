@@ -33,16 +33,16 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root, int x, int y, int width, int depth)
+    public int dump(QuadNode root, int x, int y, int width, int spaces)
     {
         String printer = "";
-        for (int i = 0; i < depth; i++)
+        for (int i = 0; i < spaces; i++)
         {
             printer += "  ";
         }
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal  ";
-        System.out.println(printer + depth);
-        int newDepth = depth++;
+        System.out.println(printer + spaces);
+        int newDepth = spaces + 2;
         return 1 + northWest.dump(northWest, x, y, width / 2, newDepth)
                 + northEast.dump(northEast, width / 2, y, width / 2, newDepth)
                 + southWest.dump(southWest, x, width / 2, width / 2, newDepth)
