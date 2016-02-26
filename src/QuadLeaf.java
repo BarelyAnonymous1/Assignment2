@@ -1,13 +1,21 @@
 /**
+ * Leaf node for the PR-QuadTree. Only node to contain data; contains a
+ * linkedlist of Points
  * 
- * @author prestonlattimer
+ * @author Preston Lattimer (platt) Jonathan DeFreeuw (jondef95)
  *
  */
-
 public class QuadLeaf implements QuadNode
 {
+    /**
+     * linkedlist of Points stored in the leaf node
+     */
     private LinkedList data;
 
+    /**
+     * default constructor; leaves the data linkedlist empty; used mainly for
+     * the Flyweight node
+     */
     public QuadLeaf()
     {
     }
@@ -17,16 +25,16 @@ public class QuadLeaf implements QuadNode
         data = new LinkedList(startData);
     }
 
-    
     @Override
     public int dump(int x, int y, int width, int depth)
     {
         String spaces = "";
         for (int i = 0; i < depth; i++)
             spaces += "  ";
-        String title = spaces + "Node at " + x + ", " + y + ", " + width + ":";
+        String title = spaces + "Node at " + x + ", " + y + ", " + width
+                + ":";
         if (data == null)
-            System.out.println(title + " Empty"); 
+            System.out.println(title + " Empty");
         else
         {
             System.out.println(title);
@@ -40,7 +48,7 @@ public class QuadLeaf implements QuadNode
         }
         return 1;
     }
-    
+
     public QuadNode adjustTree(int x, int y, int width)
     {
         if (data != null && data.getSize() == 4)
@@ -78,24 +86,24 @@ public class QuadLeaf implements QuadNode
         return data;
     }
 
-//    public String toString()
-//    {
-//        String output = "Node at " + x + ", " + y + ", " + width + ": ";
-//        if (data == null)
-//            return output + "Empty\n";
-//        else
-//        {
-//            output += "\n";
-//            String spaces = "";
-//            for (int i = 0; i < depth; i++)
-//                spaces += "  ";
-//            LinkedNode curr = data.getHead();
-//            while (curr != null)
-//            {
-//                output += spaces + curr.getData().toString() + "\n";
-//                curr = curr.getNext();
-//            }
-//            return output;
-//        }
-//    }
+    // public String toString()
+    // {
+    // String output = "Node at " + x + ", " + y + ", " + width + ": ";
+    // if (data == null)
+    // return output + "Empty\n";
+    // else
+    // {
+    // output += "\n";
+    // String spaces = "";
+    // for (int i = 0; i < depth; i++)
+    // spaces += " ";
+    // LinkedNode curr = data.getHead();
+    // while (curr != null)
+    // {
+    // output += spaces + curr.getData().toString() + "\n";
+    // curr = curr.getNext();
+    // }
+    // return output;
+    // }
+    // }
 }
