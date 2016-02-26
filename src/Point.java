@@ -4,7 +4,7 @@
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version 1
  */
-public class Point implements Comparable<Point>
+public class Point
 {
     private int    x;
     private int    y;
