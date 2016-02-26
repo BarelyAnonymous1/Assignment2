@@ -23,7 +23,7 @@ public class QuadTree
         }
         else
         {
-            root.insert(root, newPoint);
+            root.insert(root, 0, 0, 1024, newPoint);
         }
     }
 

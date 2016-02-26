@@ -62,6 +62,11 @@ public class QuadInternal implements QuadNode
                     width / 2, newPoint);
         return root;
     }
+    
+    public LinkedList getData()
+    {
+        return null;
+    }
 
     public String toString()
     {
@@ -72,5 +77,25 @@ public class QuadInternal implements QuadNode
         }
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
         return printer;
+    }
+    
+    public void setNW(QuadNode newNW)
+    {
+        northWest = newNW;
+    }
+    
+    public void setNE(QuadNode newNE)
+    {
+        northEast = newNE;
+    }
+    
+    public void setSW(QuadNode newSW)
+    {
+        southWest = newSW;
+    }
+    
+    public void setSE(QuadNode newSE)
+    {
+        southEast = newSE;
     }
 }

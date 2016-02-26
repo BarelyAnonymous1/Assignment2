@@ -6,10 +6,6 @@
 
 public class QuadLeaf implements QuadNode
 {
-    private int        depth;
-    private int        x;
-    private int        y;
-    private int        width;
     private LinkedList data;
 
     public QuadLeaf()
@@ -33,8 +29,12 @@ public class QuadLeaf implements QuadNode
     
     public QuadNode adjustTree(int x, int y, int width)
     {
-        if (data.getSize())
-        return null;
+        if (data.getSize() == 4)
+        {
+            QuadInternal root = new QuadInternal(QuadTree.getFlyLeaf());
+        }
+        else
+            return this;
     }
 
     @Override
@@ -52,9 +52,9 @@ public class QuadLeaf implements QuadNode
         }
     }
 
-    public int getDepth()
+    public LinkedList getData()
     {
-        return depth;
+        return data;
     }
 
     public String toString()
@@ -76,10 +76,5 @@ public class QuadLeaf implements QuadNode
             }
             return output;
         }
-    }
-
-    public LinkedList getData()
-    {
-        return data;
     }
 }
