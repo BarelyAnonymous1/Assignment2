@@ -46,6 +46,7 @@ public class QuadLeaf implements QuadNode
      *            - width of the current region
      * @param depth
      *            - depth of the current node, relative to the root (depth 0)
+     * @return the number of nodes visited
      */
     @Override
     public int dump(int x, int y, int width, int depth)
