@@ -68,16 +68,16 @@ public class QuadInternal implements QuadNode
         return null;
     }
 
-    public String toString()
-    {
-        String printer = "";
-        for (int i = 0; i < depth; i++)
-        {
-            printer += " ";
-        }
-        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
-        return printer;
-    }
+//    public String toString()
+//    {
+//        String printer = "";
+//        for (int i = 0; i < depth; i++)
+//        {
+//            printer += " ";
+//        }
+//        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
+//        return printer;
+//    }
     
     public void setNW(QuadNode newNW)
     {
