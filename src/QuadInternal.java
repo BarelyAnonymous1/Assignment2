@@ -38,11 +38,11 @@ public class QuadInternal implements QuadNode
         String printer = "";
         for (int i = 0; i < spaces; i++)
         {
-            printer += " ";
+            printer += "  ";
         }
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal  ";
         System.out.println(printer + spaces);
-        int newDepth = spaces + 2;
+        int newDepth = spaces + 1;
         return 1 + northWest.dump(northWest, x, y, width / 2, newDepth)
                 + northEast.dump(northEast, width / 2, y, width / 2, newDepth)
                 + southWest.dump(southWest, x, width / 2, width / 2, newDepth)
