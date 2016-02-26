@@ -33,13 +33,19 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public int dump(QuadNode root, int depth)
+    public int dump(QuadNode root, int x, int y, int width, int depth)
     {
-        System.out.println(root.toString());
+        String printer = "";
+        for (int i = 0; i < depth; i++)
+        {
+            printer += " ";
+        }
+        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
+        System.out.println(printer);
         return 1 + root.dump(northEast, depth++)
                 + root.dump(southEast, depth++)
                 + root.dump(southWest, depth++)
-                + root.dump(northWest, depth++);
+                + root.dump(northWest, x, y, width / 2, depth++);
     }
 
 
@@ -68,16 +74,16 @@ public class QuadInternal implements QuadNode
         return null;
     }
 
-//    public String toString()
-//    {
-//        String printer = "";
-//        for (int i = 0; i < depth; i++)
-//        {
-//            printer += " ";
-//        }
-//        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
-//        return printer;
-//    }
+    public String toString()
+    {
+        String printer = "";
+        for (int i = 0; i < depth; i++)
+        {
+            printer += " ";
+        }
+        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
+        return printer;
+    }
     
     public void setNW(QuadNode newNW)
     {
