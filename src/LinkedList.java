@@ -6,7 +6,14 @@
  */
 public class LinkedList
 {
+    /**
+     * pointer to the first node in the list
+     */
     private LinkedNode head;
+    /**
+     * number of DIFFERENT Points in the list. 
+     * Example: 4,2->2,4->4,2->0,5 has size 3
+     */
     private int        size;
 
     /**
@@ -72,7 +79,7 @@ public class LinkedList
             boolean exists = false;
             while (curr.getNext() != null)
             {
-                if (curr.getData() == newPoint)
+                if (curr.getData().equals(newPoint))
                     exists = true;
                 curr = (curr.getNext());
             }
