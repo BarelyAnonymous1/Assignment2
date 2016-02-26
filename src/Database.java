@@ -38,10 +38,8 @@ public class Database<K extends Comparable<K>, E>
      */
     public void insert(KVPair<K, E> pair)
     {
-        /**
-         * not yet implemented
-         * 
-         */
+        list.insert(pair);
+        tree.insert((Point)pair.theVal);
     }
 
     /**
