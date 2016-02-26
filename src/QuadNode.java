@@ -27,10 +27,18 @@ public interface QuadNode
     public int dump(int x, int y, int width, int depth);
 
     /**
-     * inserts a new QuadNode
+     * inserts a new Point to the QuadTree; recurses down internal nodes and
+     * stops at leaf nodes
      * 
-     * @param root
-     *            i think?
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param newPoint
+     *            - Point that is being added to the list
+     * @return the root of the subtree after the Point has been added
      */
     public QuadNode insert(int x, int y, int width, Point newPoint);
 
