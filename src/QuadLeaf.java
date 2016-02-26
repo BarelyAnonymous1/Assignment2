@@ -48,11 +48,9 @@ public class QuadLeaf implements QuadNode
         if (data != null && data.getSize() == 4)
         {
             QuadInternal root = new QuadInternal(QuadTree.getFlyLeaf());
-            LinkedNode curr = data.getHead();
-            while (curr != null)
+            while (data.getHead() != null)
             {
-                root.insert(root, x, y, width, curr.getData());
-                curr = curr.getNext();
+                root.insert(root, x, y, width, data.remove());
             }
             return root;
         }
