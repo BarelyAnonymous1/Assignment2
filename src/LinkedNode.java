@@ -41,7 +41,6 @@ public class LinkedNode
     public void setNext(LinkedNode newNext)
     {
         System.out.println("set next");
-        next = newNext;
     }
 
     /**

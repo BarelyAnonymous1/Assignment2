@@ -56,7 +56,7 @@ public class LinkedList
             {
                 if (curr.getData() == newPoint)
                     exists = true;
-                curr.setNext(curr.getNext());
+                curr = (curr.getNext());
                 }
             curr.setNext(newNode);
             if (!exists)
