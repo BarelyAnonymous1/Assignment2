@@ -24,17 +24,31 @@ public class QuadInternal implements QuadNode
         northWest = QuadTree.getFlyLeaf();
     }
 
+    /**
+     * outputs that the current node with the parameters is an internal node
+     * recursive function that moves through each of the children counts the
+     * number of notes visited
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param depth
+     *            - depth of the current node
+     */
     @Override
-    public int dump(int x, int y, int width, int spaces)
+    public int dump(int x, int y, int width, int depth)
     {
         String printer = "";
-        for (int i = 0; i < spaces; i++)
+        for (int i = 0; i < depth; i++)
         {
             printer += "  ";
         }
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
         System.out.println(printer);
-        int newDepth = spaces + 1;
+        int newDepth = depth + 1;
         return 1 + northWest.dump(x, y, width / 2, newDepth)
                 + northEast.dump(width / 2, y, width / 2, newDepth)
                 + southWest.dump(x, width / 2, width / 2, newDepth)
