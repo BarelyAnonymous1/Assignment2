@@ -67,16 +67,12 @@ public class LinkedList
         else
         {
             LinkedNode curr = head;
-            boolean exists = false;
             while (curr.getNext() != null)
             {
-                if (curr.getData() == newPoint)
-                    exists = true;
                 curr = (curr.getNext());
             }
             curr.setNext(newNode);
-            if (!exists)
-                size++;
+            size++;
         }
     }
 
