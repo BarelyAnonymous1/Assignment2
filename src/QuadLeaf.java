@@ -26,9 +26,9 @@ public class QuadLeaf implements QuadNode
         String spaces = "";
         for (int i = 0; i < depth; i++)
             spaces += "  ";
-        String title = spaces + "Node at " + x + ", " + y + ", " + width + ": ";
+        String title = spaces + "Node at " + x + ", " + y + ", " + width + ":";
         if (data == null)
-            System.out.println(title + "Empty"); 
+            System.out.println(title + " Empty"); 
         else
         {
             System.out.println(title);
