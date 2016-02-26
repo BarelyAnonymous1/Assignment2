@@ -33,27 +33,6 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public LinkedNode remove(QuadNode root, Point point)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public LinkedList getElement()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void setElement(LinkedList list)
-    {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
     public int dump(QuadNode root, int depth)
     {
         System.out.println(root.toString());
@@ -63,12 +42,6 @@ public class QuadInternal implements QuadNode
                 + root.dump(northWest, depth++);
     }
 
-    @Override
-    public LinkedNode find(QuadNode root)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     @Override
     public QuadNode insert(QuadNode root, int x, int y, int width,
@@ -88,14 +61,6 @@ public class QuadInternal implements QuadNode
             southEast = southEast.insert(southEast, width / 2, width / 2,
                     width / 2, newPoint);
         return root;
-    }
-
-    /**
-     * outputs the value of the LinkedList in the node
-     */
-    public LinkedList getData()
-    {
-        return null;
     }
 
     public String toString()
