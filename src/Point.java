@@ -125,6 +125,6 @@ public class Point implements Comparable<Point>
 
     public String toString()
     {
-        return name + ", " + x + ", " + y;
+        return "(" + name + ", " + x + ", " + y + ")";
     }
 }
