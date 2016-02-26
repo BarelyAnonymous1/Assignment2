@@ -12,7 +12,7 @@ public class Point2Test extends TestCase
      */
     public void setUp()
     {
-        // Nothing here yet
+        Point2 testClass = new Point2();
     }
 
     // ----------------------------------------------------------
