@@ -43,11 +43,11 @@ public class QuadInternal implements QuadNode
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal  ";
         System.out.println(printer + depth);
         int newDepth = depth++;
-        return 1 + root.dump(northWest, x, y, width / 2, newDepth)
-                + root.dump(northEast, width / 2, y, width / 2, newDepth)
-                + root.dump(southWest, x, width / 2, width / 2, newDepth)
-                + root.dump(southEast, width / 2, width / 2, width / 2,
-                        newDepth);
+        return 1 + root.dump(northWest, x, y, width / 2, newDepth);
+//                + root.dump(northEast, width / 2, y, width / 2, newDepth)
+//                + root.dump(southWest, x, width / 2, width / 2, newDepth)
+//                + root.dump(southEast, width / 2, width / 2, width / 2,
+//                        newDepth);
 
     }
 

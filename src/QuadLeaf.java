@@ -51,7 +51,7 @@ public class QuadLeaf implements QuadNode
         if (data != null && data.getSize() == 4)
         {
             System.out.println("adjusting at width: " + width);
-            QuadInternal root = new QuadInternal(QuadTree.getFlyLeaf());
+            QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
                 root.insert(root, x, y, width, data.remove());
