@@ -70,7 +70,6 @@ public class QuadLeaf implements QuadNode
         }
         else
         {
-            System.out.println(newPoint.toString());
             data.insert(newPoint);
             return adjustTree(x, y, width);
         }
