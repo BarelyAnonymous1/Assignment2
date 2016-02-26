@@ -8,7 +8,7 @@ import java.util.Scanner;
  * specific values to create a SkipList of Rectangles
  * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
- * @version 1
+ * @version 2
  */
 public class CommandParser
 {
