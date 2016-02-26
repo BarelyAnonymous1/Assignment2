@@ -57,6 +57,20 @@ public class QuadInternal implements QuadNode
 
     }
 
+    /**
+     * insert a new Point in a child of the current internal node; recursive in
+     * that it will continue following internal nodes if the child chosen is
+     * internal, otherwise the function will end when it reaches a leaf
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param newPoint
+     *            - Point that will be added to the tree
+     */
     @Override
     public QuadNode insert(int x, int y, int width, Point newPoint)
     {
