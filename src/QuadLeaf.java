@@ -3,6 +3,7 @@
  * linkedlist of Points
  * 
  * @author Preston Lattimer (platt) Jonathan DeFreeuw (jondef95)
+ * @version 1
  *
  */
 public class QuadLeaf implements QuadNode
