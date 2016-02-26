@@ -23,15 +23,15 @@ public class QuadLeaf implements QuadNode
     {
         if (root == null)
             return 0;
-        String title = "Node at " + x + ", " + y + ", " + width + ": ";
+        String spaces = "";
+        for (int i = 0; i < depth; i++)
+            spaces += "  ";
+        String title = spaces + "Node at " + x + ", " + y + ", " + width + ": ";
         if (data == null)
             System.out.println(title + "Empty"); 
         else
         {
             System.out.println(title);
-            String spaces = "";
-            for (int i = 0; i < depth; i++)
-                spaces += "  ";
             LinkedNode curr = data.getHead();
             while (curr != null)
             {
@@ -47,7 +47,6 @@ public class QuadLeaf implements QuadNode
     {
         if (data != null && data.getSize() == 4)
         {
-            System.out.println("adjusting at width: " + width);
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
@@ -71,7 +70,6 @@ public class QuadLeaf implements QuadNode
         }
         else
         {
-            
             data.insert(newPoint);
             return adjustTree(x, y, width);
         }
