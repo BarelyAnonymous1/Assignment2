@@ -99,6 +99,11 @@ public class LinkedList
         return head;
     }
 
+    /**
+     * get the size of the list; size should not include duplicates
+     * 
+     * @return size of the list, no duplicates
+     */
     public int getSize()
     {
         return size;
