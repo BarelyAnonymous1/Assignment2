@@ -16,11 +16,21 @@ public class QuadLeaf implements QuadNode
      * default constructor; leaves the data linkedlist empty; used mainly for
      * the Flyweight node
      */
-    public QuadLeaf(){}
-
-    public QuadLeaf(Point startData)
+    public QuadLeaf()
     {
-        data = new LinkedList(startData);
+    }
+
+    /**
+     * standard constructor for the leaf; when a leaf is created, it will have
+     * data stored into it, so a new Point is inserted and a new LinkedList is
+     * made
+     * 
+     * @param startPoint
+     *            initial point stored in the LinkedList
+     */
+    public QuadLeaf(Point startPoint)
+    {
+        data = new LinkedList(startPoint);
     }
 
     @Override
