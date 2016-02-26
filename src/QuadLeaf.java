@@ -21,27 +21,7 @@ public class QuadLeaf implements QuadNode
         data = new LinkedList(startData);
     }
 
-    @Override
-    public LinkedNode remove(QuadNode root, Point point)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public LinkedList getElement()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void setElement(LinkedList list)
-    {
-        // TODO Auto-generated method stub
-
-    }
-
+    
     @Override
     public int dump(QuadNode root, int depth)
     {
@@ -50,11 +30,10 @@ public class QuadLeaf implements QuadNode
         System.out.println(this.toString());
         return 1;
     }
-
-    @Override
-    public LinkedNode find(QuadNode root)
+    
+    public QuadNode adjustTree(int x, int y, int width)
     {
-        // TODO Auto-generated method stub
+        if (data.getSize())
         return null;
     }
 
@@ -69,7 +48,7 @@ public class QuadLeaf implements QuadNode
         else
         {
             data.insert(newPoint);
-            return null;
+            return adjustTree(x, y, width);
         }
     }
 
