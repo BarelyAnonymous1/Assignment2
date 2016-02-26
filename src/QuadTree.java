@@ -7,11 +7,10 @@
 public class QuadTree
 {
     private QuadNode        root;
-    private static QuadLeaf flyLeaf;
+    private static final QuadLeaf flyLeaf = new QuadLeaf();
 
     public QuadTree()
     {
-        flyLeaf = new QuadLeaf();
         root = flyLeaf;
     }
 

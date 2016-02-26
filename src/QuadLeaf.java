@@ -48,6 +48,7 @@ public class QuadLeaf implements QuadNode
         System.out.println("trying to adjust");
         if (data != null && data.getSize() == 4)
         {
+            System.out.println("adjusting at width: " + width);
             QuadInternal root = new QuadInternal(QuadTree.getFlyLeaf());
             while (data.getHead() != null)
             {
@@ -57,7 +58,6 @@ public class QuadLeaf implements QuadNode
         }
         else
         {
-            System.out.println("jk didnt work");
             return this;
         }
     }
