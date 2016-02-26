@@ -33,6 +33,19 @@ public class QuadLeaf implements QuadNode
         data = new LinkedList(startPoint);
     }
 
+    /**
+     * outputs that the current node, with the parameters, is leaf node outputs
+     * each value of the LinkedList the leaf contains
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param depth
+     *            - depth of the current node, relative to the root (depth 0)
+     */
     @Override
     public int dump(int x, int y, int width, int depth)
     {
@@ -57,7 +70,21 @@ public class QuadLeaf implements QuadNode
         return 1;
     }
 
-    public QuadNode adjustTree(int x, int y, int width)
+    /**
+     * helper function that adjusts the tree if a leaf node contains 4 data
+     * points creates a new internal node, adds the data from the LinkedList as
+     * children, and returns the internal node if it is made, otherwise return
+     * this
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - size of the current region
+     * @return the root of the subtree after is has been adjusted
+     */
+    private QuadNode adjustTree(int x, int y, int width)
     {
         if (data != null && data.getSize() == 4)
         {
@@ -74,6 +101,20 @@ public class QuadLeaf implements QuadNode
         }
     }
 
+    /**
+     * insert a new Point in the current node; once the insert has found this
+     * leaf node, then it is finished moving down the end of this tree
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param newPoint
+     *            - Point that will be added to the tree
+     * @return the root of the subtree that is being inserted after adjusting
+     */
     @Override
     public QuadNode insert(int x, int y, int width, Point newPoint)
     {
