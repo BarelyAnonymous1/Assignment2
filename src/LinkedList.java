@@ -33,12 +33,21 @@ public class LinkedList
         head = new LinkedNode(point);
         setSize(1);
     }
-    
+
     public Point remove()
     {
-        LinkedNode temp = head;
-        head = head.getNext();
-        return temp.getData();
+        if (head.getNext() != null)
+        {
+            LinkedNode temp = head;
+            head = head.getNext();
+            return temp.getData();
+        }
+        else
+        {
+            Point output = head.getData();
+            head = null;
+            return output;
+        }
     }
 
     /**
@@ -64,7 +73,7 @@ public class LinkedList
                 if (curr.getData() == newPoint)
                     exists = true;
                 curr = (curr.getNext());
-                }
+            }
             curr.setNext(newNode);
             if (!exists)
                 size++;
