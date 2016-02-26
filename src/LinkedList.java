@@ -60,7 +60,7 @@ public class LinkedList
                 }
             curr.setNext(newNode);
             if (!exists)
-                setSize(getSize() + 1);
+                size++;
         }
     }
 
