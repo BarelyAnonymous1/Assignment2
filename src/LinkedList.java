@@ -69,15 +69,6 @@ public class LinkedList
         return head;
     }
 
-    /**
-     * displays the toStrig values for each node in the list
-     */
-    public void dump()
-    {
-        // TODO not yet implemented
-        // should print in form "Node at 0, 0, 1024: Internal"
-    }
-
     public int getSize()
     {
         return size;
