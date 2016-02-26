@@ -19,10 +19,27 @@ public class QuadLeaf implements QuadNode
 
     
     @Override
-    public int dump(QuadNode root, int depth)
+    public int dump(QuadNode root, int x, int y, int width, int depth)
     {
         if (root == null)
             return 0;
+        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        if (data == null)
+            System.out.println(output + "Empty"); 
+        else
+        {
+            output += "\n";
+            String spaces = "";
+            for (int i = 0; i < depth; i++)
+                spaces += "  ";
+            LinkedNode curr = data.getHead();
+            while (curr != null)
+            {
+                output += spaces + curr.getData().toString() + "\n";
+                curr = curr.getNext();
+            }
+            return output;
+        }
         System.out.println(this.toString());
         return 1;
     }
@@ -64,24 +81,24 @@ public class QuadLeaf implements QuadNode
         return data;
     }
 
-//    public String toString()
-//    {
-//        String output = "Node at " + x + ", " + y + ", " + width + ": ";
-//        if (data == null)
-//            return output + "Empty\n";
-//        else
-//        {
-//            output += "\n";
-//            String spaces = "";
-//            for (int i = 0; i < depth; i++)
-//                spaces += "  ";
-//            LinkedNode curr = data.getHead();
-//            while (curr != null)
-//            {
-//                output += spaces + curr.getData().toString() + "\n";
-//                curr = curr.getNext();
-//            }
-//            return output;
-//        }
-//    }
+    public String toString()
+    {
+        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        if (data == null)
+            return output + "Empty\n";
+        else
+        {
+            output += "\n";
+            String spaces = "";
+            for (int i = 0; i < depth; i++)
+                spaces += "  ";
+            LinkedNode curr = data.getHead();
+            while (curr != null)
+            {
+                output += spaces + curr.getData().toString() + "\n";
+                curr = curr.getNext();
+            }
+            return output;
+        }
+    }
 }

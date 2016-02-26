@@ -42,9 +42,12 @@ public class QuadInternal implements QuadNode
         }
         printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
         System.out.println(printer);
-        return 1 + root.dump(northEast, depth++)
-                + root.dump(southEast, depth++)
-                + root.dump(southWest, depth++)
+        return 1 + root.dump(northEast, width / 2, y,
+                width / 2, depth++)
+                + root.dump(southEast, width / 2, width / 2,
+                        width / 2, depth++)
+                + root.dump(southWest, x, width / 2,
+                        width / 2, depth++)
                 + root.dump(northWest, x, y, width / 2, depth++);
     }
 
@@ -72,17 +75,6 @@ public class QuadInternal implements QuadNode
     public LinkedList getData()
     {
         return null;
-    }
-
-    public String toString()
-    {
-        String printer = "";
-        for (int i = 0; i < depth; i++)
-        {
-            printer += " ";
-        }
-        printer += "Node at " + x + ", " + y + ", " + width + ": Internal";
-        return printer;
     }
     
     public void setNW(QuadNode newNW)
