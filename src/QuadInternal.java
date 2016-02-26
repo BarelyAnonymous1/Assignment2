@@ -89,6 +89,12 @@ public class QuadInternal implements QuadNode
         return this;
     }
 
+    /**
+     * gets the data stored in the internal node; which is null because the
+     * internal node stores no information except pointers to its children
+     * 
+     * @return null because there is no data in the internal node
+     */
     @Override
     public LinkedList getData()
     {
