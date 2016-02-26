@@ -32,6 +32,7 @@ public class LinkedList
 
     /**
      * removes the head from the list, and replaces the head with the next node
+     * 
      * @return the data stored in the head of the node
      */
     public Point remove()
@@ -51,10 +52,11 @@ public class LinkedList
     }
 
     /**
-     * inserts a specific KVPair into the list
+     * inserts a specific Point into the list; inserts at the end so that it can
+     * be determined if there are any duplicates in the list
      * 
-     * @param newPair
-     *            the pair that will be added to the node
+     * @param newPoint
+     *            the Point that will be added to the node
      */
     public void insert(Point newPoint)
     {
