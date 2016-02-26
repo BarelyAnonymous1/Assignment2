@@ -4,10 +4,6 @@
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version 1
- * @param <K>
- *            key for the KVPair
- * @param <E>
- *            value for the KVPair
  */
 public class LinkedNode
 {
