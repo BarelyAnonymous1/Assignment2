@@ -22,7 +22,7 @@ public class LinkedList
     public LinkedList()
     {
         head = null;
-        setSize(0);
+        size = 0;
     }
 
     /**
@@ -34,7 +34,7 @@ public class LinkedList
     public LinkedList(Point startPoint)
     {
         head = new LinkedNode(startPoint);
-        setSize(1);
+        size = 1;
     }
 
     /**
@@ -92,5 +92,10 @@ public class LinkedList
     public LinkedNode getHead()
     {
         return head;
+    }
+    
+    public int getSize()
+    {
+        return size;
     }
 }
