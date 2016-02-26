@@ -19,7 +19,7 @@ public class LinkedList
     public LinkedList()
     {
         head = null;
-        size = 0;
+        setSize(0);
     }
 
     /**
@@ -31,7 +31,7 @@ public class LinkedList
     public LinkedList(Point point)
     {
         head = new LinkedNode(point);
-        size = 1;
+        setSize(1);
     }
 
     /**
@@ -46,7 +46,7 @@ public class LinkedList
         if (head == null)
         {
             head = newNode;
-            size++;
+            setSize(getSize() + 1);
         }
         else
         {
@@ -54,7 +54,7 @@ public class LinkedList
             while (curr.getNext() != null)
                 curr.setNext(curr.getNext());
             curr.setNext(newNode);
-            size++;
+            setSize(getSize() + 1);
         }
     }
     
@@ -70,5 +70,15 @@ public class LinkedList
     {
         // TODO not yet implemented
         // should print in form "Node at 0, 0, 1024: Internal"
+    }
+
+    public int getSize()
+    {
+        return size;
+    }
+
+    public void setSize(int newSize)
+    {
+        size = newSize;
     }
 }
