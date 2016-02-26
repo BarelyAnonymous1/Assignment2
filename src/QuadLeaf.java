@@ -21,8 +21,6 @@ public class QuadLeaf implements QuadNode
     @Override
     public int dump(int x, int y, int width, int depth)
     {
-        if (root == null)
-            return 0;
         String spaces = "";
         for (int i = 0; i < depth; i++)
             spaces += "  ";
@@ -50,7 +48,7 @@ public class QuadLeaf implements QuadNode
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
-                root.insert(root, x, y, width, data.remove());
+                root.insert(x, y, width, data.remove());
             }
             return root;
         }
