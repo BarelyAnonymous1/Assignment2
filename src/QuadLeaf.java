@@ -10,13 +10,11 @@ public class QuadLeaf implements QuadNode
 
     public QuadLeaf()
     {
-        System.out.println("made new fly");
     }
 
     public QuadLeaf(Point startData)
     {
         data = new LinkedList(startData);
-        System.out.println("made new node");
     }
 
     
@@ -47,7 +45,6 @@ public class QuadLeaf implements QuadNode
     
     public QuadNode adjustTree(int x, int y, int width)
     {
-        System.out.println("trying to adjust");
         if (data != null && data.getSize() == 4)
         {
             System.out.println("adjusting at width: " + width);
@@ -76,7 +73,6 @@ public class QuadLeaf implements QuadNode
         {
             
             data.insert(newPoint);
-            System.out.println("about to adjust");
             return adjustTree(x, y, width);
         }
     }
