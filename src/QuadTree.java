@@ -6,7 +6,7 @@
  */
 public class QuadTree
 {
-    private QuadNode        root;
+    private QuadNode              root;
     private static final QuadLeaf flyLeaf = new QuadLeaf();
 
     public QuadTree()
@@ -26,8 +26,8 @@ public class QuadTree
     public void dump()
     {
         System.out.println("QuadTree dump:");
-        System.out.println(root.dump(0, 0, 1024, 0)
-                + " quadtree nodes printed");
+        System.out.println(
+                root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
     }
 
     public QuadNode getRoot()
