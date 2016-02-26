@@ -71,7 +71,7 @@ public class LinkedList
         if (head == null)
         {
             head = newNode;
-            setSize(getSize() + 1);
+            size++;
         }
         else
         {
