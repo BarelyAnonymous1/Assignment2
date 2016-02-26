@@ -82,9 +82,8 @@ public class Database<K extends Comparable<K>, E>
      */
     public void dump()
     {
-        System.out.println("QuadTree dump:");
-//        System.out.println(tree.dump(0, 0, 1024, tree.getHead())
-//                + " quadtree nodes printed");
+        list.dump();
+        tree.dump();
     }
 
     /**

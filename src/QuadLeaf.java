@@ -23,24 +23,23 @@ public class QuadLeaf implements QuadNode
     {
         if (root == null)
             return 0;
-        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+        String title = "Node at " + x + ", " + y + ", " + width + ": ";
         if (data == null)
-            System.out.println(output + "Empty"); 
+            System.out.println(title + "Empty"); 
         else
         {
-            output += "\n";
+            System.out.println(title);
             String spaces = "";
             for (int i = 0; i < depth; i++)
                 spaces += "  ";
             LinkedNode curr = data.getHead();
             while (curr != null)
             {
-                output += spaces + curr.getData().toString() + "\n";
+                String output = spaces + curr.getData().toString();
+                System.out.println(output);
                 curr = curr.getNext();
             }
-            return output;
         }
-        System.out.println(this.toString());
         return 1;
     }
     
@@ -81,24 +80,24 @@ public class QuadLeaf implements QuadNode
         return data;
     }
 
-    public String toString()
-    {
-        String output = "Node at " + x + ", " + y + ", " + width + ": ";
-        if (data == null)
-            return output + "Empty\n";
-        else
-        {
-            output += "\n";
-            String spaces = "";
-            for (int i = 0; i < depth; i++)
-                spaces += "  ";
-            LinkedNode curr = data.getHead();
-            while (curr != null)
-            {
-                output += spaces + curr.getData().toString() + "\n";
-                curr = curr.getNext();
-            }
-            return output;
-        }
-    }
+//    public String toString()
+//    {
+//        String output = "Node at " + x + ", " + y + ", " + width + ": ";
+//        if (data == null)
+//            return output + "Empty\n";
+//        else
+//        {
+//            output += "\n";
+//            String spaces = "";
+//            for (int i = 0; i < depth; i++)
+//                spaces += "  ";
+//            LinkedNode curr = data.getHead();
+//            while (curr != null)
+//            {
+//                output += spaces + curr.getData().toString() + "\n";
+//                curr = curr.getNext();
+//            }
+//            return output;
+//        }
+//    }
 }
