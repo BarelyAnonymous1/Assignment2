@@ -16,15 +16,6 @@ public class QuadLeaf implements QuadNode
     {
     }
 
-    public QuadLeaf(int startX, int startY, int startWidth, int startDepth)
-    {
-        x = startX;
-        y = startY;
-        width = startWidth;
-        depth = startDepth;
-        data = new LinkedList();
-    }
-
     public QuadLeaf(Point startData)
     {
         data = new LinkedList(startData);
@@ -68,11 +59,17 @@ public class QuadLeaf implements QuadNode
     }
 
     @Override
-    public QuadNode insert(QuadNode root, Point newPoint)
+    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
     {
         if (data == null)
         {
-            QuadLeaf newLeaf = new QuadLeaf()
+            QuadLeaf newLeaf = new QuadLeaf(newPoint);
+            return newLeaf;
+        }
+        else
+        {
+            data.insert(newPoint);
+            return null;
         }
     }
 

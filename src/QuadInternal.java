@@ -57,8 +57,10 @@ public class QuadInternal implements QuadNode
     public int dump(QuadNode root, int depth)
     {
         System.out.println(root.toString());
-        return 1 + root.dump(northEast, depth++) + root.dump(southEast, depth++)
-                + root.dump(southWest, depth++) + root.dump(northWest, depth++);
+        return 1 + root.dump(northEast, depth++)
+                + root.dump(southEast, depth++)
+                + root.dump(southWest, depth++)
+                + root.dump(northWest, depth++);
     }
 
     @Override
@@ -69,17 +71,22 @@ public class QuadInternal implements QuadNode
     }
 
     @Override
-    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
+    public QuadNode insert(QuadNode root, int x, int y, int width,
+            Point newPoint)
     {
-        if (newPoint.getX() < width / 2)
-            if (newPoint.getY() < width / 2)
-                northWest = northWest.insert(northWest, newPoint);
+        if (newPoint.getX() < x + width / 2)
+            if (newPoint.getY() < y + width / 2)
+                northWest = northWest.insert(northWest, x, y, width / 2,
+                        newPoint);
             else
-                southWest = southWest.insert(southWest, newPoint);
-        else if (newPoint.getY() < width / 2)
-            northEast = northEast.insert(northEast, newPoint);
+                southWest = southWest.insert(southWest, x, width / 2,
+                        width / 2, newPoint);
+        else if (newPoint.getY() < y + width / 2)
+            northEast = northEast.insert(northEast, width / 2, y,
+                    width / 2, newPoint);
         else
-            southEast = southEast.insert(southEast, newPoint);
+            southEast = southEast.insert(southEast, width / 2, width / 2,
+                    width / 2, newPoint);
         return root;
     }
 
