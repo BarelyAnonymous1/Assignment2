@@ -11,7 +11,7 @@
 public class LinkedList
 {
     private LinkedNode head;
-    private int              size;
+    private int        size;
 
     /**
      * default constructor for the LinkedList
@@ -51,13 +51,19 @@ public class LinkedList
         else
         {
             LinkedNode curr = head;
+            boolean exists = false;
             while (curr.getNext() != null)
+            {
+                if (curr.getData() == newPoint)
+                    exists = true;
                 curr.setNext(curr.getNext());
+            }
             curr.setNext(newNode);
-            setSize(getSize() + 1);
+            if (!exists)
+                setSize(getSize() + 1);
         }
     }
-    
+
     public LinkedNode getHead()
     {
         return head;

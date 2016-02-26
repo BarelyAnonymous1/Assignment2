@@ -63,6 +63,7 @@ public class QuadLeaf implements QuadNode
     @Override
     public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
     {
+        System.out.println(newPoint.toString());
         if (data == null)
         {
             QuadLeaf newLeaf = new QuadLeaf(newPoint);
