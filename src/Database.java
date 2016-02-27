@@ -72,7 +72,9 @@ public class Database<K extends Comparable<K>, E>
      */
     public void duplicates()
     {
-        // not yet implemented
+        System.out.println("Duplicate points:");
+        tree.duplicates();
+
     }
 
     /**
