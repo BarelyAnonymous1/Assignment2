@@ -109,6 +109,6 @@ public class QuadInternal implements QuadNode
         northWest.duplicates();
         southWest.duplicates();
         northEast.duplicates();
-        
+        southEast.duplicates();
     }
 }
