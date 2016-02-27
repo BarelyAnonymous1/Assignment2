@@ -18,7 +18,7 @@ public class QuadTree
      */
     public QuadTree()
     {
-        root = FLYLEAF;
+        root = QuadTree.FLYLEAF;
     }
 
     /**
@@ -39,5 +39,10 @@ public class QuadTree
         System.out.println("QuadTree dump:");
         System.out.println(
                 root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
+    }
+    
+    public void duplicates()
+    {
+        System.out.println(x);
     }
 }
