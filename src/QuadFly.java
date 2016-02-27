@@ -4,8 +4,9 @@ public class QuadFly implements QuadNode
 
     public QuadFly()
     {
-        
+
     }
+
     @Override
     public int dump(int x, int y, int width, int depth)
     {
@@ -29,7 +30,9 @@ public class QuadFly implements QuadNode
     {
         return null;
     }
-    
-    public void duplicates(){}
+
+    public void duplicates()
+    {
+    }
 
 }
