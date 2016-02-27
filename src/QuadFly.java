@@ -2,6 +2,10 @@
 public class QuadFly implements QuadNode
 {
 
+    public QuadFly()
+    {
+        
+    }
     @Override
     public int dump(int x, int y, int width, int depth)
     {
