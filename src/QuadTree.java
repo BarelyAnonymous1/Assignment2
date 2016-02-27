@@ -9,7 +9,7 @@ public class QuadTree
     /**
      * Flyweight model used to for null pointers in the tree
      */
-    public static final QuadLeaf FLYLEAF = new QuadLeaf();
+    public static final QuadFly FLYLEAF = new QuadFly();
 
     private QuadNode              root;
 
