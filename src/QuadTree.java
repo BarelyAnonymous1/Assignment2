@@ -6,8 +6,12 @@
  */
 public class QuadTree
 {
-    private QuadNode              root;
+    /**
+     * Flyweight model used to for null pointers in the tree
+     */
     public static final QuadLeaf FLYLEAF = new QuadLeaf();
+
+    private QuadNode              root;
 
     /**
      * default constructor that stores a flyweight in the root of the tree

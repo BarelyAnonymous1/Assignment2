@@ -18,10 +18,10 @@ public class QuadInternal implements QuadNode
      */
     public QuadInternal()
     {
-        northEast = QuadTree.getFlyLeaf();
-        southEast = QuadTree.getFlyLeaf();
-        southWest = QuadTree.getFlyLeaf();
-        northWest = QuadTree.getFlyLeaf();
+        northEast = QuadTree.FLYLEAF;
+        southEast = QuadTree.FLYLEAF;
+        southWest = QuadTree.FLYLEAF;
+        northWest = QuadTree.FLYLEAF;
     }
 
     /**
