@@ -1,11 +1,16 @@
 
 public class QuadFly implements QuadNode
 {
-
-    public QuadFly()
+    private static QuadFly instance = new QuadFly();
+    
+    private QuadFly()
     {
     }
 
+    public static QuadFly getInstance()
+    {
+        return instance;
+    }
     @Override
     public int dump(int x, int y, int width, int depth)
     {
