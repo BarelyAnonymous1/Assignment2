@@ -27,8 +27,9 @@ public class QuadFly implements QuadNode
     @Override
     public LinkedList getData()
     {
-        // TODO Auto-generated method stub
         return null;
     }
+    
+    public void duplicates(){}
 
 }
