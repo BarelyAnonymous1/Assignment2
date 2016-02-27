@@ -102,4 +102,13 @@ public class QuadInternal implements QuadNode
     {
         return null;
     }
+    
+    @Override
+    public void duplicates()
+    {
+        northWest.duplicates();
+        southWest.duplicates();
+        northEast.duplicates();
+        
+    }
 }
