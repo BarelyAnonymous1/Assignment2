@@ -62,13 +62,6 @@ public class Rectangle implements Comparable<Rectangle>
         height = newHeight;
     }
 
-    public Rectangle(String newName, int newX, int newY)
-    {
-        name = newName;
-        x = newX;
-        y = newY;
-    }
-
     /**
      * access to x coordinate
      * 
