@@ -56,18 +56,13 @@ public class QuadLeaf implements QuadNode
             spaces += "  ";
         String title = spaces + "Node at " + x + ", " + y + ", " + width
                 + ":";
-        if (data == null)
-            System.out.println(title + " Empty");
-        else
+        System.out.println(title);
+        LinkedNode curr = data.getHead();
+        while (curr != null)
         {
-            System.out.println(title);
-            LinkedNode curr = data.getHead();
-            while (curr != null)
-            {
-                String output = spaces + curr.getData().toString();
-                System.out.println(output);
-                curr = curr.getNext();
-            }
+            String output = spaces + curr.getData().toString();
+            System.out.println(output);
+            curr = curr.getNext();
         }
         return 1;
     }
@@ -120,16 +115,8 @@ public class QuadLeaf implements QuadNode
     @Override
     public QuadNode insert(int x, int y, int width, Point newPoint)
     {
-        if (data == null)
-        {
-            QuadLeaf newLeaf = new QuadLeaf(newPoint);
-            return newLeaf;
-        }
-        else
-        {
-            data.insert(newPoint);
-            return adjustTree(x, y, width);
-        }
+        data.insert(newPoint);
+        return adjustTree(x, y, width);
     }
 
     /**
