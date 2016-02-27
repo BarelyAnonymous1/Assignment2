@@ -15,8 +15,8 @@ public class LinkedList
      * size 3
      */
     private int        size;
-    
-    private boolean duplicates;
+
+    private boolean    duplicates;
 
     /**
      * default constructor for the LinkedList
@@ -110,7 +110,13 @@ public class LinkedList
     {
         return size;
     }
-    
+
+    /**
+     * returns whether or not the list contains only a unique point
+     * 
+     * @return true if there is only one unique set of coordinates in the list,
+     *         false otherwise
+     */
     public boolean onlyDuplicates()
     {
         return duplicates;
