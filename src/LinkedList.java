@@ -79,13 +79,10 @@ public class LinkedList
             boolean exists = false;
             while (curr.getNext() != null)
             {
-                if (curr.getData().equals(newPoint))
-                    exists = true;
                 curr = (curr.getNext());
             }
             curr.setNext(newNode);
-            if (!exists)
-                size++;
+            size++;
         }
     }
 
