@@ -43,6 +43,5 @@ public class QuadTree
     
     public void duplicates()
     {
-        System.out.println(x);
     }
 }

@@ -48,4 +48,6 @@ public interface QuadNode
      * @return data in the node
      */
     public LinkedList getData();
+    
+    public void duplicates();
 }
