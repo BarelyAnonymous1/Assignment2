@@ -4,7 +4,6 @@ public class QuadFly implements QuadNode
 
     public QuadFly()
     {
-
     }
 
     @Override
