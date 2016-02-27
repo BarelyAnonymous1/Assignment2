@@ -128,4 +128,9 @@ public class QuadLeaf implements QuadNode
     {
         return data;
     }
+    
+    public void duplicates()
+    {
+        //do things
+    }
 }
