@@ -30,6 +30,7 @@ public class QuadFly implements QuadNode
         return null;
     }
 
+    @Override
     public void duplicates()
     {
     }
