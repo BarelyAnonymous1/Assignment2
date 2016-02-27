@@ -15,6 +15,8 @@ public class LinkedList
      * size 3
      */
     private int        size;
+    
+    private boolean duplicates;
 
     /**
      * default constructor for the LinkedList
@@ -23,6 +25,7 @@ public class LinkedList
     {
         head = null;
         size = 0;
+        duplicates = true;
     }
 
     /**
@@ -35,6 +38,7 @@ public class LinkedList
     {
         head = new LinkedNode(startPoint);
         size = 1;
+        duplicates = true;
     }
 
     /**
@@ -76,9 +80,10 @@ public class LinkedList
         else
         {
             LinkedNode curr = head;
-            boolean exists = false;
             while (curr.getNext() != null)
             {
+                if (!curr.getData().equals(newPoint))
+                    duplicates = false;
                 curr = (curr.getNext());
             }
             curr.setNext(newNode);
@@ -104,5 +109,10 @@ public class LinkedList
     public int getSize()
     {
         return size;
+    }
+    
+    public boolean onlyDuplicates()
+    {
+        return duplicates;
     }
 }
