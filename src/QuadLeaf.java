@@ -83,7 +83,7 @@ public class QuadLeaf implements QuadNode
      */
     private QuadNode adjustTree(int x, int y, int width)
     {
-        if (data.getSize() == 4 && data.onlyDuplicates())
+        if (data.getSize() == 4 && !data.onlyDuplicates())
         {
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
