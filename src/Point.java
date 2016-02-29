@@ -101,10 +101,10 @@ public class Point implements Comparable<Point>
     {
         if (this.x == other.getX())
         {
-            return this.y - other.getY();
+            return other.getY() - this.y;
         }
         else
-            return this.x - other.getX();
+            return other.getX() - this.x;
     }
 
     /**
