@@ -101,7 +101,6 @@ public class LinkedList
     
     public void outputDuplicates()
     {
-        System.out.println("tried finding dupe");
         LinkedNode curr = head;
         while (curr.getNext() != null)
         {
