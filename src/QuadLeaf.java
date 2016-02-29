@@ -128,11 +128,10 @@ public class QuadLeaf implements QuadNode
     {
         return data;
     }
-
+    
     @Override
     public void duplicates()
     {
-        if (data.onlyDuplicates())
-            data.outputDuplicates();
+        data.outputDuplicates();
     }
 }
