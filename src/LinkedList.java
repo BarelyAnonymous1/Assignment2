@@ -64,7 +64,8 @@ public class LinkedList
 
     /**
      * inserts a specific Point into the list; inserts at the end so that it can
-     * be determined if there are any duplicates in the list
+     * be determined if there are any duplicates in the list; sorted by coordinate
+     * in ascending order, first by x coordinate, then by y coordinate
      * 
      * @param newPoint
      *            the Point that will be added to the node
@@ -95,6 +96,11 @@ public class LinkedList
             curr.setNext(newNode);
             size++;
         }
+    }
+    
+    public void outputDuplicates()
+    {
+        
     }
 
     /**
