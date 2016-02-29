@@ -134,4 +134,9 @@ public class Point implements Comparable<Point>
     {
         return "(" + name + ", " + x + ", " + y + ")";
     }
+    
+    public String outputCoord()
+    {
+        return "(" + x + ", " + y + ")";
+    }
 }
