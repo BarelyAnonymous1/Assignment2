@@ -105,7 +105,7 @@ public class LinkedList
         {
             boolean dupeFound = false;
             boolean nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
-            while (nextDuplicate)
+            while (curr.getNext() != null && nextDuplicate)
             {
                 if (!dupeFound)
                     dupeFound = true;
@@ -114,6 +114,7 @@ public class LinkedList
             }
             if (dupeFound)
                 System.out.println(curr.getData().outputCoord());
+            curr = curr.getNext();
         }
     }
 
