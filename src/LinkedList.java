@@ -89,6 +89,7 @@ public class LinkedList
                 {
                     newNode.setNext(curr.getNext());
                     curr.setNext(newNode);
+                    size++;
                     return;
                 }
                 curr = (curr.getNext());

@@ -6,4 +6,4 @@ insert r_r          1 20
 
 dump
 
-
+duplicates
