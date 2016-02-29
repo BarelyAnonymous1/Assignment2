@@ -100,7 +100,21 @@ public class LinkedList
     
     public void outputDuplicates()
     {
-        
+        LinkedNode curr = head;
+        while (curr.getNext() != null)
+        {
+            boolean dupeFound = false;
+            boolean nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
+            while (nextDuplicate)
+            {
+                if (!dupeFound)
+                    dupeFound = true;
+                curr = curr.getNext();
+                nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
+            }
+            if (dupeFound)
+                System.out.println(curr.getData().outputCoord());
+        }
     }
 
     /**
