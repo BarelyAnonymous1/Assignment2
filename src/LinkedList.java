@@ -85,7 +85,7 @@ public class LinkedList
             {
                 if (!curr.getData().equals(newPoint))
                     duplicates = false;
-                if (newPoint.compareTo(curr.getData()) <= 0)
+                if (newPoint.compareTo(curr.getData()) >= 0)
                 {
                     newNode.setNext(curr.getNext());
                     curr.setNext(newNode);
