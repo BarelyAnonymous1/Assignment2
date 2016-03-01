@@ -14,6 +14,10 @@ public class QuadLeaf implements QuadNode
     private LinkedList data;
 
     
+    public QuadLeaf()
+    {
+        data = new LinkedList();
+    }
     /**
      * standard constructor for the leaf; when a leaf is created, it will have
      * data stored into it, so a new Point is inserted and a new LinkedList is
