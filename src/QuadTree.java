@@ -45,4 +45,9 @@ public class QuadTree
     {
         root.duplicates();
     }
+    
+    public void remove(Point findPoint)
+    {
+        root.remove(0, 0, 1024, findPoint);
+    }
 }
