@@ -108,10 +108,10 @@ public class LinkedList
         {
             if (curr.getData().equals(curr.getNext().getData()))
             {
-                if (!(output.contains(curr.getNext().getData().toString())))
+                if (!(output.contains(curr.getNext().getData().outputCoord())))
                 {
-                    output += curr.getNext().getData().toString();
-                    System.out.println(curr.getNext().getData().toString());
+                    output += curr.getNext().getData().outputCoord();
+                    System.out.println(curr.getNext().getData().outputCoord());
                 }
             }
             curr = curr.getNext();
