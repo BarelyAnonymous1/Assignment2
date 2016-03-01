@@ -149,14 +149,21 @@ public class LinkedList
         return duplicates;
     }
     
-    public boolean contains(Point searchPoint)
+    public Point remove(Point searchPoint, boolean byName)
     {
         LinkedNode curr = head;
-        while (head.getNext() != null)
+        while (curr.getNext() != null)
         {
-            if (curr.getData().equals(searchPoint))
+            if (curr.getNext().getData().equals(searchPoint))
             {
-                return true;
+                if (!byName)
+                {
+                    
+                }
+                else if (curr.getData().getName().compareTo(searchPoint.getName()) == 0)
+                {
+                    
+                }
             }
             curr = curr.getNext();
         }

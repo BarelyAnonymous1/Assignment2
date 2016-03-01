@@ -41,9 +41,9 @@ public class QuadFly implements QuadNode
     }
     
     @Override
-    public boolean remove(int x, int y, int width, Point searchPoint)
+    public Point remove(int x, int y, int width, Point searchPoint, boolean byName)
     {
-        return false;
+        return null;
     }
 
 }
