@@ -21,8 +21,8 @@ public class QuadFlyTest extends TestCase {
 
 	@Test
 	public void testDump() {
-		tree.FLYLEAF.dump(0, 0, 2, 2);
-		assertSame("    Node at 0, 0, 2: Empty", systemOut().getHistory());
+		tree.FLYLEAF.dump(0, 0, 2, 0);
+		assertSame("Node at 0, 0, 2: Empty", systemOut().getHistory());
 	}
 
 }
