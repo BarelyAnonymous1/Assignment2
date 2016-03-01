@@ -51,5 +51,5 @@ public interface QuadNode
     
     public void duplicates();
     
-    public Point remove(int x, int y, int width, Point newPoint);
+    public Point remove(int x, int y, int width, Point newPoint, boolean byName);
 }
