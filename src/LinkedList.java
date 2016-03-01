@@ -85,13 +85,13 @@ public class LinkedList
             {
                 if (!curr.getData().equals(newPoint))
                     duplicates = false;
-                if (newPoint.compareTo(curr.getData()) >= 0)
-                {
-                    newNode.setNext(curr.getNext());
-                    curr.setNext(newNode);
-                    size++;
-                    return;
-                }
+//                if (newPoint.compareTo(curr.getData()) >= 0)
+//                {
+//                    newNode.setNext(curr.getNext());
+//                    curr.setNext(newNode);
+//                    size++;
+//                    return;
+//                }
                 curr = (curr.getNext());
             }
             curr.setNext(newNode);
@@ -108,10 +108,10 @@ public class LinkedList
             boolean nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
             while (curr.getNext() != null && nextDuplicate)
             {
+                nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
                 if (!dupeFound)
                     dupeFound = true;
                 curr = curr.getNext();
-                nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
             }
             if (dupeFound)
                 System.out.println(curr.getData().outputCoord());
