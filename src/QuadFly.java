@@ -41,7 +41,7 @@ public class QuadFly implements QuadNode
     }
     
     @Override
-    public boolean search(Point searchPoint)
+    public boolean search(int x, int y, int width, Point searchPoint)
     {
         return false;
     }
