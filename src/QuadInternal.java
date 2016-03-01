@@ -80,13 +80,13 @@ public class QuadInternal implements QuadNode
             if (newPoint.getY() < y + width / 2)
                 northWest = northWest.insert(x, y, width / 2, newPoint);
             else
-                southWest = southWest.insert(x, width / 2, width / 2,
+                southWest = southWest.insert(x, y + width / 2, width / 2,
                         newPoint);
         else if (newPoint.getY() < y + width / 2)
-            northEast = northEast.insert(width / 2, y, width / 2,
+            northEast = northEast.insert(x + width / 2, y, width / 2,
                     newPoint);
         else
-            southEast = southEast.insert(width / 2, width / 2, width / 2,
+            southEast = southEast.insert(width / 2, y + width / 2, width / 2,
                     newPoint);
         return this;
     }
