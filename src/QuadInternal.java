@@ -112,18 +112,19 @@ public class QuadInternal implements QuadNode
         southEast.duplicates();
     }
 
-    public boolean search(int x, int y, int width, Point newPoint)
+    public boolean remove(int x, int y, int width, Point newPoint)
     {
         if (newPoint.getX() < x + width / 2)
             if (newPoint.getY() < y + width / 2)
-                return northWest.search(x, y, width / 2, newPoint);
+                return northWest.remove(x, y, width / 2, newPoint);
             else
-                return southWest.search(x, y + width / 2, width / 2,
+                return southWest.remove(x, y + width / 2, width / 2,
                         newPoint);
         else if (newPoint.getY() < y + width / 2)
-            return northEast.search(x + width / 2, y, width / 2, newPoint);
+            return northEast.remove(x + width / 2, y, width / 2, newPoint);
         else
-            return southEast.search(x + width / 2, y + width / 2,
+            return southEast.remove(x + width / 2, y + width / 2,
                     width / 2, newPoint);
     }
+    
 }
