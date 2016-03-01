@@ -113,8 +113,8 @@ public class LinkedList
                     output += curr.getNext().getData().toString();
                     System.out.println(curr.getNext().getData().toString());
                 }
-                curr = curr.getNext();
             }
+            curr = curr.getNext();
         }
     }
 
