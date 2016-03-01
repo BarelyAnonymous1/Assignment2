@@ -93,7 +93,7 @@ public class Database<K extends Comparable<K>, E>
      */
     public SkipNode<K, E> search(K key)
     {
-        return null;
+        return list.search(key);
     }
 
     /**
