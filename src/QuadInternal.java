@@ -86,8 +86,8 @@ public class QuadInternal implements QuadNode
             northEast = northEast.insert(x + width / 2, y, width / 2,
                     newPoint);
         else
-            southEast = southEast.insert(x + width / 2, y + width / 2, width / 2,
-                    newPoint);
+            southEast = southEast.insert(x + width / 2, y + width / 2,
+                    width / 2, newPoint);
         return this;
     }
 
@@ -102,7 +102,7 @@ public class QuadInternal implements QuadNode
     {
         return null;
     }
-    
+
     @Override
     public void duplicates()
     {
@@ -110,5 +110,20 @@ public class QuadInternal implements QuadNode
         southWest.duplicates();
         northEast.duplicates();
         southEast.duplicates();
+    }
+
+    public boolean search(int x, int y, int width, Point newPoint)
+    {
+        if (newPoint.getX() < x + width / 2)
+            if (newPoint.getY() < y + width / 2)
+                return northWest.search(x, y, width / 2, newPoint);
+            else
+                return southWest.search(x, y + width / 2, width / 2,
+                        newPoint);
+        else if (newPoint.getY() < y + width / 2)
+            return northEast.search(x + width / 2, y, width / 2, newPoint);
+        else
+            return southEast.search(x + width / 2, y + width / 2,
+                    width / 2, newPoint);
     }
 }
