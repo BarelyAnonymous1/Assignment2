@@ -2,7 +2,7 @@
 public class QuadFly implements QuadNode
 {
     private static QuadFly instance = new QuadFly();
-    
+
     private QuadFly()
     {
     }
@@ -11,6 +11,7 @@ public class QuadFly implements QuadNode
     {
         return instance;
     }
+
     @Override
     public int dump(int x, int y, int width, int depth)
     {
@@ -39,9 +40,16 @@ public class QuadFly implements QuadNode
     public void duplicates()
     {
     }
-    
+
     @Override
-    public Point remove(int x, int y, int width, Point searchPoint, boolean byName)
+    public Point remove(int x, int y, int width, Point searchPoint,
+            boolean byName)
+    {
+        return null;
+    }
+
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
     {
         return null;
     }
