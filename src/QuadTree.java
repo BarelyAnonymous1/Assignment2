@@ -46,8 +46,8 @@ public class QuadTree
         root.duplicates();
     }
     
-    public void remove(Point findPoint)
+    public boolean remove(Point findPoint)
     {
-        root.remove(0, 0, 1024, findPoint);
+        return root.remove(0, 0, 1024, findPoint);
     }
 }
