@@ -240,7 +240,7 @@ public class CommandParser
         }
         else
         {
-            System.out.println("(" + name + ", "
+            System.out.println("Point found: (" + name + ", "
                     + searchResult.getValue().toString() + ")");
 //            while (searchResult.next[0] != null && searchResult.next[0]
 //                    .getKey().compareTo(searchResult.getKey()) == 0)
