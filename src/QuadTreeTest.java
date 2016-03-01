@@ -69,7 +69,7 @@ public class QuadTreeTest extends TestCase {
 		tree.insert(point7);
 		tree.insert(point8);
 		tree.duplicates();
-		assertEquals("a", systemOut().getHistory());
+		assertEquals("(1, 20)\n(140, 10)\n", systemOut().getHistory());
 		
 	}
 
