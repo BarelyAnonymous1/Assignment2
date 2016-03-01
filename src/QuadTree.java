@@ -27,6 +27,7 @@ public class QuadTree
      */
     public void insert(Point newPoint)
     {
+    	if (newPoint == null) return;
         root = root.insert(0, 0, 1024, newPoint);
     }
 
