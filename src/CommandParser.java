@@ -8,7 +8,7 @@ import java.util.Scanner;
  * specific values to create a SkipList of Rectangles
  * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
- * @version 1
+ * @version 2
  */
 public class CommandParser
 {
@@ -240,13 +240,13 @@ public class CommandParser
         }
         else
         {
-            System.out.println("(" + name + ", "
+            System.out.println("Point found: (" + name + ", "
                     + searchResult.getValue().toString() + ")");
             while (searchResult.next[0] != null && searchResult.next[0]
                     .getKey().compareTo(searchResult.getKey()) == 0)
             {
                 searchResult = searchResult.next[0];
-                System.out.println("(" + name + ", "
+                System.out.println("Point found: (" + name + ", "
                         + searchResult.getValue().toString() + ")");
             }
         }

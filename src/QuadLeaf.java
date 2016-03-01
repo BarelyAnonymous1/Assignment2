@@ -1,56 +1,86 @@
 /**
+ * Leaf node for the PR-QuadTree. Only node to contain data; contains a
+ * linkedlist of Points
  * 
- * @author prestonlattimer
+ * @author Preston Lattimer (platt) Jonathan DeFreeuw (jondef95)
+ * @version 1
  *
  */
-
 public class QuadLeaf implements QuadNode
 {
+    /**
+     * linkedlist of Points stored in the leaf node
+     */
     private LinkedList data;
 
-    public QuadLeaf()
+    /**
+     * standard constructor for the leaf; when a leaf is created, it will have
+     * data stored into it, so a new Point is inserted and a new LinkedList is
+     * made
+     * 
+     * @param startPoint
+     *            initial point stored in the LinkedList
+     */
+    public QuadLeaf(Point startPoint)
     {
+        data = new LinkedList(startPoint);
     }
 
-    public QuadLeaf(Point startData)
-    {
-        data = new LinkedList(startData);
-    }
-
-    
+    /**
+     * outputs that the current node, with the parameters, is leaf node outputs
+     * each value of the LinkedList the leaf contains
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param depth
+     *            - depth of the current node, relative to the root (depth 0)
+     * @return the number of nodes visited
+     */
     @Override
-    public int dump(QuadNode root, int x, int y, int width, int depth)
+    public int dump(int x, int y, int width, int depth)
     {
-        if (root == null)
-            return 0;
         String spaces = "";
         for (int i = 0; i < depth; i++)
             spaces += "  ";
-        String title = spaces + "Node at " + x + ", " + y + ", " + width + ":";
-        if (data == null)
-            System.out.println(title + " Empty"); 
-        else
+        String title = spaces + "Node at " + x + ", " + y + ", " + width
+                + ":";
+        System.out.println(title);
+        LinkedNode curr = data.getHead();
+        while (curr != null)
         {
-            System.out.println(title);
-            LinkedNode curr = data.getHead();
-            while (curr != null)
-            {
-                String output = spaces + curr.getData().toString();
-                System.out.println(output);
-                curr = curr.getNext();
-            }
+            String output = spaces + curr.getData().toString();
+            System.out.println(output);
+            curr = curr.getNext();
         }
         return 1;
     }
-    
-    public QuadNode adjustTree(int x, int y, int width)
+
+    /**
+     * helper function that adjusts the tree if a leaf node contains 4 data
+     * points creates a new internal node, adds the data from the LinkedList as
+     * children, and returns the internal node if it is made, otherwise return
+     * this
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - size of the current region
+     * @return the root of the subtree after is has been adjusted
+     */
+    private QuadNode adjustTree(int x, int y, int width)
     {
-        if (data != null && data.getSize() == 4)
+        if (data.getSize() >= 4 && !data.onlyDuplicates())
         {
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
-                root.insert(root, x, y, width, data.remove());
+                root.insert(x, y, width, data.remove());
             }
             return root;
         }
@@ -60,44 +90,45 @@ public class QuadLeaf implements QuadNode
         }
     }
 
+    /**
+     * insert a new Point in the current node; once the insert has found this
+     * leaf node, then it is finished moving down the end of this tree
+     * 
+     * @param x
+     *            - x coordinate of the top left corner of the current region
+     * @param y
+     *            - y coordinate of the top left corner of the current region
+     * @param width
+     *            - width of the current region
+     * @param newPoint
+     *            - Point that will be added to the tree
+     * @return the root of the subtree that is being inserted after adjusting
+     */
     @Override
-    public QuadNode insert(QuadNode root, int x, int y, int width, Point newPoint)
+    public QuadNode insert(int x, int y, int width, Point newPoint)
     {
-        if (data == null)
-        {
-            QuadLeaf newLeaf = new QuadLeaf(newPoint);
-            return newLeaf;
-        }
-        else
-        {
-            data.insert(newPoint);
-            return adjustTree(x, y, width);
-        }
+        data.insert(newPoint);
+        return adjustTree(x, y, width);
     }
 
+    /**
+     * returns the pointer to the linkedlist stored in this leaf node
+     * 
+     * @return the pointer to the linkedlist
+     */
     public LinkedList getData()
     {
         return data;
     }
-
-//    public String toString()
-//    {
-//        String output = "Node at " + x + ", " + y + ", " + width + ": ";
-//        if (data == null)
-//            return output + "Empty\n";
-//        else
-//        {
-//            output += "\n";
-//            String spaces = "";
-//            for (int i = 0; i < depth; i++)
-//                spaces += "  ";
-//            LinkedNode curr = data.getHead();
-//            while (curr != null)
-//            {
-//                output += spaces + curr.getData().toString() + "\n";
-//                curr = curr.getNext();
-//            }
-//            return output;
-//        }
-//    }
+    
+    @Override
+    public void duplicates()
+    {
+        data.outputDuplicates();
+    }
+    
+    public boolean search(int x, int y, int width, Point newPoint)
+    {
+        return data.contains(newPoint);
+    }
 }

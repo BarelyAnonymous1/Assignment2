@@ -12,7 +12,6 @@ public class Point2Test extends TestCase
      */
     public void setUp()
     {
-        // Nothing here yet
     }
 
     // ----------------------------------------------------------
@@ -25,6 +24,7 @@ public class Point2Test extends TestCase
      */
     public void testSyntax1() throws Exception
     {
+        Point2 testClass = new Point2();
         String[] args = new String[1];
         args[0] = "P2SyntaxTest1.txt";
         Point2.main(args);

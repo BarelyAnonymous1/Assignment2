@@ -99,10 +99,12 @@ public class Point implements Comparable<Point>
      */
     public int compareTo(Point other)
     {
-        if (this.x == other.getX() && this.y == other.getY())
-            return 0;
+        if (this.x == other.getX())
+        {
+            return other.getY() - this.y;
+        }
         else
-            return -1;
+            return other.getX() - this.x;
     }
 
     /**
@@ -123,8 +125,18 @@ public class Point implements Comparable<Point>
         return false;
     }
 
+    /**
+     * turns the Point into a String to output to terminal
+     * 
+     * @return the String representation of the Point
+     */
     public String toString()
     {
         return "(" + name + ", " + x + ", " + y + ")";
+    }
+    
+    public String outputCoord()
+    {
+        return "(" + x + ", " + y + ")";
     }
 }

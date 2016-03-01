@@ -39,7 +39,7 @@ public class Database<K extends Comparable<K>, E>
     public void insert(KVPair<K, E> pair)
     {
         list.insert(pair);
-        tree.insert((Point)pair.theVal);
+        tree.insert((Point) pair.theVal);
     }
 
     /**
@@ -72,7 +72,7 @@ public class Database<K extends Comparable<K>, E>
      */
     public void duplicates()
     {
-        // not yet implemented
+        tree.duplicates();
     }
 
     /**
@@ -93,7 +93,7 @@ public class Database<K extends Comparable<K>, E>
      */
     public SkipNode<K, E> search(K key)
     {
-        return null;
+        return list.search(key);
     }
 
     /**

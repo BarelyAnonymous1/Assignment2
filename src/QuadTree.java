@@ -6,17 +6,28 @@
  */
 public class QuadTree
 {
-    private QuadNode        root;
-    private static final QuadLeaf flyLeaf = new QuadLeaf();
+    /**
+     * Flyweight model used to for null pointers in the tree
+     */
+    public static final QuadFly FLYLEAF = QuadFly.getInstance();
 
+    private QuadNode              root;
+
+    /**
+     * default constructor that stores a flyweight in the root of the tree
+     */
     public QuadTree()
     {
-        root = flyLeaf;
+        root = QuadTree.FLYLEAF;
     }
 
+    /**
+     * insert a new point into the tree
+     * @param newPoint the new point to be added to the tree
+     */
     public void insert(Point newPoint)
     {
-        root = root.insert(root, 0, 0, 1024, newPoint);
+        root = root.insert(0, 0, 1024, newPoint);
     }
 
     /**
@@ -26,17 +37,12 @@ public class QuadTree
     public void dump()
     {
         System.out.println("QuadTree dump:");
-        System.out.println(root.dump(root, 0, 0, 1024, 0)
-                + " quadtree nodes printed");
+        System.out.println(
+                root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
     }
-
-    public QuadNode getRoot()
+    
+    public void duplicates()
     {
-        return root;
-    }
-
-    public static QuadLeaf getFlyLeaf()
-    {
-        return flyLeaf;
+        root.duplicates();
     }
 }
