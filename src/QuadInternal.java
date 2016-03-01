@@ -118,30 +118,59 @@ public class QuadInternal implements QuadNode
         Point foundPoint = null;
         if (searchPoint.getX() < x + width / 2)
             if (searchPoint.getY() < y + width / 2)
-                foundPoint = northWest.remove(x, y, width / 2, searchPoint, byName);
+            {
+                foundPoint = northWest.remove(x, y, width / 2, searchPoint,
+                        byName);
+                northWest = adjustTree(x, y, width);
+            }
             else
+            {
                 foundPoint = southWest.remove(x, y + width / 2, width / 2,
                         searchPoint, byName);
+                southWest = adjustTree(x, y, width);
+            }
         else if (searchPoint.getY() < y + width / 2)
-            foundPoint = northEast.remove(x + width / 2, y, width / 2, searchPoint,
-                    byName);
+        {
+            foundPoint = northEast.remove(x + width / 2, y, width / 2,
+                    searchPoint, byName);
+            northEast = adjustTree(x, y, width);
+        }
         else
+        {
             foundPoint = southEast.remove(x + width / 2, y + width / 2,
                     width / 2, searchPoint, byName);
-        adjustTree(x, y, width);
+            southEast = adjustTree(x, y, width);
+        }
         return foundPoint;
     }
-    
+
     private QuadNode adjustTree(int x, int y, int width)
     {
-        if (data.getSize() >= 4 && !data.onlyDuplicates())
+        int numData = 0;
+        if (northWest.getData() != null)
+            numData += northWest.getData().getSize();
+        if (northEast.getData() != null)
+            numData += northEast.getData().getSize();
+        if (southWest.getData() != null)
+            numData += southWest.getData().getSize();
+        if (southEast.getData() != null)
+            numData += southEast.getData().getSize();
+        if (numData == 0)
         {
-            QuadInternal root = new QuadInternal();
-            while (data.getHead() != null)
-            {
-                root.insert(x, y, width, data.remove());
-            }
-            return root;
+            return QuadTree.FLYLEAF;
+        }
+        else if (numData < 4)
+        {
+            QuadLeaf newLeaf = new QuadLeaf();
+            while (northWest.getData().getHead() != null)
+                numData += northWest.getData().getSize();
+            if (northEast.getData() != null)
+                numData += northEast.getData().getSize();
+            if (southWest.getData() != null)
+                numData += southWest.getData().getSize();
+            if (southEast.getData() != null)
+                numData += southEast.getData().getSize();
+            return 
         }
         else
         {

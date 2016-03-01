@@ -42,6 +42,7 @@ public interface QuadNode
      */
     public QuadNode insert(int x, int y, int width, Point newPoint);
 
+    public QuadNode adjustTree(int x, int y, int width);
     /**
      * getter for the data stored in the node
      * 
