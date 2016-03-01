@@ -35,25 +35,26 @@ public class QuadTreeTest extends TestCase {
 		tree.insert(point4);
 		tree.insert(null);
 		tree.dump();
-		assertEquals("QuadTree dump:\n"
-			+"Node at 0, 0, 1024: Internal\n"
-			+"  Node at 0, 0, 512: Internal\n"
-			+"    Node at 0, 0, 256: Internal\n"
-			+"      Node at 0, 0, 128:\n"
-			+"      (a, 1, 20)\n"
-			+"      (b, 10, 30)\n"
-			+"      Node at 128, 0, 128:\n"
-			+"      (c, 140, 10)\n"
-			+"      Node at 0, 128, 128: Empty\n"
-			+"      Node at 128, 128, 128:\n"
-			+"      (d, 200, 200)\n"
-			+"    Node at 256, 0, 256: Empty\n"
-			+"    Node at 0, 256, 256: Empty\n"
-			+"    Node at 256, 256, 256: Empty\n"
-			+"  Node at 512, 0, 512: Empty\n"
-			+"  Node at 0, 512, 512: Empty\n"
-			+"  Node at 512, 512, 512: Empty\n"
-			+"13 quadtree nodes printed\n", 
+		assertEquals(
+			  "QuadTree dump:\n"
+			+ "Node at 0, 0, 1024: Internal\n"
+			+ "  Node at 0, 0, 512: Internal\n"
+			+ "    Node at 0, 0, 256: Internal\n"
+			+ "      Node at 0, 0, 128:\n"
+			+ "      (a, 1, 20)\n"
+			+ "      (b, 10, 30)\n"
+			+ "      Node at 128, 0, 128:\n"
+			+ "      (c, 140, 10)\n"
+			+ "      Node at 0, 128, 128: Empty\n"
+			+ "      Node at 128, 128, 128:\n"
+			+ "      (d, 200, 200)\n"
+			+ "    Node at 256, 0, 256: Empty\n"
+			+ "    Node at 0, 256, 256: Empty\n"
+			+ "    Node at 256, 256, 256: Empty\n"
+			+ "  Node at 512, 0, 512: Empty\n"
+			+ "  Node at 0, 512, 512: Empty\n"
+			+ "  Node at 512, 512, 512: Empty\n"
+			+ "13 quadtree nodes printed\n", 
 			systemOut().getHistory());
 	}
 	public void testDuplicates() {
