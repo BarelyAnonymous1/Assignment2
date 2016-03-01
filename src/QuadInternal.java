@@ -51,9 +51,9 @@ public class QuadInternal implements QuadNode
         System.out.println(printer);
         int newDepth = depth + 1;
         return 1 + northWest.dump(x, y, width / 2, newDepth)
-                + northEast.dump(width / 2, y, width / 2, newDepth)
-                + southWest.dump(x, width / 2, width / 2, newDepth)
-                + southEast.dump(width / 2, width / 2, width / 2,
+                + northEast.dump(x + width / 2, y, width / 2, newDepth)
+                + southWest.dump(x, y + width / 2, width / 2, newDepth)
+                + southEast.dump(x + width / 2, y + width / 2, width / 2,
                         newDepth);
 
     }
@@ -86,7 +86,7 @@ public class QuadInternal implements QuadNode
             northEast = northEast.insert(x + width / 2, y, width / 2,
                     newPoint);
         else
-            southEast = southEast.insert(width / 2, y + width / 2, width / 2,
+            southEast = southEast.insert(x + width / 2, y + width / 2, width / 2,
                     newPoint);
         return this;
     }
