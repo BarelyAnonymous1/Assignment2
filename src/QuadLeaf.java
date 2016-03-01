@@ -126,4 +126,9 @@ public class QuadLeaf implements QuadNode
     {
         data.outputDuplicates();
     }
+    
+    public boolean search(int x, int y, int width, Point newPoint)
+    {
+        return data.contains(newPoint);
+    }
 }

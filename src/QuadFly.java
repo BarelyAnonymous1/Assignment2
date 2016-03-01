@@ -39,5 +39,11 @@ public class QuadFly implements QuadNode
     public void duplicates()
     {
     }
+    
+    @Override
+    public boolean search(Point newPoint)
+    {
+        return false;
+    }
 
 }
