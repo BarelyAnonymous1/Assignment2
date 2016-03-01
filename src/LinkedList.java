@@ -158,6 +158,7 @@ public class LinkedList
             {
                 return true;
             }
+            curr = curr.getNext();
         }
         return false;
     }
