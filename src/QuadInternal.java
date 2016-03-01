@@ -148,7 +148,7 @@ public class QuadInternal implements QuadNode
     public QuadNode adjustTree(int x, int y, int width)
     {
         int numData = 0;
-        if (northWest.getData() != null)
+        if (northWest.getData() != null )
             numData += northWest.getData().getSize();
         if (northEast.getData() != null)
             numData += northEast.getData().getSize();
