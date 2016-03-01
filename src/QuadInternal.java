@@ -112,21 +112,41 @@ public class QuadInternal implements QuadNode
         southEast.duplicates();
     }
 
-    public Point remove(int x, int y, int width, Point newPoint,
+    public Point remove(int x, int y, int width, Point searchPoint,
             boolean byName)
     {
-        if (newPoint.getX() < x + width / 2)
-            if (newPoint.getY() < y + width / 2)
-                return northWest.remove(x, y, width / 2, newPoint, byName);
+        Point foundPoint = null;
+        if (searchPoint.getX() < x + width / 2)
+            if (searchPoint.getY() < y + width / 2)
+                foundPoint = northWest.remove(x, y, width / 2, searchPoint, byName);
             else
-                return southWest.remove(x, y + width / 2, width / 2,
-                        newPoint, byName);
-        else if (newPoint.getY() < y + width / 2)
-            return northEast.remove(x + width / 2, y, width / 2, newPoint,
+                foundPoint = southWest.remove(x, y + width / 2, width / 2,
+                        searchPoint, byName);
+        else if (searchPoint.getY() < y + width / 2)
+            foundPoint = northEast.remove(x + width / 2, y, width / 2, searchPoint,
                     byName);
         else
-            return southEast.remove(x + width / 2, y + width / 2,
-                    width / 2, newPoint, byName);
+            foundPoint = southEast.remove(x + width / 2, y + width / 2,
+                    width / 2, searchPoint, byName);
+        adjustTree(x, y, width);
+        return foundPoint;
+    }
+    
+    private QuadNode adjustTree(int x, int y, int width)
+    {
+        if (data.getSize() >= 4 && !data.onlyDuplicates())
+        {
+            QuadInternal root = new QuadInternal();
+            while (data.getHead() != null)
+            {
+                root.insert(x, y, width, data.remove());
+            }
+            return root;
+        }
+        else
+        {
+            return this;
+        }
     }
 
 }

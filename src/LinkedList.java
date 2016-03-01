@@ -158,15 +158,21 @@ public class LinkedList
             {
                 if (!byName)
                 {
-                    
+                    LinkedNode temp = curr.getNext();
+                    curr.setNext(curr.getNext().getNext());
+                    temp.setNext(null);
+                    return temp.getData();
                 }
                 else if (curr.getData().getName().compareTo(searchPoint.getName()) == 0)
                 {
-                    
+                    LinkedNode temp = curr.getNext();
+                    curr.setNext(curr.getNext().getNext());
+                    temp.setNext(null);
+                    return temp.getData();
                 }
             }
             curr = curr.getNext();
         }
-        return false;
+        return null;
     }
 }
