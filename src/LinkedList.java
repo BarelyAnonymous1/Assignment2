@@ -148,4 +148,17 @@ public class LinkedList
     {
         return duplicates;
     }
+    
+    public boolean contains(Point searchPoint)
+    {
+        LinkedNode curr = head;
+        while (head.getNext() != null)
+        {
+            if (curr.getData().equals(searchPoint))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
