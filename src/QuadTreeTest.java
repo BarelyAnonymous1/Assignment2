@@ -35,8 +35,7 @@ public class QuadTreeTest extends TestCase {
 		tree.insert(point4);
 		tree.insert(null);
 		tree.dump();
-		assertEquals(
-			 "QuadTree dump: \n"
+		assertEquals("QuadTree dump:\n"
 			+"Node at 0, 0, 1024: Internal\n"
 			+"  Node at 0, 0, 512: Internal\n"
 			+"    Node at 0, 0, 256: Internal\n"
