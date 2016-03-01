@@ -64,8 +64,9 @@ public class LinkedList
 
     /**
      * inserts a specific Point into the list; inserts at the end so that it can
-     * be determined if there are any duplicates in the list; sorted by coordinate
-     * in ascending order, first by x coordinate, then by y coordinate
+     * be determined if there are any duplicates in the list; sorted by
+     * coordinate in ascending order, first by x coordinate, then by y
+     * coordinate
      * 
      * @param newPoint
      *            the Point that will be added to the node
@@ -98,24 +99,22 @@ public class LinkedList
             size++;
         }
     }
-    
+
     public void outputDuplicates()
     {
         LinkedNode curr = head;
+        String output = "";
         while (curr.getNext() != null)
         {
-            boolean dupeFound = false;
-            boolean nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
-            while (curr.getNext() != null && nextDuplicate)
+            if (curr.getData().equals(curr.getNext().getData()))
             {
-                nextDuplicate = (curr.getData().equals(curr.getNext().getData()));
-                if (!dupeFound)
-                    dupeFound = true;
+                if (!(output.contains(curr.getNext().getData().toString())))
+                {
+                    output += curr.getNext().getData().toString();
+                    System.out.println(curr.getNext().getData().toString());
+                }
                 curr = curr.getNext();
             }
-            if (dupeFound)
-                System.out.println(curr.getData().outputCoord());
-            curr = curr.getNext();
         }
     }
 
