@@ -63,9 +63,11 @@ public class QuadTreeTest extends TestCase {
 		Point point5 = new Point("a", 1, 20);
 		Point point6 = new Point("a", 2, 30);
 		Point point7 = new Point("d", 1, 20);
+		Point point8 = new Point("e", 140, 10);
 		tree.insert(point5);
 		tree.insert(point6);
 		tree.insert(point7);
+		tree.insert(point8);
 		tree.duplicates();
 		
 	}
