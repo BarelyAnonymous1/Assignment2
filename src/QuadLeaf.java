@@ -127,7 +127,7 @@ public class QuadLeaf implements QuadNode
         data.outputDuplicates();
     }
     
-    public boolean remove(int x, int y, int width, Point newPoint)
+    public Point remove(int x, int y, int width, Point newPoint)
     {
         return data.remove(newPoint);
     }
