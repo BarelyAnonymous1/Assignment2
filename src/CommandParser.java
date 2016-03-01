@@ -242,13 +242,13 @@ public class CommandParser
         {
             System.out.println("(" + name + ", "
                     + searchResult.getValue().toString() + ")");
-            while (searchResult.next[0] != null && searchResult.next[0]
-                    .getKey().compareTo(searchResult.getKey()) == 0)
-            {
-                searchResult = searchResult.next[0];
-                System.out.println("(" + name + ", "
-                        + searchResult.getValue().toString() + ")");
-            }
+//            while (searchResult.next[0] != null && searchResult.next[0]
+//                    .getKey().compareTo(searchResult.getKey()) == 0)
+//            {
+//                searchResult = searchResult.next[0];
+//                System.out.println("(" + name + ", "
+//                        + searchResult.getValue().toString() + ")");
+//            }
         }
     }
 
