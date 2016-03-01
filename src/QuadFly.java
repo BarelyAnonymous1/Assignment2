@@ -51,7 +51,7 @@ public class QuadFly implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
-        return null;
+        return this;
     }
 
 }
