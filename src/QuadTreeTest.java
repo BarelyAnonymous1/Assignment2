@@ -34,7 +34,7 @@ public class QuadTreeTest extends TestCase {
 		tree.insert(point3);
 		tree.insert(point4);
 		tree.insert(null);
-		
+		tree.dump();
 	}
 
 }
