@@ -78,7 +78,8 @@ public class QuadLeaf implements QuadNode
      *            - size of the current region
      * @return the root of the subtree after is has been adjusted
      */
-    private QuadNode adjustTree(int x, int y, int width)
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
     {
         if (data.getSize() >= 4 && !data.onlyDuplicates())
         {

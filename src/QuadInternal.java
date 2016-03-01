@@ -121,30 +121,31 @@ public class QuadInternal implements QuadNode
             {
                 foundPoint = northWest.remove(x, y, width / 2, searchPoint,
                         byName);
-                northWest = adjustTree(x, y, width);
+                northWest = northWest.adjustTree(x, y, width);
             }
             else
             {
                 foundPoint = southWest.remove(x, y + width / 2, width / 2,
                         searchPoint, byName);
-                southWest = adjustTree(x, y, width);
+                southWest = southWest.adjustTree(x, y, width);
             }
         else if (searchPoint.getY() < y + width / 2)
         {
             foundPoint = northEast.remove(x + width / 2, y, width / 2,
                     searchPoint, byName);
-            northEast = adjustTree(x, y, width);
+            northEast = northEast.adjustTree(x, y, width);
         }
         else
         {
             foundPoint = southEast.remove(x + width / 2, y + width / 2,
                     width / 2, searchPoint, byName);
-            southEast = adjustTree(x, y, width);
+            southEast = southEast.adjustTree(x, y, width);
         }
         return foundPoint;
     }
 
-    private QuadNode adjustTree(int x, int y, int width)
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
     {
         int numData = 0;
         if (northWest.getData() != null)
@@ -170,7 +171,7 @@ public class QuadInternal implements QuadNode
                 numData += southWest.getData().getSize();
             if (southEast.getData() != null)
                 numData += southEast.getData().getSize();
-            return 
+            return newLeaf;
         }
         else
         {
