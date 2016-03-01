@@ -50,4 +50,6 @@ public interface QuadNode
     public LinkedList getData();
     
     public void duplicates();
+    
+    public void search(int x, int y, int width, Point newPoint);
 }

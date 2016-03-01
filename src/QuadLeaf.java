@@ -14,14 +14,6 @@ public class QuadLeaf implements QuadNode
     private LinkedList data;
 
     /**
-     * default constructor; leaves the data linkedlist empty; used mainly for
-     * the Flyweight node
-     */
-    public QuadLeaf()
-    {
-    }
-
-    /**
      * standard constructor for the leaf; when a leaf is created, it will have
      * data stored into it, so a new Point is inserted and a new LinkedList is
      * made
@@ -83,7 +75,7 @@ public class QuadLeaf implements QuadNode
      */
     private QuadNode adjustTree(int x, int y, int width)
     {
-        if (data.getSize() == 4 && !data.onlyDuplicates())
+        if (data.getSize() >= 4 && !data.onlyDuplicates())
         {
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
