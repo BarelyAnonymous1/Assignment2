@@ -13,7 +13,7 @@ QuadTree dump:
 Node at 0, 0, 1024: Internal
   Node at 0, 0, 512: Internal
     Node at 0, 0, 256: Internal
-      Node at 0, 0, 128:0
+      Node at 0, 0, 128
       r_r, 1, 20
       rec, 10, 30
       r_42, 1, 20
