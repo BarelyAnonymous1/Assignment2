@@ -92,6 +92,7 @@ public class QuadLeaf implements QuadNode
         }
         else
         {
+            System.out.println("dont need to adjust just like i thought");
             return this;
         }
     }
