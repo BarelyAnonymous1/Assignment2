@@ -195,6 +195,7 @@ public class LinkedList
         LinkedNode curr = head;
         if (curr.getData().equals(searchPoint))
         {
+            resize();
             return removeHead();
         }
         while (curr.getNext() != null)
