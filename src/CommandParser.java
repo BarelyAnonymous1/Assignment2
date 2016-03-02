@@ -225,8 +225,8 @@ public class CommandParser
         }
         else
         {
-            System.out.println("Point found: (" + name + ", "
-                    + searchResult.getValue().toString() + ")");
+            System.out.println(
+                    "Point found: " + searchResult.getValue().toString());
             while (searchResult.next[0] != null && searchResult.next[0]
                     .getKey().compareTo(searchResult.getKey()) == 0)
             {
