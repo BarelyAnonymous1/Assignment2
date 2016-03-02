@@ -147,28 +147,33 @@ public class QuadInternal implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
-        int numData = 0;
+        int numUniques = 0;
         if (northWest.getData() != null )
-            numData += northWest.getData().getSize();
+        {
+            int nw = northWest.getData().getUnique();
+            if (nw == 0)
+                northWest = QuadTree.FLYLEAF;
+            numUniques += nw;
+        }
         if (northEast.getData() != null)
-            numData += northEast.getData().getSize();
+            numUniques += northEast.getData().getUnique();
         if (southWest.getData() != null)
-            numData += southWest.getData().getSize();
+            numUniques += southWest.getData().getUnique();
         if (southEast.getData() != null)
-            numData += southEast.getData().getSize();
-        if (numData == 0)
+            numUniques += southEast.getData().getUnique();
+        if (numUniques == 0)
         {
             return QuadTree.FLYLEAF;
         }
-        else if (numData < 4)
+        else if (numUniques < 4)
         {
             QuadLeaf newLeaf = new QuadLeaf();
             while (northWest.getData().getHead() != null)
-                numData += northWest.getData().getSize();
+                numUniques += northWest.getData().getSize();
             if (northEast.getData() != null)
-                numData += northEast.getData().getSize();
+                numUniques += northEast.getData().getSize();
             if (southWest.getData() != null)
-                numData += southWest.getData().getSize();
+                numUniques += southWest.getData().getSize();
             if (southEast.getData() != null)
                 numData += southEast.getData().getSize();
             return newLeaf;
