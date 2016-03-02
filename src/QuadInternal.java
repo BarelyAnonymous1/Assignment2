@@ -189,6 +189,7 @@ public class QuadInternal implements QuadNode
         else if (numUniques < 4)
         {
             QuadLeaf newLeaf = new QuadLeaf();
+            System.out.println("stuck");
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
             {
@@ -203,10 +204,16 @@ public class QuadInternal implements QuadNode
             }
             while (southWest.getData() != null
                     && southWest.getData().getHead() != null)
+            {
                 newLeaf.insert(x, y, width, southWest.getData().removeHead());
+                System.out.println("stuck");
+            }
             while (southEast.getData() != null
                     && southEast.getData().getHead() != null)
+            {
                 newLeaf.insert(x, y, width, southEast.getData().removeHead());
+                System.out.println("stuck");
+            }
             return newLeaf.adjustTree(x, y, width);
         }
         else
