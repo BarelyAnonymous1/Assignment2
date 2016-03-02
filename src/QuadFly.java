@@ -53,5 +53,10 @@ public class QuadFly implements QuadNode
     {
         return this;
     }
+    
+    public int getUnique()
+    {
+        return 0;
+    }
 
 }
