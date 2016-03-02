@@ -135,7 +135,6 @@ public class QuadLeaf implements QuadNode
     
     public Point remove(int x, int y, int width, Point removePoint, boolean byName)
     {
-        System.out.println(removePoint.toString());
         return data.remove(removePoint, byName);
     }
 }
