@@ -86,7 +86,7 @@ public class QuadLeaf implements QuadNode
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
-                root.insert(x, y, width, data.remove());
+                root.insert(x, y, width, data.removeHead());
             }
             return root;
         }

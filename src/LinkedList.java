@@ -56,14 +56,12 @@ public class LinkedList
         {
             Point temp = head.getData();
             head = head.getNext();
-            resize();
             return temp;
         }
         else
         {
             Point output = head.getData();
             head = null;
-            resize();
             return output;
         }
     }
@@ -157,7 +155,7 @@ public class LinkedList
         {
             LinkedNode curr = head;
             int newSize = 0;
-
+            int newUnique = 0;
             while (curr.getNext() != null)
             {
                 if (!curr.getData().equals(curr.getNext().getData()))
