@@ -88,7 +88,7 @@ public class QuadLeaf implements QuadNode
             {
                 root.insert(x, y, width, data.removeHead());
             }
-            return root;
+            return root.adjustTree(x, y, width);
         }
         else
         {
