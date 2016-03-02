@@ -13,11 +13,11 @@ public class QuadLeaf implements QuadNode
      */
     private LinkedList data;
 
-    
     public QuadLeaf()
     {
         data = new LinkedList();
     }
+
     /**
      * standard constructor for the leaf; when a leaf is created, it will have
      * data stored into it, so a new Point is inserted and a new LinkedList is
@@ -131,18 +131,19 @@ public class QuadLeaf implements QuadNode
     {
         return data;
     }
-    
+
     @Override
     public void duplicates()
     {
         data.outputDuplicates();
     }
-    
-    public Point remove(int x, int y, int width, Point removePoint, boolean byName)
+
+    public Point remove(int x, int y, int width, Point removePoint,
+            boolean byName)
     {
         return data.remove(removePoint, byName);
     }
-    
+
     public int getUnique()
     {
         return data.getUnique();
