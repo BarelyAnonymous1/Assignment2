@@ -154,8 +154,6 @@ public class LinkedList
         }
         else
         {
-            System.out.println("Size: " + size);
-            System.out.println("numUniques: " + numUnique);
             LinkedNode curr = head;
             int newSize = 1;
             int newUnique = 1;
@@ -170,9 +168,6 @@ public class LinkedList
             }
             size = newSize;
             numUnique = newUnique;
-            
-            System.out.println("Size: " + size);
-            System.out.println("numUniques: " + numUnique);
         }
     }
 
