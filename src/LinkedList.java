@@ -148,7 +148,6 @@ public class LinkedList
     {
         if (head == null)
         {
-            System.out.println("head is null whoops");
             size = 0;
             numUnique = 0;
         }
