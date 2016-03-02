@@ -194,12 +194,14 @@ public class QuadInternal implements QuadNode
         }
         else if (numUniques < 4)
         {
-            System.out.println("Trying to make new leaf");
             QuadLeaf newLeaf = new QuadLeaf();
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
+            {
+                System.out.println("Trying to add to leaf");
                 newLeaf.insert(x, y, width,
                         northWest.getData().removeHead());
+            }
             while (northEast.getData() != null
                     && northEast.getData().getHead() != null)
                 newLeaf.insert(x, y, width,
