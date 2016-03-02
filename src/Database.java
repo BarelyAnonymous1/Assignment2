@@ -27,7 +27,6 @@ public class Database
     public Database()
     {
         list = new SkipList<String, Point>();
-        System.out.println("stuck");
         tree = new QuadTree();
     }
 
@@ -56,6 +55,7 @@ public class Database
         Point output = list.removeKey(key);
         if (output == null)
             return null;
+        System.out.println("stuck");
         tree.remove(output, true);
         return output;
     }
