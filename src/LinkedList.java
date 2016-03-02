@@ -156,6 +156,7 @@ public class LinkedList
             LinkedNode curr = head;
             int newSize = 1;
             int newUnique = 1;
+            System.out.println("trying to go through list to count");
             while (curr.getNext() != null)
             {
                 System.out.println("trying to go through list to count");
