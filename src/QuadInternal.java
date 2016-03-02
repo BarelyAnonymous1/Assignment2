@@ -116,7 +116,6 @@ public class QuadInternal implements QuadNode
             boolean byName)
     {
         Point foundPoint = null;
-        System.out.println(width);
         if (searchPoint.getX() < x + width / 2)
             if (searchPoint.getY() < y + width / 2)
             {
@@ -182,7 +181,6 @@ public class QuadInternal implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
-        System.out.println("stuck");
         int numUniques = removeEmpty();
         if (numUniques == 0)
         {
@@ -191,31 +189,18 @@ public class QuadInternal implements QuadNode
         else if (numUniques < 4)
         {
             QuadLeaf newLeaf = new QuadLeaf();
-            System.out.println("stuck");
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
-            {
                 newLeaf.insert(x, y, width, northWest.getData().removeHead());
-                System.out.println("stuck");
-            }
             while (northEast.getData() != null
                     && northEast.getData().getHead() != null)
-            {
                 newLeaf.insert(x, y, width, northEast.getData().removeHead());
-                System.out.println("stuck");
-            }
             while (southWest.getData() != null
                     && southWest.getData().getHead() != null)
-            {
                 newLeaf.insert(x, y, width, southWest.getData().removeHead());
-                System.out.println("stuck");
-            }
             while (southEast.getData() != null
                     && southEast.getData().getHead() != null)
-            {
                 newLeaf.insert(x, y, width, southEast.getData().removeHead());
-                System.out.println("stuck");
-            }
             return newLeaf.adjustTree(x, y, width);
         }
         else
