@@ -144,7 +144,7 @@ public class LinkedList
         return size;
     }
 
-    private void resize()
+    public void resize()
     {
         if (head == null)
         {
