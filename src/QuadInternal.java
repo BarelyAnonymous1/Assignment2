@@ -183,6 +183,11 @@ public class QuadInternal implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
+        northWest = northWest.adjustTree(x, y, width / 2);
+        southWest = southWest.adjustTree(x, y + width / 2, width / 2);
+        northEast = northEast.adjustTree(x + width / 2, y, width / 2);
+        southEast = southEast.adjustTree(x + width / 2, y + width / 2,
+                width / 2);
         int numUniques = removeEmpty();
         System.out.println(x + " " + y + " " + width + ", " + numUniques);
         if (numUniques == 0)
