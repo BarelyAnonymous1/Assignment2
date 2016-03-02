@@ -181,6 +181,7 @@ public class QuadInternal implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
+        System.out.println("stuck");
         int numUniques = removeEmpty();
         if (numUniques == 0)
         {
