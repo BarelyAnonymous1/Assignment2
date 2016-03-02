@@ -154,8 +154,8 @@ public class LinkedList
         else
         {
             LinkedNode curr = head;
-            int newSize = 0;
-            int newUnique = 0;
+            int newSize = 1;
+            int newUnique = 1;
             while (curr.getNext() != null)
             {
                 if (!curr.getData().equals(curr.getNext().getData()))
