@@ -166,6 +166,9 @@ public class LinkedList
             }
             size = newSize;
             numUnique = newUnique;
+            
+            System.out.println(size);
+            System.out.println(numUnique);
         }
     }
 
