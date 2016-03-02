@@ -48,6 +48,6 @@ public class QuadTree
     
     public Point remove(Point findPoint, boolean byName)
     {
-        root = root.remove(0, 0, 1024, findPoint, byName);
+        return root.remove(0, 0, 1024, findPoint, byName);
     }
 }
