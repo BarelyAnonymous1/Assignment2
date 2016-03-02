@@ -165,6 +165,7 @@ public class LinkedList
                     newUnique++;
                 }
                 size++;
+                curr = curr.getNext();
             }
             size = newSize;
             numUnique = newUnique;
