@@ -27,6 +27,7 @@ public class Database
     public Database()
     {
         list = new SkipList<String, Point>();
+        System.out.println("stuck");
         tree = new QuadTree();
     }
 
