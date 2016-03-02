@@ -138,4 +138,9 @@ public class QuadLeaf implements QuadNode
     {
         return data.remove(removePoint, byName);
     }
+    
+    public int getUnique()
+    {
+        return data.getUnique();
+    }
 }
