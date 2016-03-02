@@ -225,4 +225,8 @@ public class QuadInternal implements QuadNode
         }
     }
 
+    public int getUnique()
+    {
+        return 4;
+    }
 }
