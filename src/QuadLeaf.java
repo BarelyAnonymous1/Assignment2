@@ -148,6 +148,6 @@ public class QuadLeaf implements QuadNode
 
     public int getUnique()
     {
-        return data.getUnique();
+        return data.getSize();
     }
 }
