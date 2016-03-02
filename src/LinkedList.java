@@ -188,10 +188,13 @@ public class LinkedList
     public Point remove(Point searchPoint, boolean byName)
     {
         LinkedNode curr = head;
-        while (curr != null)
+        if (curr.getData().equals(searchPoint))
         {
-            System.out.println("here!");
-            if (curr.getData().equals(searchPoint))
+            return removeHead();
+        }
+        while (curr.getNext() != null)
+        {
+            if (curr.getNext().getData().equals(searchPoint))
             {
                 if (!byName)
                 {
@@ -201,7 +204,7 @@ public class LinkedList
                     resize();
                     return temp.getData();
                 }
-                else if (curr.getData().getName()
+                else if (curr.getNext().getData().getName()
                         .compareTo(searchPoint.getName()) == 0)
                 {
                     LinkedNode temp = curr.getNext();
