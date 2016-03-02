@@ -55,7 +55,7 @@ public class Database
         Point output = list.removeKey(key);
         if (output == null)
             return null;
-        System.out.println("stuck");
+        System.out.println(output.toString());
         tree.remove(output, true);
         return output;
     }
