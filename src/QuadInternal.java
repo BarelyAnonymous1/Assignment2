@@ -116,7 +116,7 @@ public class QuadInternal implements QuadNode
             boolean byName)
     {
         Point foundPoint = null;
-        System.out.println("stuck internal");
+        System.out.println(width);
         if (searchPoint.getX() < x + width / 2)
             if (searchPoint.getY() < y + width / 2)
             {
