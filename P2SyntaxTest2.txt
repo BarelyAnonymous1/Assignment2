@@ -6,6 +6,9 @@ insert r_r          0 0
   insert far  1 1
   
   insert reallyfar 512 512
+    insert hi 814 1022
+  insert hello 333 667
+  insert another 1 1
 dump
 
 remove r_r

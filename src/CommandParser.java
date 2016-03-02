@@ -15,7 +15,7 @@ public class CommandParser
     /**
      * String field to hold the file that has been input
      */
-    private String                  inputFile;
+    private String   inputFile;
 
     /**
      * SkipList used to hold the KeyValue Pairs for Rectangles
@@ -58,8 +58,7 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next command
-                switch (cmd)
-                {
+                switch (cmd) {
                     case ("insert"):
                     {
                         parseInsert(scanner);
@@ -129,10 +128,8 @@ public class CommandParser
                     + y + ")");
         }
         else
-        {
             System.out.println("Point rejected: (" + name + ", " + x + ", "
                     + y + ")");
-        }
     }
 
     /**
@@ -151,14 +148,9 @@ public class CommandParser
         {
             Point found = base.removeKey(name);
             if (found == null)
-            {
                 System.out.println("Point not removed: " + name);
-            }
             else
-            {
-                System.out.println("Point removed: (" + name + ", "
-                        + found.toString() + ")");
-            }
+                System.out.println("Point removed: " + found.toString());
         }
         else
         {
@@ -166,25 +158,18 @@ public class CommandParser
             int y = scanner.nextInt();
             if (checkDim(x, y))
             {
-                String search = x + ", " + y;
                 Point searchPoint = new Point(null, x, y);
                 Point found = base.removeValue(searchPoint);
                 if (found == null)
-                {
-                    System.out
-                            .println("Point not found: (" + search + ")");
-                }
+                    System.out.println(
+                            "Point not found: (" + x + ", " + y + ")");
                 else
-                {
-                    System.out.println("Point removed: (" + found.getName()
-                            + ", " + found.toString() + ")");
-                }
+                    System.out
+                            .println("Point removed: " + found.toString());
             }
             else
-            {
                 System.out
                         .println("Point rejected: (" + x + ", " + y + ")");
-            }
         }
     }
 
