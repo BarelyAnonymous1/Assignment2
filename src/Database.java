@@ -9,13 +9,13 @@
  * @param <E>
  *            value for the KVPairs in the lists
  */
-public class Database<K extends Comparable<K>, E>
+public class Database
 {
 
     /**
      * creates the skipList for the database
      */
-    private SkipList<K, E> list;
+    private SkipList<String, Point> list;
     /**
      * declares the quadtree for the database
      */
@@ -26,7 +26,7 @@ public class Database<K extends Comparable<K>, E>
      */
     public Database()
     {
-        list = new SkipList<K, E>();
+        list = new SkipList<String, Point>();
         tree = new QuadTree();
     }
 
@@ -36,10 +36,10 @@ public class Database<K extends Comparable<K>, E>
      * @param pair
      *            is the value to be inserted
      */
-    public void insert(KVPair<K, E> pair)
+    public void insert(KVPair<String, Point> pair)
     {
         list.insert(pair);
-        tree.insert((Point) pair.theVal);
+        tree.insert(pair.theVal);
     }
 
     /**
@@ -52,7 +52,10 @@ public class Database<K extends Comparable<K>, E>
      */
     public E removeKey(K key)
     {
-        return null;
+        E output = list.removeKey(key);
+        Point search = (Point) output;
+        tree.remove(search, true);
+        return output;
     }
 
     /**
@@ -64,7 +67,8 @@ public class Database<K extends Comparable<K>, E>
      */
     public E removeValue(E val)
     {
-        return null;
+        Point search = tree.remove((Point) val, false);
+        E output = list.removeKey((K)search.getName()); 
     }
 
     /**
