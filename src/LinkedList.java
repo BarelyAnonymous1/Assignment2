@@ -158,6 +158,7 @@ public class LinkedList
             int newUnique = 1;
             while (curr.getNext() != null)
             {
+                System.out.println("trying to go through list to count");
                 if (!curr.getData().equals(curr.getNext().getData()))
                 {
                     newUnique++;
