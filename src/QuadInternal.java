@@ -140,7 +140,8 @@ public class QuadInternal implements QuadNode
         {
             foundPoint = southEast.remove(x + width / 2, y + width / 2,
                     width / 2, searchPoint, byName);
-            southEast = southEast.adjustTree(x + width / 2, y + width / 2, width / 2);
+            southEast = southEast.adjustTree(x + width / 2, y + width / 2,
+                    width / 2);
         }
         return foundPoint;
     }
@@ -187,7 +188,6 @@ public class QuadInternal implements QuadNode
     public QuadNode adjustTree(int x, int y, int width)
     {
         int numUniques = removeEmpty();
-        System.out.println(width + ", " + numUniques);
         if (numUniques == 0)
         {
             return QuadTree.FLYLEAF;
@@ -197,32 +197,20 @@ public class QuadInternal implements QuadNode
             QuadLeaf newLeaf = new QuadLeaf();
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
-            {
-                System.out.println("Trying to add to leaf nw");
                 newLeaf.insert(x, y, width,
                         northWest.getData().removeHead());
-            }
             while (northEast.getData() != null
                     && northEast.getData().getHead() != null)
-            {
-                System.out.println("Trying to add to leaf ne");
                 newLeaf.insert(x, y, width,
                         northEast.getData().removeHead());
-            }
             while (southWest.getData() != null
                     && southWest.getData().getHead() != null)
-            {
-                System.out.println("Trying to add to leaf sw");
                 newLeaf.insert(x, y, width,
                         southWest.getData().removeHead());
-            }
             while (southEast.getData() != null
                     && southEast.getData().getHead() != null)
-            {
-                System.out.println("Trying to add to leaf se");
                 newLeaf.insert(x, y, width,
                         southEast.getData().removeHead());
-            }
             return newLeaf.adjustTree(x, y, width);
         }
         else
