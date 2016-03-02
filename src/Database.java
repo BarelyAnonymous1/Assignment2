@@ -50,11 +50,12 @@ public class Database
      *            is the key to be searched
      * @return the value in the SkipList and quadtree
      */
-    public E removeKey(K key)
+    public Point removeKey(String key)
     {
-        E output = list.removeKey(key);
-        Point search = (Point) output;
-        tree.remove(search, true);
+        Point output = list.removeKey(key);
+        if (output == null)
+            return null;
+        tree.remove(output, true);
         return output;
     }
 
@@ -65,10 +66,13 @@ public class Database
      *            is the value to be found
      * @return the value in the SkipList and quadtree
      */
-    public E removeValue(E val)
+    public Point removeValue(Point val)
     {
-        Point search = tree.remove((Point) val, false);
-        E output = list.removeKey((K)search.getName()); 
+        Point search = tree.remove(val, false);
+        if (search == null)
+            return null;
+        list.removeKey(search.getName());
+        return search;
     }
 
     /**
@@ -95,7 +99,7 @@ public class Database
      *            the key that is being searched for
      * @return the node in the SkipList that contains that specific key
      */
-    public SkipNode<K, E> search(K key)
+    public SkipNode<String, Point> search(String key)
     {
         return list.search(key);
     }
@@ -107,7 +111,7 @@ public class Database
      *            the region that is being used to search for points in the
      *            quadtree
      */
-    public void regionSearch(E region)
+    public void regionSearch(Rectangle region)
     {
     }
 }
