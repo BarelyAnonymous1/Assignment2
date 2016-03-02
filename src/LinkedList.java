@@ -179,6 +179,11 @@ public class LinkedList
     {
         return duplicates;
     }
+    
+    public int getUnique()
+    {
+        return numUnique;
+    }
 
     public Point remove(Point searchPoint, boolean byName)
     {
