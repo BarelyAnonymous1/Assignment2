@@ -144,11 +144,10 @@ public class QuadInternal implements QuadNode
         return foundPoint;
     }
 
-    @Override
-    public QuadNode adjustTree(int x, int y, int width)
+    private int trimTree()
     {
         int numUniques = 0;
-        if (northWest.getData() != null )
+        if (northWest.getData() != null)
         {
             int nw = northWest.getData().getUnique();
             if (nw == 0)
@@ -156,11 +155,33 @@ public class QuadInternal implements QuadNode
             numUniques += nw;
         }
         if (northEast.getData() != null)
-            numUniques += northEast.getData().getUnique();
+        {
+            int ne = northEast.getData().getUnique();
+            if (ne == 0)
+                northEast = QuadTree.FLYLEAF;
+            numUniques += ne;
+        }
         if (southWest.getData() != null)
-            numUniques += southWest.getData().getUnique();
+        {
+            int sw = southWest.getData().getUnique();
+            if (sw == 0)
+                southWest = QuadTree.FLYLEAF;
+            numUniques += sw;
+        }
         if (southEast.getData() != null)
-            numUniques += southEast.getData().getUnique();
+        {
+            int se = southEast.getData().getUnique();
+            if (se == 0)
+                southEast = QuadTree.FLYLEAF;
+            numUniques += se;
+        }
+        return numUniques;
+    }
+
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
+    {
+        int numUniques = trimTree();
         if (numUniques == 0)
         {
             return QuadTree.FLYLEAF;
@@ -168,14 +189,9 @@ public class QuadInternal implements QuadNode
         else if (numUniques < 4)
         {
             QuadLeaf newLeaf = new QuadLeaf();
-            while (northWest.getData().getHead() != null)
-                numUniques += northWest.getData().getSize();
-            if (northEast.getData() != null)
-                numUniques += northEast.getData().getSize();
-            if (southWest.getData() != null)
-                numUniques += southWest.getData().getSize();
-            if (southEast.getData() != null)
-                numData += southEast.getData().getSize();
+            while (northWest.getData() != null
+                    && northWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width, northWest.getData().removeHead());
             return newLeaf;
         }
         else
