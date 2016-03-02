@@ -187,7 +187,7 @@ public class QuadInternal implements QuadNode
                     && southEast.getData().getHead() != null)
                 newLeaf.insert(x, y, width,
                         southEast.getData().removeHead());
-            return newLeaf;
+            return newLeaf.adjustTree(x, y, width);
         }
         else
         {
