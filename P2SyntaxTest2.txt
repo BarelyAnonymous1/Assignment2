@@ -9,7 +9,6 @@ insert r_r          0 0
   insert r 412 127
   insert hi 814 1022
   insert hello 333 667
-  insert another 1 1
 dump
 
 remove r_r
