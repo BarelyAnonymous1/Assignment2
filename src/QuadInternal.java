@@ -151,7 +151,7 @@ public class QuadInternal implements QuadNode
         int numUniques = 0;
         if (northWest.getData() != null)
         {
-            int nw = northWest.getData().getUnique();
+            int nw = northWest.getUnique();
             if (nw == 0)
                 northWest = QuadTree.FLYLEAF;
             numUniques += nw;
@@ -159,7 +159,7 @@ public class QuadInternal implements QuadNode
         }
         if (northEast.getData() != null)
         {
-            int ne = northEast.getData().getUnique();
+            int ne = northEast.getUnique();
             if (ne == 0)
                 northEast = QuadTree.FLYLEAF;
             numUniques += ne;
@@ -167,7 +167,7 @@ public class QuadInternal implements QuadNode
         }
         if (southWest.getData() != null)
         {
-            int sw = southWest.getData().getUnique();
+            int sw = southWest.getUnique();
             if (sw == 0)
                 southWest = QuadTree.FLYLEAF;
             numUniques += sw;
@@ -175,7 +175,7 @@ public class QuadInternal implements QuadNode
         }
         if (southEast.getData() != null)
         {
-            int se = southEast.getData().getUnique();
+            int se = southEast.getUnique();
             if (se == 0)
                 southEast = QuadTree.FLYLEAF;
             numUniques += se;
