@@ -121,27 +121,27 @@ public class QuadInternal implements QuadNode
             {
                 foundPoint = northWest.remove(x, y, width / 2, searchPoint,
                         byName);
-//                northWest = northWest.adjustTree(x, y, width / 2);
+                // northWest = northWest.adjustTree(x, y, width / 2);
             }
             else
             {
                 foundPoint = southWest.remove(x, y + width / 2, width / 2,
                         searchPoint, byName);
-//                southWest = southWest.adjustTree(x, y + width / 2,
-//                        width / 2);
+                // southWest = southWest.adjustTree(x, y + width / 2,
+                // width / 2);
             }
         else if (searchPoint.getY() < y + width / 2)
         {
             foundPoint = northEast.remove(x + width / 2, y, width / 2,
                     searchPoint, byName);
-//            northEast = northEast.adjustTree(x + width / 2, y, width / 2);
+            // northEast = northEast.adjustTree(x + width / 2, y, width / 2);
         }
         else
         {
             foundPoint = southEast.remove(x + width / 2, y + width / 2,
                     width / 2, searchPoint, byName);
-//            southEast = southEast.adjustTree(x + width / 2, y + width / 2,
-//                    width / 2);
+            // southEast = southEast.adjustTree(x + width / 2, y + width / 2,
+            // width / 2);
         }
         return foundPoint;
     }
@@ -149,38 +149,26 @@ public class QuadInternal implements QuadNode
     private int removeEmpty()
     {
         int numUniques = 0;
-        if (northWest.getData() != null)
-        {
-            int nw = northWest.getUnique();
-            if (nw == 0)
-                northWest = QuadTree.FLYLEAF;
-            numUniques += nw;
-            System.out.println("nw " + nw);
-        }
-        if (northEast.getData() != null)
-        {
-            int ne = northEast.getUnique();
-            if (ne == 0)
-                northEast = QuadTree.FLYLEAF;
-            numUniques += ne;
-            System.out.println("ne " + ne);
-        }
-        if (southWest.getData() != null)
-        {
-            int sw = southWest.getUnique();
-            if (sw == 0)
-                southWest = QuadTree.FLYLEAF;
-            numUniques += sw;
-            System.out.println("sw " + sw);
-        }
-        if (southEast.getData() != null)
-        {
-            int se = southEast.getUnique();
-            if (se == 0)
-                southEast = QuadTree.FLYLEAF;
-            numUniques += se;
-            System.out.println("se " + se);
-        }
+        int nw = northWest.getUnique();
+        if (nw == 0)
+            northWest = QuadTree.FLYLEAF;
+        numUniques += nw;
+        System.out.println("nw " + nw);
+        int ne = northEast.getUnique();
+        if (ne == 0)
+            northEast = QuadTree.FLYLEAF;
+        numUniques += ne;
+        System.out.println("ne " + ne);
+        int sw = southWest.getUnique();
+        if (sw == 0)
+            southWest = QuadTree.FLYLEAF;
+        numUniques += sw;
+        System.out.println("sw " + sw);
+        int se = southEast.getUnique();
+        if (se == 0)
+            southEast = QuadTree.FLYLEAF;
+        numUniques += se;
+        System.out.println("se " + se);
         return numUniques;
     }
 
