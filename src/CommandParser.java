@@ -289,7 +289,7 @@ public class CommandParser
      */
     public boolean checkDim(int x, int y)
     {
-        return (x >= 0 && y >= 0 && x < 1023 && y < 1023);
+        return (x >= 0 && y >= 0 && x < 1024 && y < 1024);
     }
 
 }
