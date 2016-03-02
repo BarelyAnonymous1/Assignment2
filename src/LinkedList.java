@@ -160,9 +160,12 @@ public class LinkedList
             {
                 if (!curr.getData().equals(curr.getNext().getData()))
                 {
-
+                    newUnique++;
                 }
+                size++;
             }
+            size = newSize;
+            numUnique = newUnique;
         }
     }
 
