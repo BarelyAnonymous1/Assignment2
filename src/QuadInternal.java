@@ -191,10 +191,16 @@ public class QuadInternal implements QuadNode
             QuadLeaf newLeaf = new QuadLeaf();
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
+            {
                 newLeaf.insert(x, y, width, northWest.getData().removeHead());
+                System.out.println("stuck");
+            }
             while (northEast.getData() != null
                     && northEast.getData().getHead() != null)
+            {
                 newLeaf.insert(x, y, width, northEast.getData().removeHead());
+                System.out.println("stuck");
+            }
             while (southWest.getData() != null
                     && southWest.getData().getHead() != null)
                 newLeaf.insert(x, y, width, southWest.getData().removeHead());
