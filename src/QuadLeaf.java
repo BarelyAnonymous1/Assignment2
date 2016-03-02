@@ -92,7 +92,6 @@ public class QuadLeaf implements QuadNode
         }
         else
         {
-            data.resize();
             return this;
         }
     }
