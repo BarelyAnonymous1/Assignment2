@@ -144,7 +144,7 @@ public class QuadInternal implements QuadNode
         return foundPoint;
     }
 
-    private int trimTree()
+    private int removeEmpty()
     {
         int numUniques = 0;
         if (northWest.getData() != null)
@@ -181,7 +181,7 @@ public class QuadInternal implements QuadNode
     @Override
     public QuadNode adjustTree(int x, int y, int width)
     {
-        int numUniques = trimTree();
+        int numUniques = removeEmpty();
         if (numUniques == 0)
         {
             return QuadTree.FLYLEAF;
@@ -189,6 +189,15 @@ public class QuadInternal implements QuadNode
         else if (numUniques < 4)
         {
             QuadLeaf newLeaf = new QuadLeaf();
+            while (northWest.getData() != null
+                    && northWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width, northWest.getData().removeHead());
+            while (northWest.getData() != null
+                    && northWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width, northWest.getData().removeHead());
+            while (northWest.getData() != null
+                    && northWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width, northWest.getData().removeHead());
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
                 newLeaf.insert(x, y, width, northWest.getData().removeHead());
