@@ -148,28 +148,23 @@ public class QuadInternal implements QuadNode
 
     private int removeEmpty()
     {
-        int numUniques = 0;
         int nw = northWest.getUnique();
         if (nw == 0)
             northWest = QuadTree.FLYLEAF;
-        numUniques += nw;
         System.out.println("nw " + nw);
         int ne = northEast.getUnique();
         if (ne == 0)
             northEast = QuadTree.FLYLEAF;
-        numUniques += ne;
         System.out.println("ne " + ne);
         int sw = southWest.getUnique();
         if (sw == 0)
             southWest = QuadTree.FLYLEAF;
-        numUniques += sw;
         System.out.println("sw " + sw);
         int se = southEast.getUnique();
         if (se == 0)
             southEast = QuadTree.FLYLEAF;
-        numUniques += se;
         System.out.println("se " + se);
-        return numUniques;
+        return nw + ne + sw + se;
     }
 
     @Override
