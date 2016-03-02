@@ -135,6 +135,6 @@ public class QuadLeaf implements QuadNode
     
     public QuadNode remove(int x, int y, int width, Point newPoint, boolean byName)
     {
-        return trimTree(
+        return null;
     }
 }

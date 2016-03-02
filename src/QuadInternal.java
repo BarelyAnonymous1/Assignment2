@@ -112,37 +112,37 @@ public class QuadInternal implements QuadNode
         southEast.duplicates();
     }
 
-    public Point remove(int x, int y, int width, Point searchPoint,
-            boolean byName)
-    {
-        Point foundPoint = null;
-        if (searchPoint.getX() < x + width / 2)
-            if (searchPoint.getY() < y + width / 2)
-            {
-                foundPoint = northWest.remove(x, y, width / 2, searchPoint,
-                        byName);
-                northWest = northWest.adjustTree(x, y, width);
-            }
-            else
-            {
-                foundPoint = southWest.remove(x, y + width / 2, width / 2,
-                        searchPoint, byName);
-                southWest = southWest.adjustTree(x, y, width);
-            }
-        else if (searchPoint.getY() < y + width / 2)
-        {
-            foundPoint = northEast.remove(x + width / 2, y, width / 2,
-                    searchPoint, byName);
-            northEast = northEast.adjustTree(x, y, width);
-        }
-        else
-        {
-            foundPoint = southEast.remove(x + width / 2, y + width / 2,
-                    width / 2, searchPoint, byName);
-            southEast = southEast.adjustTree(x, y, width);
-        }
-        return foundPoint;
-    }
+//    public Point remove(int x, int y, int width, Point searchPoint,
+//            boolean byName)
+//    {
+//        Point foundPoint = null;
+//        if (searchPoint.getX() < x + width / 2)
+//            if (searchPoint.getY() < y + width / 2)
+//            {
+//                foundPoint = northWest.remove(x, y, width / 2, searchPoint,
+//                        byName);
+//                northWest = northWest.adjustTree(x, y, width);
+//            }
+//            else
+//            {
+//                foundPoint = southWest.remove(x, y + width / 2, width / 2,
+//                        searchPoint, byName);
+//                southWest = southWest.adjustTree(x, y, width);
+//            }
+//        else if (searchPoint.getY() < y + width / 2)
+//        {
+//            foundPoint = northEast.remove(x + width / 2, y, width / 2,
+//                    searchPoint, byName);
+//            northEast = northEast.adjustTree(x, y, width);
+//        }
+//        else
+//        {
+//            foundPoint = southEast.remove(x + width / 2, y + width / 2,
+//                    width / 2, searchPoint, byName);
+//            southEast = southEast.adjustTree(x, y, width);
+//        }
+//        return foundPoint;
+//    }
 
     @Override
     public QuadNode adjustTree(int x, int y, int width)
