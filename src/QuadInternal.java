@@ -121,25 +121,26 @@ public class QuadInternal implements QuadNode
             {
                 foundPoint = northWest.remove(x, y, width / 2, searchPoint,
                         byName);
-                northWest = northWest.adjustTree(x, y, width);
+                northWest = northWest.adjustTree(x, y, width / 2);
             }
             else
             {
                 foundPoint = southWest.remove(x, y + width / 2, width / 2,
                         searchPoint, byName);
-                southWest = southWest.adjustTree(x, y, width);
+                southWest = southWest.adjustTree(x, y + width / 2,
+                        width / 2);
             }
         else if (searchPoint.getY() < y + width / 2)
         {
             foundPoint = northEast.remove(x + width / 2, y, width / 2,
                     searchPoint, byName);
-            northEast = northEast.adjustTree(x, y, width);
+            northEast = northEast.adjustTree(x + width / 2, y, width / 2);
         }
         else
         {
             foundPoint = southEast.remove(x + width / 2, y + width / 2,
                     width / 2, searchPoint, byName);
-            southEast = southEast.adjustTree(x, y, width);
+            southEast = southEast.adjustTree(x + width / 2, y + width / 2, width / 2);
         }
         return foundPoint;
     }
@@ -192,16 +193,20 @@ public class QuadInternal implements QuadNode
             QuadLeaf newLeaf = new QuadLeaf();
             while (northWest.getData() != null
                     && northWest.getData().getHead() != null)
-                newLeaf.insert(x, y, width, northWest.getData().removeHead());
+                newLeaf.insert(x, y, width,
+                        northWest.getData().removeHead());
             while (northEast.getData() != null
                     && northEast.getData().getHead() != null)
-                newLeaf.insert(x, y, width, northEast.getData().removeHead());
+                newLeaf.insert(x, y, width,
+                        northEast.getData().removeHead());
             while (southWest.getData() != null
                     && southWest.getData().getHead() != null)
-                newLeaf.insert(x, y, width, southWest.getData().removeHead());
+                newLeaf.insert(x, y, width,
+                        southWest.getData().removeHead());
             while (southEast.getData() != null
                     && southEast.getData().getHead() != null)
-                newLeaf.insert(x, y, width, southEast.getData().removeHead());
+                newLeaf.insert(x, y, width,
+                        southEast.getData().removeHead());
             return newLeaf;
         }
         else
