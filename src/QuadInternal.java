@@ -177,7 +177,7 @@ public class QuadInternal implements QuadNode
             int se = southEast.getData().getUnique();
             if (se == 0)
                 southEast = QuadTree.FLYLEAF;
-            System.out.println("se" + se);
+            System.out.println("se, " + se);
             numUniques += se;
         }
         return numUniques;
