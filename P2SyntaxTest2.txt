@@ -1,6 +1,14 @@
 
 insert r_r          0 0
-
+  insert rec        0 1
+  insert r_42   1 0
+  
+  insert far  1 1
+  
+  insert reallyfar 512 512
+  insert r 412 127
+  insert hi 814 1022
+  insert hello 333 667
 dump
 
 remove r_r
