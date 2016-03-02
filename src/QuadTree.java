@@ -11,7 +11,7 @@ public class QuadTree
      */
     public static final QuadFly FLYLEAF = QuadFly.getInstance();
 
-    private QuadNode              root;
+    private QuadNode            root;
 
     /**
      * default constructor that stores a flyweight in the root of the tree
@@ -23,12 +23,14 @@ public class QuadTree
 
     /**
      * insert a new point into the tree
-     * @param newPoint the new point to be added to the tree
+     * 
+     * @param newPoint
+     *            the new point to be added to the tree
      */
     public void insert(Point newPoint)
     {
         root = root.insert(0, 0, 1024, newPoint);
-        }
+    }
 
     /**
      * output a list of every item in the list in the following format:
@@ -40,15 +42,15 @@ public class QuadTree
         System.out.println(
                 root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
     }
-    
+
     public void duplicates()
     {
         root.duplicates();
     }
-    
+
     public Point remove(Point findPoint, boolean byName)
     {
-        Point output =  root.remove(0, 0, 1024, findPoint, byName);
+        Point output = root.remove(0, 0, 1024, findPoint, byName);
         root = root.adjustTree(0, 0, 1024);
         return output;
     }
