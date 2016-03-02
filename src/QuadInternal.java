@@ -184,7 +184,7 @@ public class QuadInternal implements QuadNode
     public QuadNode adjustTree(int x, int y, int width)
     {
         int numUniques = removeEmpty();
-        System.out.println(width + ", " + numUniques);
+        System.out.println(x + " " + y + " " + width + ", " + numUniques);
         if (numUniques == 0)
         {
             return QuadTree.FLYLEAF;
