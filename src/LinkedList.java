@@ -81,6 +81,7 @@ public class LinkedList
         if (head == null)
         {
             head = newNode;
+            numUnique++;
             size++;
         }
         else
