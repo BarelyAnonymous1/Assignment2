@@ -90,6 +90,10 @@ public class QuadLeaf implements QuadNode
             }
             return root;
         }
+        else if (data.getSize() == 0)
+        {
+            return QuadTree.FLYLEAF;
+        }
         else
         {
             data.resize();

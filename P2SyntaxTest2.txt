@@ -1,11 +1,8 @@
 
-  
-  insert reallyfar 512 512
-  insert r 412 127
-  insert hi 814 1022
-  insert hello 333 667
+insert r_r          0 0
+
 dump
 
-remove 512 512
+remove r_r
 
 dump
