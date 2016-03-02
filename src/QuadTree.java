@@ -49,7 +49,7 @@ public class QuadTree
     public Point remove(Point findPoint, boolean byName)
     {
         Point output =  root.remove(0, 0, 1024, findPoint, byName);
-        root = root.adjustTree(0, 0, 1024);
+        root.adjustTree(0, 0, 1024);
         return output;
     }
 }
