@@ -135,6 +135,9 @@ public class Point implements Comparable<Point>
         return "(" + name + ", " + x + ", " + y + ")";
     }
     
+    /**
+     * @return the coordinate in string format
+     */
     public String outputCoord()
     {
         return "(" + x + ", " + y + ")";

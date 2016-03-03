@@ -14,7 +14,10 @@ import student.TestCase;
 public class LinkedListTest extends TestCase {
 
     private LinkedList list;
-    private Point point1, point2, point3, point4;
+    private Point point1, 
+                    point2, 
+                    point3, 
+                    point4;
     @Before
     public void setUp() {
         list = new LinkedList();
