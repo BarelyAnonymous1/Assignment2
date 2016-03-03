@@ -40,6 +40,7 @@ public class LinkedListTest extends TestCase {
 		list.insert(point1);
 		list.insert(point1);
 		list.outputDuplicates();
+		assertTrue(systemOut().getHistory().endsWith("(1, 20)");
 	}
 	
 
