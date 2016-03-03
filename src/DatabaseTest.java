@@ -7,14 +7,14 @@ import student.TestCase;
  */
 public class DatabaseTest extends TestCase
 {
-    private Database<String, Integer> base;
+    private Database base;
 
     /**
      * creates the database used in testing
      */
     public void setUp()
     {
-        base = new Database<String, Integer>();
+        base = new Database();
     }
 
     /**
@@ -22,7 +22,7 @@ public class DatabaseTest extends TestCase
      */
     public void test()
     {
-        base.regionSearch(4);
+        base.regionSearch(null);
         assertNull(base.removeKey("hello"));
     }
 

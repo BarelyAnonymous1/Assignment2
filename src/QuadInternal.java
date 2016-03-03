@@ -112,18 +112,91 @@ public class QuadInternal implements QuadNode
         southEast.duplicates();
     }
 
-    public boolean search(int x, int y, int width, Point newPoint)
+    public Point remove(int x, int y, int width, Point searchPoint,
+            boolean byName)
     {
-        if (newPoint.getX() < x + width / 2)
-            if (newPoint.getY() < y + width / 2)
-                return northWest.search(x, y, width / 2, newPoint);
+        Point foundPoint = null;
+        if (searchPoint.getX() < x + width / 2)
+            if (searchPoint.getY() < y + width / 2)
+            {
+                foundPoint = northWest.remove(x, y, width / 2, searchPoint,
+                        byName);
+                // northWest = northWest.adjustTree(x, y, width / 2);
+            }
             else
-                return southWest.search(x, y + width / 2, width / 2,
-                        newPoint);
-        else if (newPoint.getY() < y + width / 2)
-            return northEast.search(x + width / 2, y, width / 2, newPoint);
+            {
+                foundPoint = southWest.remove(x, y + width / 2, width / 2,
+                        searchPoint, byName);
+                // southWest = southWest.adjustTree(x, y + width / 2,
+                // width / 2);
+            }
+        else if (searchPoint.getY() < y + width / 2)
+        {
+            foundPoint = northEast.remove(x + width / 2, y, width / 2,
+                    searchPoint, byName);
+            // northEast = northEast.adjustTree(x + width / 2, y, width / 2);
+        }
         else
-            return southEast.search(x + width / 2, y + width / 2,
-                    width / 2, newPoint);
+        {
+            foundPoint = southEast.remove(x + width / 2, y + width / 2,
+                    width / 2, searchPoint, byName);
+            // southEast = southEast.adjustTree(x + width / 2, y + width / 2,
+            // width / 2);
+        }
+        return foundPoint;
+    }
+
+    private int removeEmpty()
+    {
+        int nw = northWest.getUnique();
+        int ne = northEast.getUnique();
+        int sw = southWest.getUnique();
+        int se = southEast.getUnique();
+        return nw + ne + sw + se;
+    }
+
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
+    {
+        northWest = northWest.adjustTree(x, y, width / 2);
+        southWest = southWest.adjustTree(x, y + width / 2, width / 2);
+        northEast = northEast.adjustTree(x + width / 2, y, width / 2);
+        southEast = southEast.adjustTree(x + width / 2, y + width / 2,
+                width / 2);
+        int numUniques = removeEmpty();
+        if (numUniques == 0)
+        {
+            return QuadTree.FLYLEAF;
+        }
+        else if (numUniques < 4)
+        {
+            QuadLeaf newLeaf = new QuadLeaf();
+            while (northWest.getData() != null
+                    && northWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width,
+                        northWest.getData().removeHead());
+            while (northEast.getData() != null
+                    && northEast.getData().getHead() != null)
+                newLeaf.insert(x, y, width,
+                        northEast.getData().removeHead());
+            while (southWest.getData() != null
+                    && southWest.getData().getHead() != null)
+                newLeaf.insert(x, y, width,
+                        southWest.getData().removeHead());
+            while (southEast.getData() != null
+                    && southEast.getData().getHead() != null)
+                newLeaf.insert(x, y, width,
+                        southEast.getData().removeHead());
+            return newLeaf.adjustTree(x, y, width);
+        }
+        else
+        {
+            return this;
+        }
+    }
+
+    public int getUnique()
+    {
+        return 4;
     }
 }

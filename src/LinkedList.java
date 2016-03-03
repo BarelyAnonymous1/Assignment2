@@ -16,6 +16,8 @@ public class LinkedList
      */
     private int        size;
 
+    private int        numUnique;
+
     private boolean    duplicates;
 
     /**
@@ -25,6 +27,7 @@ public class LinkedList
     {
         head = null;
         size = 0;
+        numUnique = 0;
         duplicates = true;
     }
 
@@ -38,6 +41,7 @@ public class LinkedList
     {
         head = new LinkedNode(startPoint);
         size = 1;
+        numUnique = 1;
         duplicates = true;
     }
 
@@ -46,7 +50,7 @@ public class LinkedList
      * 
      * @return the data stored in the head of the node
      */
-    public Point remove()
+    public Point removeHead()
     {
         if (head.getNext() != null)
         {
@@ -77,6 +81,7 @@ public class LinkedList
         if (head == null)
         {
             head = newNode;
+            numUnique++;
             size++;
         }
         else
@@ -108,10 +113,12 @@ public class LinkedList
         {
             if (curr.getData().equals(curr.getNext().getData()))
             {
-                if (!(output.contains(curr.getNext().getData().outputCoord())))
+                if (!(output
+                        .contains(curr.getNext().getData().outputCoord())))
                 {
                     output += curr.getNext().getData().outputCoord();
-                    System.out.println(curr.getNext().getData().outputCoord());
+                    System.out.println(
+                            curr.getNext().getData().outputCoord());
                 }
             }
             curr = curr.getNext();
@@ -138,6 +145,32 @@ public class LinkedList
         return size;
     }
 
+    public void resize()
+    {
+        if (head == null)
+        {
+            size = 0;
+            numUnique = 0;
+        }
+        else
+        {
+            LinkedNode curr = head;
+            int newSize = 1;
+            int newUnique = 1;
+            while (curr.getNext() != null)
+            {
+                if (!curr.getData().equals(curr.getNext().getData()))
+                {
+                    newUnique++;
+                }
+                newSize++;
+                curr = curr.getNext();
+            }
+            size = newSize;
+            numUnique = newUnique;
+        }
+    }
+
     /**
      * returns whether or not the list contains only a unique point
      * 
@@ -149,17 +182,43 @@ public class LinkedList
         return duplicates;
     }
     
-    public boolean contains(Point searchPoint)
+    public int getUnique()
+    {
+        return numUnique;
+    }
+
+    public Point remove(Point searchPoint, boolean byName)
     {
         LinkedNode curr = head;
-        while (head.getNext() != null)
+        if (curr.getData().equals(searchPoint))
         {
-            if (curr.getData().equals(searchPoint))
+            resize();
+            return removeHead();
+        }
+        while (curr.getNext() != null)
+        {
+            if (curr.getNext().getData().equals(searchPoint))
             {
-                return true;
+                if (!byName)
+                {
+                    LinkedNode temp = curr.getNext();
+                    curr.setNext(curr.getNext().getNext());
+                    temp.setNext(null);
+                    resize();
+                    return temp.getData();
+                }
+                else if (curr.getNext().getData().getName()
+                        .compareTo(searchPoint.getName()) == 0)
+                {
+                    LinkedNode temp = curr.getNext();
+                    curr.setNext(curr.getNext().getNext());
+                    temp.setNext(null);
+                    resize();
+                    return temp.getData();
+                }
             }
             curr = curr.getNext();
         }
-        return false;
+        return null;
     }
 }

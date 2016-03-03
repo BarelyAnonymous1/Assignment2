@@ -13,6 +13,11 @@ public class QuadLeaf implements QuadNode
      */
     private LinkedList data;
 
+    public QuadLeaf()
+    {
+        data = new LinkedList();
+    }
+
     /**
      * standard constructor for the leaf; when a leaf is created, it will have
      * data stored into it, so a new Point is inserted and a new LinkedList is
@@ -73,19 +78,25 @@ public class QuadLeaf implements QuadNode
      *            - size of the current region
      * @return the root of the subtree after is has been adjusted
      */
-    private QuadNode adjustTree(int x, int y, int width)
+    @Override
+    public QuadNode adjustTree(int x, int y, int width)
     {
         if (data.getSize() >= 4 && !data.onlyDuplicates())
         {
             QuadInternal root = new QuadInternal();
             while (data.getHead() != null)
             {
-                root.insert(x, y, width, data.remove());
+                root.insert(x, y, width, data.removeHead());
             }
             return root;
         }
+        else if (data.getSize() == 0)
+        {
+            return QuadTree.FLYLEAF;
+        }
         else
         {
+            data.resize();
             return this;
         }
     }
@@ -120,15 +131,23 @@ public class QuadLeaf implements QuadNode
     {
         return data;
     }
-    
+
     @Override
     public void duplicates()
     {
         data.outputDuplicates();
     }
-    
-    public boolean search(int x, int y, int width, Point newPoint)
+
+    public Point remove(int x, int y, int width, Point removePoint,
+            boolean byName)
     {
-        return data.contains(newPoint);
+        Point output = data.remove(removePoint, byName);
+        adjustTree(x, y, width);
+        return output;
+    }
+
+    public int getUnique()
+    {
+        return data.getSize();
     }
 }

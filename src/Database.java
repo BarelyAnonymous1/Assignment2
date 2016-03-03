@@ -9,13 +9,13 @@
  * @param <E>
  *            value for the KVPairs in the lists
  */
-public class Database<K extends Comparable<K>, E>
+public class Database
 {
 
     /**
      * creates the skipList for the database
      */
-    private SkipList<K, E> list;
+    private SkipList<String, Point> list;
     /**
      * declares the quadtree for the database
      */
@@ -26,7 +26,7 @@ public class Database<K extends Comparable<K>, E>
      */
     public Database()
     {
-        list = new SkipList<K, E>();
+        list = new SkipList<String, Point>();
         tree = new QuadTree();
     }
 
@@ -36,10 +36,10 @@ public class Database<K extends Comparable<K>, E>
      * @param pair
      *            is the value to be inserted
      */
-    public void insert(KVPair<K, E> pair)
+    public void insert(KVPair<String, Point> pair)
     {
         list.insert(pair);
-        tree.insert((Point) pair.theVal);
+        tree.insert(pair.theVal);
     }
 
     /**
@@ -50,9 +50,13 @@ public class Database<K extends Comparable<K>, E>
      *            is the key to be searched
      * @return the value in the SkipList and quadtree
      */
-    public E removeKey(K key)
+    public Point removeKey(String key)
     {
-        return null;
+        Point output = list.removeKey(key);
+        if (output == null)
+            return null;
+        tree.remove(output, true);
+        return output;
     }
 
     /**
@@ -62,9 +66,13 @@ public class Database<K extends Comparable<K>, E>
      *            is the value to be found
      * @return the value in the SkipList and quadtree
      */
-    public E removeValue(E val)
+    public Point removeValue(Point val)
     {
-        return null;
+        Point search = tree.remove(val, false);
+        if (search == null)
+            return null;
+        list.removeKey(search.getName());
+        return search;
     }
 
     /**
@@ -91,7 +99,7 @@ public class Database<K extends Comparable<K>, E>
      *            the key that is being searched for
      * @return the node in the SkipList that contains that specific key
      */
-    public SkipNode<K, E> search(K key)
+    public SkipNode<String, Point> search(String key)
     {
         return list.search(key);
     }
@@ -103,7 +111,7 @@ public class Database<K extends Comparable<K>, E>
      *            the region that is being used to search for points in the
      *            quadtree
      */
-    public void regionSearch(E region)
+    public void regionSearch(Rectangle region)
     {
     }
 }
