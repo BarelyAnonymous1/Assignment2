@@ -73,5 +73,10 @@ public class QuadTreeTest extends TestCase {
 		assertEquals("(1, 20)\n(140, 10)\n", systemOut().getHistory());
 		
 	}
+	
+	public void testRemove() {
+		tree.remove(point1, true);
+		tree.remove(point1, false);
+	}
 
 }
