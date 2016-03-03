@@ -105,6 +105,10 @@ public class LinkedList
         }
     }
 
+    /**
+     * This method returns the duplicate points in the linked 
+     * list
+     */
     public void outputDuplicates()
     {
         LinkedNode curr = head;
