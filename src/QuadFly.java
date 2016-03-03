@@ -1,12 +1,24 @@
-
+/**
+ * creates the flyweight for the class so that we can conserve space
+ * -any leaf node that does not point to data points instead to the 
+ * single flyweight, instantiated inside the quadtree class
+ * @author platt, jondef95
+ *
+ */
 public class QuadFly implements QuadNode
 {
     private static QuadFly instance = new QuadFly();
 
+    /**
+     * creates an empty flyweight
+     */
     private QuadFly()
     {
     }
 
+    /**
+     * @return the individual instance of the quadfly
+     */
     public static QuadFly getInstance()
     {
         return instance;
@@ -54,6 +66,9 @@ public class QuadFly implements QuadNode
         return this;
     }
     
+    /**
+     * returns that this has no unique values
+     */
     public int getUnique()
     {
         return 0;
