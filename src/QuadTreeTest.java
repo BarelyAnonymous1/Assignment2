@@ -80,6 +80,7 @@ public class QuadTreeTest extends TestCase {
 		tree.insert(point1);
 		tree.remove(point1, true);
 		tree.dump();
+		tree.insert(point1);
 		tree.remove(point1, false);
 		tree.dump();
 		
