@@ -208,6 +208,8 @@ public class LinkedList
     public Point remove(Point searchPoint, boolean byName)
     {
         LinkedNode curr = head;
+        if (curr == null)
+        	return null;
         if (curr.getData().equals(searchPoint))
         {
             resize();
