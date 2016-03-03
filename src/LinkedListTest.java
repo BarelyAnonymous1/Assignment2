@@ -13,8 +13,8 @@ import student.TestCase;
  */
 public class LinkedListTest extends TestCase {
 
-	LinkedList list;
-	Point point1, point2, point3, point4;
+	private LinkedList list;
+	private Point point1, point2, point3, point4;
 	@Before
 	public void setUp() {
 		list = new LinkedList();
@@ -24,11 +24,16 @@ public class LinkedListTest extends TestCase {
 		point4 = new Point("d", 200, 200);
 	}
 
-	@Test
+	/**
+	 * tests the insert method
+	 */
 	public void testInsert() {
 		list.insert(point1);
 		list.insert(point2);
 		assertEquals(2, list.getSize());
 	}
+	
+	
+	
 
 }
