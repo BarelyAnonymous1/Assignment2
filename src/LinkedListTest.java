@@ -13,17 +13,22 @@ import student.TestCase;
  */
 public class LinkedListTest extends TestCase {
 
-	/* (non-Javadoc)
-	 * @see student.TestCase#setUp()
-	 */
+	LinkedList list;
+	Point point1, point2, point3, point4;
 	@Before
-	protected void setUp() throws Exception {
-		super.setUp();
+	public void setUp() {
+		list = new LinkedList();
+		point1 = new Point("a", 1, 20);
+		point2 = new Point("b", 10, 30);
+		point3 = new Point("c", 140, 10);
+		point4 = new Point("d", 200, 200);
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testInsert() {
+		list.insert(point1);
+		list.insert(point2);
+		assertEquals(2, list.getSize());
 	}
 
 }
