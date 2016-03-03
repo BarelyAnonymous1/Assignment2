@@ -189,11 +189,22 @@ public class LinkedList
         return duplicates;
     }
     
+    /**
+     * @return the number of unique elements in the list
+     */
     public int getUnique()
     {
         return numUnique;
     }
 
+    /**
+     * removes a point and checks to see whether it is supposed
+     * to be returned by name or by value. if by name will check against
+     * other points in the linked list
+     * @param searchPoint the value to be found
+     * @param byName whether to search by name
+     * @return the point removed
+     */
     public Point remove(Point searchPoint, boolean byName)
     {
         LinkedNode curr = head;
