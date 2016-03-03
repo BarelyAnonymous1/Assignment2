@@ -149,6 +149,9 @@ public class LinkedList
         return size;
     }
 
+    /**
+     * changes the size of the list depending on whether unique points exist
+     */
     public void resize()
     {
         if (head == null)
