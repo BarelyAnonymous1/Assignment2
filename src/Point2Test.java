@@ -69,9 +69,9 @@ public class Point2Test extends TestCase
     	args[0] = "test.txt";
     	Point2.main(args);
     	assertTrue(systemOut().getHistory()
-    			.endsWith("Point not removed: r_r"
-    					+ "Point removed: (a, 1, 1)"
-    					+ "Point rejected: (1, -2)"
-    					+ "Point removed: (inExistRec_0, 1, 1)"));
+    			.endsWith("Point not removed: r_r\n"
+    					+ "Point removed: (a, 1, 1)\n"
+    					+ "Point rejected: (1, -2)\n"
+    					+ "Point removed: (inExistRec_0, 1, 1)\n"));
     }
 }
