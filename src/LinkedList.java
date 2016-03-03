@@ -207,10 +207,6 @@ public class LinkedList
      */
     public Point remove(Point searchPoint, boolean byName)
     {
-    	if (searchPoint == null)
-    	{
-    		return null;
-    	}
         LinkedNode curr = head;
         if (curr.getData().equals(searchPoint))
         {
