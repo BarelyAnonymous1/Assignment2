@@ -55,5 +55,11 @@ public class LinkedListTest extends TestCase {
 		list.remove(null, false);
 		list.remove(point1, true);
 		list.remove(point1, false);
+		list.insert(point1);
+		list.insert(point2);
+		list.insert(point1);
+		list.remove(point1, true);
+		list.remove(point2, false);
+		assertEquals(1, list.getSize());
 	}
 }
