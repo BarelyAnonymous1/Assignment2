@@ -209,7 +209,7 @@ public class LinkedList
     {
         LinkedNode curr = head;
         if (curr == null)
-        	return null;
+            return null;
         if (curr.getData().equals(searchPoint))
         {
             resize();
