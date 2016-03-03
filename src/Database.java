@@ -4,10 +4,6 @@
  * 
  * @author Jonathan DeFreeuw (jondef95) Preston Lattimer (platt)
  * @version 1
- * @param <K>
- *            key for the KVPairs in the lists
- * @param <E>
- *            value for the KVPairs in the lists
  */
 public class Database
 {
