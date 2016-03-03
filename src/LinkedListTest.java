@@ -33,6 +33,9 @@ public class LinkedListTest extends TestCase {
 		assertEquals(2, list.getSize());
 	}
 	
+	/**
+	 * tests the duplicates method
+	 */
 	public void testOutputDuplicates()
 	{
 		list.insert(point1);
@@ -43,5 +46,14 @@ public class LinkedListTest extends TestCase {
 		assertTrue(systemOut().getHistory().endsWith("(1, 20)\n"));
 	}
 	
-
+	/**
+	 * tests the remove method
+	 */
+	public void testRemove()
+	{
+		list.remove(null, true);
+		list.remove(null, false);
+		list.remove(point1, true);
+		list.remove(point1, false);
+	}
 }
