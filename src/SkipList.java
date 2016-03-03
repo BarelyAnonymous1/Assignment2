@@ -222,7 +222,7 @@ public class SkipList<K extends Comparable<K>, E>
             String name = "";
             if (current.getValue() == null)
             {
-                name = "null";
+                name = "(null)";
             }
             else
             {
