@@ -61,14 +61,12 @@ public class Point2Test extends TestCase
                         + "r_42, 1, 20\n" + "1 quadtree nodes printed\n"));
     }
     
-//    dump
-//
-//    duplicates
-//
-//    search r_r
-//    regionsearch   0 0 25 25
-//    remove r_r
-//    remove 10 30
-//    duplicates
-//    dump
+    public void testSyntax3() throws Exception
+    {
+    	System.out.println("");
+    	System.out.println("");
+    	String[] args = new String[1];
+    	args[0] = "test.txt";
+    	Point2.main(args);
+    }
 }
