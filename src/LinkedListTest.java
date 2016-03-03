@@ -33,7 +33,14 @@ public class LinkedListTest extends TestCase {
 		assertEquals(2, list.getSize());
 	}
 	
-	
+	public void testOutputDuplicates()
+	{
+		list.insert(point1);
+		list.insert(point2);
+		list.insert(point1);
+		list.insert(point1);
+		list.outputDuplicates();
+	}
 	
 
 }
