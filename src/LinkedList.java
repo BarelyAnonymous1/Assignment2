@@ -207,7 +207,7 @@ public class LinkedList
      */
     public Point remove(Point searchPoint, boolean byName)
     {
-    	if (searchPoint == null || byName == null)
+    	if (searchPoint == null)
     	{
     		return null;
     	}

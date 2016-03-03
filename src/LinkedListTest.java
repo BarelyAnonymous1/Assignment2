@@ -51,8 +51,8 @@ public class LinkedListTest extends TestCase {
 	 */
 	public void testRemove()
 	{
-		list.remove(null, true);
-		list.remove(null, false);
+		//list.remove(null, true);
+		//list.remove(null, false);
 		list.remove(point1, true);
 		list.remove(point1, false);
 	}
