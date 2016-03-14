@@ -78,7 +78,7 @@ public class LinkedListTest extends TestCase {
         Point point2diffName = new Point("a", 10, 30);
         list.insert(point2diffName);
         list.insert(point2);
-        list.remove(point2, true);
+        assertEquals(point2, list.remove(point2, true));
         
     }
 }
