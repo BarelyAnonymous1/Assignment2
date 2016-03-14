@@ -8,16 +8,16 @@ import student.TestCase;
  */
 
 /**
- * @author prestonlattimer
- *
+ * @author platt, jondef95
+ * @version 1
  */
 public class LinkedListTest extends TestCase {
 
     private LinkedList list;
-    private Point point1, 
-                    point2, 
-                    point3, 
-                    point4;
+    private Point point1; 
+    private Point point2; 
+    private Point point3;
+    private Point point4;
     /**
      * sets up the information for the tests
      */

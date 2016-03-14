@@ -3,6 +3,7 @@
  * -any leaf node that does not point to data points instead to the 
  * single flyweight, instantiated inside the quadtree class
  * @author platt, jondef95
+ * @verson 1
  *
  */
 public class QuadFly implements QuadNode
@@ -67,7 +68,7 @@ public class QuadFly implements QuadNode
     }
     
     /**
-     * returns that this has no unique values
+     * @return that this has no unique values
      */
     public int getUnique()
     {

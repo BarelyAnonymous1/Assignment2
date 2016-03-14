@@ -63,15 +63,15 @@ public class Point2Test extends TestCase
     
     public void testSyntax3() throws Exception
     {
-    	System.out.println("");
-    	System.out.println("");
-    	String[] args = new String[1];
-    	args[0] = "test.txt";
-    	Point2.main(args);
-    	assertTrue(systemOut().getHistory()
-    			.endsWith("Point not removed: r_r\n"
-    					+ "Point removed: (a, 1, 1)\n"
-    					+ "Point rejected: (1, -2)\n"
-    					+ "Point removed: (inExistRec_0, 1, 1)\n"));
+        System.out.println("");
+        System.out.println("");
+        String[] args = new String[1];
+        args[0] = "test.txt";
+        Point2.main(args);
+        assertTrue(systemOut().getHistory()
+                .endsWith("Point not removed: r_r\n"
+                        + "Point removed: (a, 1, 1)\n"
+                        + "Point rejected: (1, -2)\n"
+                        + "Point removed: (inExistRec_0, 1, 1)\n"));
     }
 }

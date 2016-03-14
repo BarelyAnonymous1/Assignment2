@@ -13,6 +13,9 @@ public class QuadLeaf implements QuadNode
      */
     private LinkedList data;
 
+    /**
+     * creates a quadleaf
+     */
     public QuadLeaf()
     {
         data = new LinkedList();
@@ -138,6 +141,15 @@ public class QuadLeaf implements QuadNode
         data.outputDuplicates();
     }
 
+    /**
+     * removes the leaf node and adjusts the tree
+     * @param x is the x value searched
+     * @param y is the y value searched
+     * @param width is the width of the interval
+     * @param removePoint is the point to be removed
+     * @param byName is whether or not we remove name for SkipList
+     * @return the point that is removed
+     */
     public Point remove(int x, int y, int width, Point removePoint,
             boolean byName)
     {
@@ -146,6 +158,9 @@ public class QuadLeaf implements QuadNode
         return output;
     }
 
+    /**
+     * @return whether or not this is unique
+     */
     public int getUnique()
     {
         return data.getSize();
