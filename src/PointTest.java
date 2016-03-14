@@ -20,8 +20,12 @@ public class PointTest extends TestCase {
         Object obj = new Object();
         Point point = new Point("a", 1, 2);
         Point point2 = new Point("a", 1, 2);
+        Point pointNotSame = new Point("b", 3, 2);
+        Point pointNotSame2 = new Point("c", 1, 3);
         assertFalse(point.equals(obj));
         assertTrue(point.equals(point2));
+        assertFalse(point.equals(pointNotSame));
+        assertFalse(point.equals(pointNotSame2));
     }
 
 }
