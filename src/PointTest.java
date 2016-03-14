@@ -8,7 +8,8 @@ import student.TestCase;
  */
 
 /**
- * @author prestonlattimer
+ * @author platt, jondef95
+ * @version 1
  *
  */
 public class PointTest extends TestCase {
