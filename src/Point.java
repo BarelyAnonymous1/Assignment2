@@ -26,17 +26,17 @@ public class Point implements Comparable<Point>
         x = startX;
         y = startY;
     }
-
+    
     /**
      * sets the X coordinate of the Point
      * 
      * @param newX
      *            replacement x coordinate
      */
-    public void setX(int newX)
+    /**public void setX(int newX)
     {
         x = newX;
-    }
+    }*/
 
     /**
      * sets the Y coordinate of the Point
@@ -44,10 +44,10 @@ public class Point implements Comparable<Point>
      * @param newY
      *            replacement y coordinate
      */
-    public void setY(int newY)
+    /**public void setY(int newY)
     {
         y = newY;
-    }
+    }/*
 
     /**
      * sets the name of the Point
@@ -59,7 +59,6 @@ public class Point implements Comparable<Point>
     {
         name = newName;
     }
-
     /**
      * access to private x coordinate
      * 
