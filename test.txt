@@ -3,6 +3,11 @@ insert r_r          -1 -20
   insert rec        7 -8
 dump
 
+remove tester1
+insert northwest 1 1
+insert northeast 1 1022
+insert southwest 1022 1
+insert southeast 1022 1022
 insert a 2 3 
 insert c 2 3 
 insert a -2 3 
