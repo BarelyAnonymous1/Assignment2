@@ -73,7 +73,7 @@ public class LinkedListTest extends TestCase {
      */
     public void testRemove2()
     {
-        list.insert(null);
+        list.insert(point1);
         list.remove(point2, true);
         
     }
