@@ -74,6 +74,10 @@ public class LinkedListTest extends TestCase {
     public void testRemove2()
     {
         list.insert(point1);
+        assertNull(list.remove(point2, true));
+        Point point2diffName = new Point("a", 10, 30);
+        list.insert(point2diffName);
+        list.insert(point2);
         list.remove(point2, true);
         
     }
