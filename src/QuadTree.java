@@ -29,7 +29,7 @@ public class QuadTree
      */
     public void insert(Point newPoint)
     {
-    	if (newPoint == null) return;
+        if (newPoint == null) return;
         root = root.insert(0, 0, 1024, newPoint);
     }
 
@@ -44,11 +44,20 @@ public class QuadTree
                 root.dump(0, 0, 1024, 0) + " quadtree nodes printed");
     }
 
+    /**
+     * runs the duplicates command
+     */
     public void duplicates()
     {
         root.duplicates();
     }
 
+    /**
+     * runs the remove method
+     * @param findPoint the point to be found
+     * @param byName whether we need the name for SkipList
+     * @return the point that was removed, null if none removed
+     */
     public Point remove(Point findPoint, boolean byName)
     {
         Point output = root.remove(0, 0, 1024, findPoint, byName);
