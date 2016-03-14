@@ -75,6 +75,7 @@ public class LinkedListTest extends TestCase {
     {
         list.insert(point1);
         list.insert(null);
+        list.remove(point1, true);
         
     }
 }
