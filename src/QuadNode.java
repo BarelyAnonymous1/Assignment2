@@ -67,7 +67,7 @@ public interface QuadNode
      * @param width the width of search
      * @param removePoint what point to remove
      * @param byName whether the name is necessary for SkipList
-     * @return
+     * @return the node that is removed
      */
     public Point remove(int x, int y, int width, Point removePoint, boolean byName);
     
