@@ -18,7 +18,9 @@ public class LinkedListTest extends TestCase {
                     point2, 
                     point3, 
                     point4;
-    @Before
+    /**
+     * sets up the information for the tests
+     */
     public void setUp() {
         list = new LinkedList();
         point1 = new Point("a", 1, 20);

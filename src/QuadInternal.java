@@ -112,6 +112,14 @@ public class QuadInternal implements QuadNode
         southEast.duplicates();
     }
 
+    /**
+     * @param x is the x coordinate
+     * @param y is the y coordinate
+     * @param width is the width of the area searched
+     * @param searchPoint is the point to be found
+     * @param byName tells whether to remove by specific name or not
+     * @return the point that was removed
+     */
     public Point remove(int x, int y, int width, Point searchPoint,
             boolean byName)
     {
@@ -146,6 +154,11 @@ public class QuadInternal implements QuadNode
         return foundPoint;
     }
 
+    /**
+     * @return the value of whehter there is anything unique
+     * if unique then != 0
+     * if not unique (all flyweight) = 0
+     */
     private int removeEmpty()
     {
         int nw = northWest.getUnique();
@@ -195,6 +208,9 @@ public class QuadInternal implements QuadNode
         }
     }
 
+    /**
+     * @return the number of children -- 4
+     */
     public int getUnique()
     {
         return 4;
