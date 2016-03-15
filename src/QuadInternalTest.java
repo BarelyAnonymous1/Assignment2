@@ -27,11 +27,18 @@ public class QuadInternalTest extends TestCase {
     }
 
     /**
-     * tests the remove class
+     * tests the remove method
      */
     public void testRemove()
     {
         Point searchPoint = new Point("a", 54, 10);
         assertNull(node1.remove(0, 4, 20, searchPoint, true));
+    }
+    /**
+     * tests the adjustTree mehtod
+     */
+    public void testAdjustTree()
+    {
+        assertNull(node1.adjustTree(0, 0, 10));
     }
 }
