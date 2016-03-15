@@ -189,7 +189,8 @@ public class Rectangle implements Comparable<Rectangle>
     public boolean contains(Point otherPoint)
     {
         // left edge r2 is to the right of r1
-        return !((otherPoint.getX() > this.x + this.width)
+        return !(
+                (otherPoint.getX() > this.x + this.width)
                 // right edge r2 is to the left of r1
                 || (otherPoint.getX() < this.x)
                 // bottom edge r2 is above r1
