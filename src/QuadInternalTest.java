@@ -14,9 +14,9 @@ import student.TestCase;
  */
 public class QuadInternalTest extends TestCase {
 
-    QuadInternal node1;
-    QuadInternal node2;
-    QuadInternal node3;
+    private QuadInternal node1;
+    private QuadInternal node2;
+    private QuadInternal node3;
     /**
      * sets up the class
      */
