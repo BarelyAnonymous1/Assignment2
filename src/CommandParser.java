@@ -227,8 +227,8 @@ public class CommandParser
         {
             System.out.println(
                     "Point found: " + searchResult.getValue().toString());
-            while (searchResult.next[0] != null 
-                    && searchResult.next[0]
+            while (//searchResult.next[0] != null && 
+                    searchResult.next[0]
                     .getKey().compareTo(searchResult.getKey()) == 0)
             {
                 System.out.println("HIT IT");
