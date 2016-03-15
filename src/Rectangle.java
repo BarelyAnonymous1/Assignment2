@@ -150,7 +150,8 @@ public class Rectangle implements Comparable<Rectangle>
         if (obj instanceof Rectangle)
         {
             Rectangle rect = (Rectangle) obj;
-            return (this.x == rect.getX() && this.y == rect.getY()
+            return (this.x == rect.getX() 
+                    && this.y == rect.getY()
                     && this.width == rect.getWidth()
                     && this.height == rect.getHeight());
         }
