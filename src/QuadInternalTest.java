@@ -48,6 +48,8 @@ public class QuadInternalTest extends TestCase {
         tree.insert(new Point("c", 1, 1));
         tree.remove(new Point("c", 1, 1), true);
         tree.dump();
+        assertTrue(systemOut().getHistory()
+                .endsWith("1 quadtree nodes printed"));
         
     }
     
