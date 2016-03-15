@@ -40,5 +40,11 @@ public class QuadInternalTest extends TestCase {
     public void testAdjustTree()
     {
         assertSame(node1.adjustTree(0, 0, 10), QuadTree.FLYLEAF);
+        QuadTree tree = new QuadTree();
+        Point newPoint = new Point("a", 1023, 1);
+        tree.insert(newPoint);
+        tree.dump();
+        
     }
+    
 }
