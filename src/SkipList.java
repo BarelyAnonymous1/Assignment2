@@ -163,12 +163,13 @@ public class SkipList<K extends Comparable<K>, E>
      * Scrolls along the bottom level of the list until the loop hits a value
      * that is the same as the searched for value. Then uses removeKey(key of
      * value) to delete the node from the SkipList
+     * NO LONGER NECESSARY WITH QUADTREE
      * 
      * @param value
      *            the searched for value
      * @return located value if found, if not, null
      */
-    public E removeValue(E value)
+    /**public E removeValue(E value)
     {
         SkipNode<K, E> current = head;
         while (current.next[0] != null)
@@ -180,7 +181,7 @@ public class SkipList<K extends Comparable<K>, E>
             current = current.next[0];
         }
         return null;
-    }
+    }*/
 
     /**
      * finds a specific node given a key value using a while loop to discover
