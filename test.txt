@@ -12,11 +12,15 @@ insert southeast 1022 1022
 insert a 2 3 
 insert c 2 3 
 insert ff 2 3
-insert ff 2 4
-insert fa 8 10
+insert fa 2 4
+insert ff 8 10
+insert f 8 10
 insert a -2 3 
 insert 1a 2 3 
 insert 2a -2 3 
+
+search ff
+
 
 remove a
 remove b
