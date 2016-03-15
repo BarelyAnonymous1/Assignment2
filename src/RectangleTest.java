@@ -288,6 +288,7 @@ public class RectangleTest extends TestCase
         assertFalse(rect3.contains(point2));
         assertFalse(rect2.contains(point3));
         assertFalse(rect3.contains(point3));
+        assertFalse(rect2.contains(point4));
         
     }
 }
