@@ -269,4 +269,20 @@ public class RectangleTest extends TestCase
         assertFalse(rect1.equals(rect4));
         
     }
+    
+    /**
+     * tests the contains method
+     */
+    public void testContains()
+    {
+        Point point1 = new Point("a", 1, 1);
+        Point point2 = new Point("b", 1022, 1);
+        Point point3 = new Point("c", 1, 1022);
+        Point point4 = new Point("d", 1022, 1022);
+        
+        Rectangle rect1 = new Rectangle("rect1", 0, 0, 1023, 1023);
+        Rectangle rect2 = new Rectangle("rect2", 2, 2, 1000, 1000);
+        assertTrue(rect1.contains(point1));
+        assertFalse(rect2.contains(point1));
+    }
 }
