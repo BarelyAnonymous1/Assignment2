@@ -45,6 +45,7 @@ public class QuadInternalTest extends TestCase {
         tree.insert(newPoint);
         tree.insert(newPoint);
         tree.insert(new Point("b", 1022, 1));
+        tree.insert(new Point("c", 1, 1));
         tree.dump();
         
     }
