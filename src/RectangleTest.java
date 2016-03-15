@@ -280,6 +280,7 @@ public class RectangleTest extends TestCase
         Point point3 = new Point("c", 1, 1022);
         Point point4 = new Point("d", 1022, 1022);
         
+        
         Rectangle rect1 = new Rectangle("rect1", 0, 0, 1023, 1023);
         Rectangle rect2 = new Rectangle("rect2", 2, 2, 1000, 1000);
         Rectangle rect3 = new Rectangle("rect3", 1, 1, 1, 1);
@@ -288,7 +289,9 @@ public class RectangleTest extends TestCase
         assertFalse(rect3.contains(point2));
         assertFalse(rect2.contains(point3));
         assertFalse(rect3.contains(point3));
-        assertFalse(rect2.contains(point4));
+        assertFalse(rect2.contains(point2));
+        
+        
         
     }
 }
