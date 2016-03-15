@@ -6,6 +6,7 @@ dump
 remove tester1
 
 insert northwest 1 1
+search northwest
 insert northeast 1 1022
 insert southwest 1022 1
 insert southeast 1022 1022

@@ -231,7 +231,6 @@ public class CommandParser
                     searchResult.next[0]
                     .getKey().compareTo(searchResult.getKey()) == 0)
             {
-                System.out.println("HIT IT");
                 searchResult = searchResult.next[0];
                 System.out.println("Point found: "
                         + searchResult.getValue().toString());
