@@ -287,7 +287,7 @@ public class RectangleTest extends TestCase
         Rectangle rect4 = new Rectangle("rect4", 1020, 1024, 1, 4);
         
         Rectangle rect5 = new Rectangle("rect5", 1, 4, 2, 2);
-        Point point5 = new Point("e", 2, 5);
+        Point point5 = new Point("e", 2, 3);
         assertTrue(rect1.contains(point1));
         assertFalse(rect2.contains(point1));
         assertFalse(rect3.contains(point2));
