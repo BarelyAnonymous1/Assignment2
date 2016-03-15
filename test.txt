@@ -20,7 +20,7 @@ insert 1a 2 3
 insert 2a -2 3 
 
 search ff
-
+search g
 
 remove a
 remove b
